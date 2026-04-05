@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT License"
+issueTrackerURL="https://github.com/Mrthomas20121/NatureHorizons/issues"
+
+[[mods]]
+modId="nature_horizons"
+version="1.20.1-1.0.2"
+displayName="Nature Horizons"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/nature_horizons"
+#logoFile="tinkers_reforged_logo.png"
+authors="Mrthomas20121"
+description='''
+Add new Nether biomes.
+'''
+
+[[dependencies.nature_horizons]]
+	modId = "forge"
+	mandatory = true
+	versionRange = "[47.3.7,)"
+	ordering = "NONE"
+	side = "BOTH"
+[[dependencies.nature_horizons]]
+	modId = "biolith"
+	mandatory = true
+	versionRange = "[1.0.1-alpha.1,)"
+	ordering = "NONE"
+	side = "BOTH"
