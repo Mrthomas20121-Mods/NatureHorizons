@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "nature_horizons:block/wood/aspen/stripped_log_top",
+    "side": "nature_horizons:block/wood/aspen/stripped_log"
+  }
+}

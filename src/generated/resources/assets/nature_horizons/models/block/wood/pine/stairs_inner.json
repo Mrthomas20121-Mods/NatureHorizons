@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "nature_horizons:block/wood/pine/planks",
+    "side": "nature_horizons:block/wood/pine/planks",
+    "top": "nature_horizons:block/wood/pine/planks"
+  }
+}

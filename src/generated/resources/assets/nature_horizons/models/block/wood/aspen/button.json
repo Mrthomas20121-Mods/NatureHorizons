@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "nature_horizons:block/wood/aspen/planks"
+  }
+}

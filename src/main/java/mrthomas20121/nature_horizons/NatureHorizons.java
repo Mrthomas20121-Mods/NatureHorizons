@@ -22,6 +22,7 @@ public class NatureHorizons {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		NatureHorizonsBlocks.BLOCKS.register(bus);
+		NatureHorizonsItems.CREATIVE_TABS.register(bus);
 
 		bus.addListener(NatureHorizonsDatagen::init);
 		bus.addListener(this::setup);

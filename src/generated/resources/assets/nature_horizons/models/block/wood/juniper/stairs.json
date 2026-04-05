@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "nature_horizons:block/wood/juniper/planks",
+    "side": "nature_horizons:block/wood/juniper/planks",
+    "top": "nature_horizons:block/wood/juniper/planks"
+  }
+}

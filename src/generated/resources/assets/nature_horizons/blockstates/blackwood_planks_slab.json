@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nature_horizons:block/wood/blackwood/slab"
+    },
+    "type=double": {
+      "model": "nature_horizons:block/wood/blackwood/planks"
+    },
+    "type=top": {
+      "model": "nature_horizons:block/wood/blackwood/slab_top"
+    }
+  }
+}

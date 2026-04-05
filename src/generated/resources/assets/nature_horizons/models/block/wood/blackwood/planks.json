@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "nature_horizons:block/wood/blackwood/planks"
+  }
+}
