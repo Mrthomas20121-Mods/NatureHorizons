@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "tag": "forge:nuggets/gold"
+    },
+    "J": {
+      "item": "nature_horizons:juniper_berry"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GJG",
+    "GGG"
+  ],
+  "result": {
+    "item": "nature_horizons:golden_juniper_berry"
+  },
+  "show_notification": true
+}

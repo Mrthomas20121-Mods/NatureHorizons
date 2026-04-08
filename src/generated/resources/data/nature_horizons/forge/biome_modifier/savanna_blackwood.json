@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_savanna",
+  "features": "nature_horizons:blackwood_tree",
+  "step": "vegetal_decoration"
+}

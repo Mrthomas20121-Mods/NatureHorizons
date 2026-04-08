@@ -32,10 +32,33 @@ public class NatureHorizonsBlockstateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+
+        addLeaveBlock(NatureHorizonsBlocks.ASPEN_LEAVES.get(), blockTexture("wood/aspen/leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.ASPEN_SAPLING.get(), blockTexture("wood/aspen/sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(), blockTexture("wood/blackwood/leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.BLACKWOOD_SAPLING.get(), blockTexture("wood/blackwood/sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.JUNIPER_LEAVES.get(), blockTexture("wood/juniper/leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.JUNIPER_SAPLING.get(), blockTexture("wood/juniper/sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.PINE_LEAVES.get(), blockTexture("wood/pine/leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.PINE_SAPLING.get(), blockTexture("wood/pine/sapling"));
+
         addWood(NatureHorizonsBlocks.ASPEN, true, RenderType.solid());
         addWood(NatureHorizonsBlocks.BLACKWOOD, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.JUNIPER, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.PINE, true, RenderType.solid());
+    }
+
+    protected void addLeaveBlock(LeavesBlock block, ResourceLocation texture) {
+        simpleBlockWithItem(block, models().cubeAll(name(block), texture).renderType(RenderType.cutoutMipped().name));
+    }
+
+    protected void addSaplingBlock(SaplingBlock block, ResourceLocation texture) {
+        simpleBlockWithItem(block, models().cross(name(block), texture).renderType(RenderType.cutout().name), texture);
+    }
+
+    public void simpleBlockWithItem(Block block, ModelFile model, ResourceLocation texture) {
+        simpleBlock(block, model);
+        generated(key(block), texture);
     }
 
     /** Creates all models for a building block object */

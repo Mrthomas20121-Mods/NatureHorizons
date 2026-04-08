@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 500,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "nature_horizons:juniper_berry"
+  },
+  "result": "nature_horizons:grilled_juniper_berry"
+}

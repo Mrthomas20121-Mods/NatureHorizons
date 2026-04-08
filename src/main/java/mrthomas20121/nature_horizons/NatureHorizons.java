@@ -2,6 +2,7 @@ package mrthomas20121.nature_horizons;
 
 import mrthomas20121.nature_horizons.datagen.NatureHorizonsDatagen;
 import mrthomas20121.nature_horizons.init.*;
+import mrthomas20121.nature_horizons.worldgen.NatureHorizonsWorldGen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +23,7 @@ public class NatureHorizons {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		NatureHorizonsBlocks.BLOCKS.register(bus);
+		NatureHorizonsItems.ITEMS.register(bus);
 		NatureHorizonsItems.CREATIVE_TABS.register(bus);
 
 		bus.addListener(NatureHorizonsDatagen::init);
@@ -30,37 +32,24 @@ public class NatureHorizons {
 
 	public void setup(FMLCommonSetupEvent event) {
 
-		//NatureHorizonsWorldGen.init();
+		NatureHorizonsWorldGen.init();
 	}
 
 	/**
-	 * Gets a resource location for Tinkers
+	 * Gets a resource location for Nature Horizons
 	 * @param name  Resource path
-	 * @return  Location for tinkers
+	 * @return  Location
 	 */
 	public static ResourceLocation getResource(String name) {
 		return new ResourceLocation(MOD_ID, name);
 	}
 
 	/**
-	 * Returns the given Resource prefixed with tinkers resource location. Use this function instead of hardcoding
+	 * Returns the given Resource prefixed with resource location. Use this function instead of hardcoding
 	 * resource locations.
 	 */
 	public static String resourceString(String res) {
 		return String.format("%s:%s", MOD_ID, res);
-	}
-
-	/**
-	 * Prefixes the given unlocalized name with tinkers prefix. Use this when passing unlocalized names for a uniform
-	 * namespace.
-	 */
-	public static String prefix(String name) {
-		return MOD_ID + "." + name.toLowerCase(Locale.US);
-	}
-
-	/** Makes a Tinker's description ID */
-	public static String makeDescriptionId(String type, String name) {
-		return type + "." + MOD_ID + "." + name;
 	}
 
 	/**

@@ -25,6 +25,10 @@ public class NatureHorizonsTags {
 
         @Override
         protected void addTags(HolderLookup.Provider provider) {
+
+            tag(BlockTags.LEAVES).add(
+                    NatureHorizonsBlocks.ASPEN_LEAVES.get(), NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(), NatureHorizonsBlocks.JUNIPER_LEAVES.get(), NatureHorizonsBlocks.PINE_LEAVES.get());
+
             for(WoodBlockObject blockObject: NatureHorizonsBlocks.WOODS) {
                 tag(BlockTags.WOODEN_FENCES).add(blockObject.getFence());
                 tag(BlockTags.FENCES).add(blockObject.getFence());
@@ -35,6 +39,7 @@ public class NatureHorizonsTags {
                 tag(BlockTags.SLABS).add(blockObject.getSlab());
                 tag(BlockTags.WOODEN_STAIRS).add(blockObject.getStairs());
                 tag(BlockTags.PLANKS).add(blockObject.get());
+                tag(BlockTags.LOGS_THAT_BURN).add(blockObject.getLog(), blockObject.getStrippedLog());
             }
         }
     }
@@ -46,6 +51,9 @@ public class NatureHorizonsTags {
         }
 
         @Override
-        protected void addTags(HolderLookup.Provider provider) {}
+        protected void addTags(HolderLookup.Provider provider) {
+
+
+        }
     }
 }

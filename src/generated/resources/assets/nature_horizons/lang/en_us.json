@@ -1,0 +1,11 @@
+{
+  "block.nature_horizons.aspen_leaves": "Aspen Leaves",
+  "block.nature_horizons.aspen_sapling": "Aspen Sapling",
+  "block.nature_horizons.blackwood_leaves": "Blackwood Leaves",
+  "block.nature_horizons.blackwood_sapling": "Blackwood Sapling",
+  "block.nature_horizons.juniper_leaves": "Juniper Leaves",
+  "block.nature_horizons.juniper_sapling": "Juniper Sapling",
+  "block.nature_horizons.pine_leaves": "Pine Leaves",
+  "block.nature_horizons.pine_sapling": "Pine Sapling",
+  "itemGroup.nature_horizons.wood": "Nature Horizons Blocks"
+}

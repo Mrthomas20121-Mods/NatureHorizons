@@ -1,10 +1,26 @@
 package mrthomas20121.nature_horizons.init;
 
 import mrthomas20121.nature_horizons.NatureHorizons;
+import mrthomas20121.nature_horizons.worldgen.tree.AspenTreeGrower;
+import mrthomas20121.nature_horizons.worldgen.tree.BlackwoodTreeGrower;
+import mrthomas20121.nature_horizons.worldgen.tree.JuniperTreeGrower;
+import mrthomas20121.nature_horizons.worldgen.tree.PineTreeGrower;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.block.grower.JungleTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import slimeknights.mantle.registration.deferred.BlockDeferredRegister;
+import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.mantle.registration.object.WoodBlockObject;
 
 import java.util.List;
@@ -13,17 +29,69 @@ public class NatureHorizonsBlocks {
 
     public static BlockDeferredRegister BLOCKS = new BlockDeferredRegister(NatureHorizons.MOD_ID);
 
+    public static ItemObject<LeavesBlock> ASPEN_LEAVES = BLOCKS.register("aspen_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SaplingBlock> ASPEN_SAPLING = BLOCKS.register("aspen_sapling", () -> sapling(new AspenTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
     public static WoodBlockObject ASPEN = BLOCKS.registerWood("aspen",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
+
+    public static ItemObject<LeavesBlock> BLACKWOOD_LEAVES = BLOCKS.register("blackwood_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SaplingBlock> BLACKWOOD_SAPLING = BLOCKS.register("blackwood_sapling", () -> sapling(new BlackwoodTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
 
     public static WoodBlockObject BLACKWOOD = BLOCKS.registerWood("blackwood",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
 
+    public static ItemObject<LeavesBlock> JUNIPER_LEAVES = BLOCKS.register("juniper_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SaplingBlock> JUNIPER_SAPLING = BLOCKS.register("juniper_sapling", () -> sapling(new JuniperTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
     public static WoodBlockObject JUNIPER = BLOCKS.registerWood("juniper",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
+
+    public static ItemObject<LeavesBlock> PINE_LEAVES = BLOCKS.register("pine_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SaplingBlock> PINE_SAPLING = BLOCKS.register("pine_sapling", () -> sapling(new PineTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
 
     public static WoodBlockObject PINE = BLOCKS.registerWood("pine",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
 
     public static List<WoodBlockObject> WOODS = List.of(ASPEN, BLACKWOOD, JUNIPER, PINE);
+
+    private static SaplingBlock sapling(AbstractTreeGrower grower) {
+        return new SaplingBlock(grower, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY));
+    }
+
+    private static LeavesBlock leaves(SoundType p_152615_) {
+        return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks().sound(p_152615_).noOcclusion().isValidSpawn(NatureHorizonsBlocks::ocelotOrParrot).isSuffocating(NatureHorizonsBlocks::never).isViewBlocking(NatureHorizonsBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(NatureHorizonsBlocks::never));
+    }
+
+    private static Boolean never(BlockState p_50779_, BlockGetter p_50780_, BlockPos p_50781_, EntityType<?> p_50782_) {
+        return false;
+    }
+
+    private static Boolean always(BlockState p_50810_, BlockGetter p_50811_, BlockPos p_50812_, EntityType<?> p_50813_) {
+        return true;
+    }
+
+    private static boolean always(BlockState p_50775_, BlockGetter p_50776_, BlockPos p_50777_) {
+        return true;
+    }
+
+    private static boolean never(BlockState p_50806_, BlockGetter p_50807_, BlockPos p_50808_) {
+        return false;
+    }
+
+    private static Boolean ocelotOrParrot(BlockState p_50822_, BlockGetter p_50823_, BlockPos p_50824_, EntityType<?> p_50825_) {
+        return p_50825_ == EntityType.OCELOT || p_50825_ == EntityType.PARROT;
+    }
 }
