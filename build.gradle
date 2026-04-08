@@ -110,10 +110,17 @@ repositories {
     }
 }
 
+mixin {
+    // MixinGradle Settings
+    add sourceSets.main, 'mixins.nature_horizons.refmap.json'
+    config 'mixins.nature_horizons.json'
+}
+
 dependencies {
 	minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 	
     implementation fg.deobf("com.terraformersmc:biolith-forge:${biolith_version}")
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:${mixinextras_version}"))
     implementation(fg.deobf("io.github.llamalad7:mixinextras-forge:${mixinextras_version}"))
 
