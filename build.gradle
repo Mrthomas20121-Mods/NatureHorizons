@@ -17,7 +17,6 @@ buildscript {
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'eclipse'
 apply plugin: 'org.spongepowered.mixin'
 
 version = nature_horizons_version
@@ -125,6 +124,13 @@ dependencies {
     implementation(fg.deobf("io.github.llamalad7:mixinextras-forge:${mixinextras_version}"))
 
     implementation fg.deobf("slimeknights.mantle:Mantle:${minecraft_version}-${mantle_version}")
+
+    // compile against the JEI API but do not include it at runtime
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+
+    implementation fg.deobf("mezz.jei:jei-${minecraft_version}-common:${jei_version}")
+    implementation fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 }
 
 jar {
