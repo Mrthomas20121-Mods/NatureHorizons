@@ -11,7 +11,7 @@ displayURL="https://www.curseforge.com/minecraft/mc-mods/nature_horizons"
 #logoFile="tinkers_reforged_logo.png"
 authors="Mrthomas20121"
 description='''
-Add new Nether biomes.
+Add new tree to the overworld
 '''
 
 [[dependencies.nature_horizons]]
@@ -24,5 +24,11 @@ Add new Nether biomes.
 	modId = "biolith"
 	mandatory = true
 	versionRange = "[1.0.1-alpha.1,)"
+	ordering = "NONE"
+	side = "BOTH"
+[[dependencies.nature_horizons]]
+	modId = "mantle"
+	mandatory = true
+	versionRange = "[1.11.97,)"
 	ordering = "NONE"
 	side = "BOTH"

@@ -1,10 +1,7 @@
 package mrthomas20121.nature_horizons.init;
 
 import mrthomas20121.nature_horizons.NatureHorizons;
-import mrthomas20121.nature_horizons.worldgen.tree.AspenTreeGrower;
-import mrthomas20121.nature_horizons.worldgen.tree.BlackwoodTreeGrower;
-import mrthomas20121.nature_horizons.worldgen.tree.JuniperTreeGrower;
-import mrthomas20121.nature_horizons.worldgen.tree.PineTreeGrower;
+import mrthomas20121.nature_horizons.worldgen.tree.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
@@ -38,6 +35,15 @@ public class NatureHorizonsBlocks {
     public static WoodBlockObject ASPEN = BLOCKS.registerWood("aspen",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
 
+    public static ItemObject<LeavesBlock> BLACK_WALNUT_LEAVES = BLOCKS.register("black_walnut_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SaplingBlock> BLACK_WALNUT_SAPLING = BLOCKS.register("black_walnut_sapling", () -> sapling(new BlackWalnutTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static WoodBlockObject BLACK_WALNUT = BLOCKS.registerWood("black_walnut",
+            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
+
     public static ItemObject<LeavesBlock> BLACKWOOD_LEAVES = BLOCKS.register("blackwood_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
 
@@ -65,7 +71,7 @@ public class NatureHorizonsBlocks {
     public static WoodBlockObject PINE = BLOCKS.registerWood("pine",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
 
-    public static List<WoodBlockObject> WOODS = List.of(ASPEN, BLACKWOOD, JUNIPER, PINE);
+    public static List<WoodBlockObject> WOODS = List.of(ASPEN, BLACK_WALNUT, BLACKWOOD, JUNIPER, PINE);
 
     private static SaplingBlock sapling(AbstractTreeGrower grower) {
         return new SaplingBlock(grower, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY));

@@ -35,6 +35,8 @@ public class NatureHorizonsBlockstateProvider extends BlockStateProvider {
 
         addLeaveBlock(NatureHorizonsBlocks.ASPEN_LEAVES.get(), blockTexture("wood/aspen/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.ASPEN_SAPLING.get(), blockTexture("wood/aspen/sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get(), blockTexture("wood/black_walnut/leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get(), blockTexture("wood/black_walnut/sapling"));
         addLeaveBlock(NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(), blockTexture("wood/blackwood/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.BLACKWOOD_SAPLING.get(), blockTexture("wood/blackwood/sapling"));
         addLeaveBlock(NatureHorizonsBlocks.JUNIPER_LEAVES.get(), blockTexture("wood/juniper/leaves"));
@@ -43,6 +45,7 @@ public class NatureHorizonsBlockstateProvider extends BlockStateProvider {
         addSaplingBlock(NatureHorizonsBlocks.PINE_SAPLING.get(), blockTexture("wood/pine/sapling"));
 
         addWood(NatureHorizonsBlocks.ASPEN, true, RenderType.solid());
+        addWood(NatureHorizonsBlocks.BLACK_WALNUT, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.BLACKWOOD, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.JUNIPER, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.PINE, true, RenderType.solid());

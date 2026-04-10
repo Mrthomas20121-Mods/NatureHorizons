@@ -4,11 +4,11 @@ import mrthomas20121.nature_horizons.NatureHorizons;
 import mrthomas20121.nature_horizons.init.NatureHorizonsBlocks;
 import mrthomas20121.nature_horizons.init.NatureHorizonsItems;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.BoatItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
@@ -25,6 +25,7 @@ public class NatureHorizonsRecipeProvider extends RecipeProvider implements IRec
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         woodCrafting(consumer, NatureHorizonsBlocks.ASPEN, "aspen");
+        woodCrafting(consumer, NatureHorizonsBlocks.BLACK_WALNUT, "black_walnut");
         woodCrafting(consumer, NatureHorizonsBlocks.BLACKWOOD, "blackwood");
         woodCrafting(consumer, NatureHorizonsBlocks.JUNIPER, "juniper");
         woodCrafting(consumer, NatureHorizonsBlocks.PINE, "pine");
@@ -40,7 +41,28 @@ public class NatureHorizonsRecipeProvider extends RecipeProvider implements IRec
                 .pattern("GGG")
                 .unlockedBy(getHasName(NatureHorizonsItems.JUNIPER_BERRY.get()), has(NatureHorizonsItems.JUNIPER_BERRY.get()))
                 .save(consumer);
+
+        boat(consumer, NatureHorizonsItems.ASPEN_BOAT.get(), NatureHorizonsItems.ASPEN_CHEST_BOAT.get(), NatureHorizonsBlocks.ASPEN.get());
+        boat(consumer, NatureHorizonsItems.BLACK_WALNUT_BOAT.get(), NatureHorizonsItems.BLACK_WALNUT_CHEST_BOAT.get(), NatureHorizonsBlocks.BLACK_WALNUT.get());
+        boat(consumer, NatureHorizonsItems.BLACKWOOD_BOAT.get(), NatureHorizonsItems.BLACKWOOD_CHEST_BOAT.get(), NatureHorizonsBlocks.BLACKWOOD.get());
+        boat(consumer, NatureHorizonsItems.JUNIPER_BOAT.get(), NatureHorizonsItems.JUNIPER_CHEST_BOAT.get(), NatureHorizonsBlocks.JUNIPER.get());
+        boat(consumer, NatureHorizonsItems.PINE_BOAT.get(), NatureHorizonsItems.PINE_CHEST_BOAT.get(), NatureHorizonsBlocks.PINE.get());
     }
+
+    private void boat(Consumer<FinishedRecipe> consumer, Item boatItem, Item chestBoatItem, Block planks) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, boatItem)
+                .define('P', planks)
+                .pattern("P P")
+                .pattern("PPP")
+                .unlockedBy(getHasName(planks), has(planks))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, chestBoatItem)
+                .requires(Tags.Items.CHESTS_WOODEN)
+                .requires(boatItem)
+                .unlockedBy(getHasName(planks), has(planks))
+                .save(consumer);
+    };
 
     @Override
     public @NotNull String getModId() {

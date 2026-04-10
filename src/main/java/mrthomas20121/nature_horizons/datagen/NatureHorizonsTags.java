@@ -2,6 +2,7 @@ package mrthomas20121.nature_horizons.datagen;
 
 import mrthomas20121.nature_horizons.NatureHorizons;
 import mrthomas20121.nature_horizons.init.NatureHorizonsBlocks;
+import mrthomas20121.nature_horizons.init.NatureHorizonsItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -30,16 +31,17 @@ public class NatureHorizonsTags {
                     NatureHorizonsBlocks.ASPEN_LEAVES.get(), NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(), NatureHorizonsBlocks.JUNIPER_LEAVES.get(), NatureHorizonsBlocks.PINE_LEAVES.get());
 
             for(WoodBlockObject blockObject: NatureHorizonsBlocks.WOODS) {
+                tag(BlockTags.MINEABLE_WITH_AXE).add(blockObject.getFenceGate(), blockObject.getPressurePlate(), blockObject.getSign(), blockObject.getHangingSign()).addTag(blockObject.getLogBlockTag());
                 tag(BlockTags.WOODEN_FENCES).add(blockObject.getFence());
                 tag(BlockTags.FENCES).add(blockObject.getFence());
-
                 tag(BlockTags.WOODEN_BUTTONS).add(blockObject.getButton());
                 tag(BlockTags.WOODEN_DOORS).add(blockObject.getDoor());
                 tag(BlockTags.WOODEN_TRAPDOORS).add(blockObject.getTrapdoor());
-                tag(BlockTags.SLABS).add(blockObject.getSlab());
+                tag(BlockTags.WOODEN_SLABS).add(blockObject.getSlab());
                 tag(BlockTags.WOODEN_STAIRS).add(blockObject.getStairs());
                 tag(BlockTags.PLANKS).add(blockObject.get());
                 tag(BlockTags.LOGS_THAT_BURN).add(blockObject.getLog(), blockObject.getStrippedLog());
+                tag(blockObject.getLogBlockTag()).add(blockObject.getLog(), blockObject.getStrippedLog(), blockObject.getWood(), blockObject.getStrippedWood());
             }
         }
     }
@@ -53,7 +55,21 @@ public class NatureHorizonsTags {
         @Override
         protected void addTags(HolderLookup.Provider provider) {
 
+            tag(ItemTags.PIGLIN_LOVED).add(NatureHorizonsItems.GOLDEN_WALNUT.get(), NatureHorizonsItems.GOLDEN_JUNIPER_BERRY.get());
 
+            for(WoodBlockObject blockObject: NatureHorizonsBlocks.WOODS) {
+                tag(ItemTags.WOODEN_FENCES).add(blockObject.getFence().asItem());
+                tag(ItemTags.FENCES).add(blockObject.getFence().asItem());
+
+                tag(ItemTags.WOODEN_BUTTONS).add(blockObject.getButton().asItem());
+                tag(ItemTags.WOODEN_DOORS).add(blockObject.getDoor().asItem());
+                tag(ItemTags.WOODEN_TRAPDOORS).add(blockObject.getTrapdoor().asItem());
+                tag(ItemTags.SLABS).add(blockObject.getSlab().asItem());
+                tag(ItemTags.WOODEN_STAIRS).add(blockObject.getStairs().asItem());
+                tag(ItemTags.PLANKS).add(blockObject.get().asItem());
+                tag(ItemTags.LOGS_THAT_BURN).add(blockObject.getLog().asItem(), blockObject.getStrippedLog().asItem());
+                tag(blockObject.getLogItemTag()).add(blockObject.getLog().asItem(), blockObject.getStrippedLog().asItem(), blockObject.getWood().asItem(), blockObject.getStrippedWood().asItem());
+            }
         }
     }
 }

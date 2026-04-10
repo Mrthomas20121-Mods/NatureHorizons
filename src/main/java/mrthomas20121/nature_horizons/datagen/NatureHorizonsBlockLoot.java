@@ -8,6 +8,7 @@ import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
@@ -48,16 +49,19 @@ public class NatureHorizonsBlockLoot extends BlockLootSubProvider {
     protected void generate() {
 
         this.add(NatureHorizonsBlocks.ASPEN_LEAVES.get(), (block) -> createLeavesDrops(block, NatureHorizonsBlocks.ASPEN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get(), (block) -> createFruitLeavesDrops(block, NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get(), NatureHorizonsItems.HARD_WALNUT.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, NatureHorizonsBlocks.BLACKWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        this.add(NatureHorizonsBlocks.JUNIPER_LEAVES.get(), (block) -> createJuniperLeavesDrops(block, NatureHorizonsBlocks.JUNIPER_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(NatureHorizonsBlocks.JUNIPER_LEAVES.get(), (block) -> createFruitLeavesDrops(block, NatureHorizonsBlocks.JUNIPER_SAPLING.get(), NatureHorizonsItems.JUNIPER_BERRY.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(NatureHorizonsBlocks.PINE_LEAVES.get(), (block) -> createLeavesDrops(block, NatureHorizonsBlocks.PINE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         this.dropSelf(NatureHorizonsBlocks.ASPEN_SAPLING.get());
+        this.dropSelf(NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get());
         this.dropSelf(NatureHorizonsBlocks.BLACKWOOD_SAPLING.get());
         this.dropSelf(NatureHorizonsBlocks.JUNIPER_SAPLING.get());
         this.dropSelf(NatureHorizonsBlocks.PINE_SAPLING.get());
 
         wood(NatureHorizonsBlocks.ASPEN);
+        wood(NatureHorizonsBlocks.BLACK_WALNUT);
         wood(NatureHorizonsBlocks.BLACKWOOD);
         wood(NatureHorizonsBlocks.JUNIPER);
         wood(NatureHorizonsBlocks.PINE);
@@ -81,7 +85,7 @@ public class NatureHorizonsBlockLoot extends BlockLootSubProvider {
         dropSelf(wood.getStairs());
     }
 
-    protected LootTable.Builder createJuniperLeavesDrops(Block p_249535_, Block p_251505_, float... p_250753_) {
-        return this.createLeavesDrops(p_249535_, p_251505_, p_250753_).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(this.applyExplosionCondition(p_249535_, LootItem.lootTableItem(NatureHorizonsItems.JUNIPER_BERRY.get())).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))));
+    protected LootTable.Builder createFruitLeavesDrops(Block p_249535_, Block p_251505_, Item fruit, float... p_250753_) {
+        return this.createLeavesDrops(p_249535_, p_251505_, p_250753_).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(this.applyExplosionCondition(p_249535_, LootItem.lootTableItem(fruit)).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))));
     }
 }

@@ -34,9 +34,9 @@ public class NatureHorizonsBiomeProvider {
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
         if (tallAspen) {
-            biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.ASPEN_TREE);
+            biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.TALL_ASPEN_TREE);
         } else {
-            biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.ASPEN_TREE);
+            biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.ASPEN_FOREST_TREES);
         }
 
         BiomeDefaultFeatures.addDefaultFlowers(biomegenerationsettings$builder);
@@ -67,7 +67,7 @@ public class NatureHorizonsBiomeProvider {
     }
 
     private static Biome biome(boolean p_265746_, float p_265800_, float p_265276_, MobSpawnSettings.Builder p_265425_, BiomeGenerationSettings.Builder p_265371_, @Nullable Music p_265636_) {
-        return biome(p_265746_, p_265800_, p_265276_, 4159204, 329011, (Integer)null, (Integer)null, p_265425_, p_265371_, p_265636_);
+        return biome(p_265746_, p_265800_, p_265276_, 4159204, 329011, 13884799, null, p_265425_, p_265371_, p_265636_);
     }
 
     private static Biome biome(boolean p_273483_, float p_272621_, float p_273588_, int p_273605_, int p_272756_, @Nullable Integer p_272889_, @Nullable Integer p_272657_, MobSpawnSettings.Builder p_273300_, BiomeGenerationSettings.Builder p_272700_, @Nullable Music p_272996_) {

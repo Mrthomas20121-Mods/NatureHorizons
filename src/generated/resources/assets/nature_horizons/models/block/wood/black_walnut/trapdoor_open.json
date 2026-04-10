@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_orientable_trapdoor_open",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "texture": "nature_horizons:block/wood/black_walnut/trapdoor"
+  }
+}

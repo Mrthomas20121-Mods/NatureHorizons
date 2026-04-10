@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:chests/wooden"
+    },
+    {
+      "item": "nature_horizons:juniper_boat"
+    }
+  ],
+  "result": {
+    "item": "nature_horizons:juniper_chest_boat"
+  }
+}

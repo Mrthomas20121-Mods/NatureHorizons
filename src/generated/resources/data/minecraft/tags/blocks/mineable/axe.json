@@ -1,0 +1,29 @@
+{
+  "values": [
+    "nature_horizons:aspen_fence_gate",
+    "nature_horizons:aspen_pressure_plate",
+    "nature_horizons:aspen_sign",
+    "nature_horizons:aspen_hanging_sign",
+    "#nature_horizons:aspen_logs",
+    "nature_horizons:black_walnut_fence_gate",
+    "nature_horizons:black_walnut_pressure_plate",
+    "nature_horizons:black_walnut_sign",
+    "nature_horizons:black_walnut_hanging_sign",
+    "#nature_horizons:black_walnut_logs",
+    "nature_horizons:blackwood_fence_gate",
+    "nature_horizons:blackwood_pressure_plate",
+    "nature_horizons:blackwood_sign",
+    "nature_horizons:blackwood_hanging_sign",
+    "#nature_horizons:blackwood_logs",
+    "nature_horizons:juniper_fence_gate",
+    "nature_horizons:juniper_pressure_plate",
+    "nature_horizons:juniper_sign",
+    "nature_horizons:juniper_hanging_sign",
+    "#nature_horizons:juniper_logs",
+    "nature_horizons:pine_fence_gate",
+    "nature_horizons:pine_pressure_plate",
+    "nature_horizons:pine_sign",
+    "nature_horizons:pine_hanging_sign",
+    "#nature_horizons:pine_logs"
+  ]
+}

@@ -11,18 +11,19 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
-import java.util.function.Supplier;
 
 public class NatureHorizonsPlacedFeatures {
 
+    public static ResourceKey<PlacedFeature> ASPEN_FOREST_TREES = feature("aspen_forest_trees");
     public static ResourceKey<PlacedFeature> ASPEN_TREE = feature("aspen_tree");
+    public static ResourceKey<PlacedFeature> ASPEN_TREE_BEES = feature("aspen_tree_bees");
     public static ResourceKey<PlacedFeature> TALL_ASPEN_TREE = feature("tall_aspen_tree");
+    public static ResourceKey<PlacedFeature> BLACK_WALNUT_TREE = feature("black_walnut_tree");
     public static ResourceKey<PlacedFeature> BLACKWOOD_TREE = feature("blackwood_tree");
     public static ResourceKey<PlacedFeature> JUNIPER_TREE = feature("juniper_tree");
 
@@ -35,26 +36,24 @@ public class NatureHorizonsPlacedFeatures {
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> holdergetter = context.lookup(Registries.CONFIGURED_FEATURE);
         Holder<ConfiguredFeature<?, ?>> ASPEN = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.ASPEN_TREE);
+        Holder<ConfiguredFeature<?, ?>> ASPEN_BEES = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.ASPEN_TREE_BEE);
+        Holder<ConfiguredFeature<?, ?>> ASPEN_FOREST = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.ASPEN_FOREST_TREES);
         Holder<ConfiguredFeature<?, ?>> TALL_ASPEN = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.TALL_ASPEN_TREE);
+        Holder<ConfiguredFeature<?, ?>> BLACK_WALNUT = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.BLACK_WALNUT_TREE);
         Holder<ConfiguredFeature<?, ?>> BLACKWOOD = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.BLACKWOOD_TREE);
         Holder<ConfiguredFeature<?, ?>> JUNIPER = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.JUNIPER_TREE);
 
-        register(context, ASPEN_TREE, ASPEN, treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), NatureHorizonsBlocks.ASPEN_SAPLING.get()));
+        register(context, ASPEN_FOREST_TREES, ASPEN_FOREST, treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
+        register(context, ASPEN_TREE, ASPEN, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.ASPEN_SAPLING.get())));
+        register(context, ASPEN_TREE_BEES, ASPEN_BEES, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.ASPEN_SAPLING.get())));
         register(context, TALL_ASPEN_TREE, TALL_ASPEN, treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), NatureHorizonsBlocks.ASPEN_SAPLING.get()));
-        register(context, BLACKWOOD_TREE, BLACKWOOD, treePlacement(PlacementUtils.countExtra(1, 0.1F, 2)));
+        register(context, BLACK_WALNUT_TREE, BLACK_WALNUT, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get())));
+        register(context, BLACKWOOD_TREE, BLACKWOOD, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.BLACKWOOD_SAPLING.get())));
         register(context, JUNIPER_TREE, JUNIPER, treePlacement(PlacementUtils.countExtra(5, 0.1F, 1), NatureHorizonsBlocks.JUNIPER_SAPLING.get()));
     }
 
     public static void register(BootstapContext<PlacedFeature> p_255872_, ResourceKey<PlacedFeature> p_255820_, Holder<ConfiguredFeature<?, ?>> p_255813_, List<PlacementModifier> p_256042_) {
         p_255872_.register(p_255820_, new PlacedFeature(p_255813_, List.copyOf(p_256042_)));
-    }
-
-    public static BlockPredicateFilter filteredByBlockSurvival(Supplier<Block> block) {
-        return filteredByBlockSurvival(block.get());
-    }
-
-    public static BlockPredicateFilter filteredByBlockSurvival(Block block) {
-        return BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(block.defaultBlockState(), BlockPos.ZERO));
     }
 
     private static ImmutableList.Builder<PlacementModifier> treePlacementBase(PlacementModifier p_195485_) {

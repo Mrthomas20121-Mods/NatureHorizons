@@ -9,6 +9,7 @@
   "downfall": 0.6,
   "effects": {
     "fog_color": 12638463,
+    "grass_color": 13884799,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -78,7 +79,7 @@
     [
       "minecraft:glow_lichen",
       "minecraft:forest_flowers",
-      "nature_horizons:aspen_tree",
+      "nature_horizons:aspen_forest_trees",
       "minecraft:flower_default",
       "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_normal",

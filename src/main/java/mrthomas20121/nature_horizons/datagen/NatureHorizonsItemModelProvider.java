@@ -17,5 +17,21 @@ public class NatureHorizonsItemModelProvider extends ItemModelProvider {
         basicItem(NatureHorizonsItems.JUNIPER_BERRY.get());
         basicItem(NatureHorizonsItems.GRILLED_JUNIPER_BERRY.get());
         basicItem(NatureHorizonsItems.GOLDEN_JUNIPER_BERRY.get());
+
+        basicItem(NatureHorizonsItems.HARD_WALNUT.get());
+        basicItem(NatureHorizonsItems.WALNUT.get());
+        basicItem(NatureHorizonsItems.ROASTED_WALNUT.get());
+        basicItem(NatureHorizonsItems.GOLDEN_WALNUT.get());
+
+        basicItem(NatureHorizonsItems.ASPEN_BOAT.get());
+        basicItem(NatureHorizonsItems.ASPEN_CHEST_BOAT.get());
+        basicItem(NatureHorizonsItems.BLACK_WALNUT_BOAT.get());
+        basicItem(NatureHorizonsItems.BLACK_WALNUT_CHEST_BOAT.get());
+        basicItem(NatureHorizonsItems.BLACKWOOD_BOAT.get());
+        basicItem(NatureHorizonsItems.BLACKWOOD_CHEST_BOAT.get());
+        basicItem(NatureHorizonsItems.JUNIPER_BOAT.get());
+        basicItem(NatureHorizonsItems.JUNIPER_CHEST_BOAT.get());
+        basicItem(NatureHorizonsItems.PINE_BOAT.get());
+        basicItem(NatureHorizonsItems.PINE_CHEST_BOAT.get());
     }
 }

@@ -15,7 +15,6 @@ public class SpruceGrowerMixin {
 
     @Inject(method = "getConfiguredMegaFeature(Lnet/minecraft/util/RandomSource;)Lnet/minecraft/resources/ResourceKey;", at = @At("RETURN"), cancellable = true)
     private void nature_horizons_getConfiguredMegaFeature(RandomSource p_255928_, CallbackInfoReturnable<ResourceKey<ConfiguredFeature<?, ?>>> cir) {
-        // SpurceTreeGrower can create a mega mine tree so we make it only return a mega spruce
         cir.setReturnValue(TreeFeatures.MEGA_SPRUCE);
     }
 }

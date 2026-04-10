@@ -24,6 +24,7 @@ public class NatureHorizons {
 
 		NatureHorizonsBlocks.BLOCKS.register(bus);
 		NatureHorizonsItems.ITEMS.register(bus);
+		NatureHorizonsEntityTypes.ENTITY_TYPES.register(bus);
 		NatureHorizonsItems.CREATIVE_TABS.register(bus);
 
 		bus.addListener(NatureHorizonsDatagen::init);

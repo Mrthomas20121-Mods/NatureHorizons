@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "nature_horizons:block/wood/black_walnut/log/wood_stripped",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "nature_horizons:block/wood/black_walnut/log/wood_stripped"
+    },
+    "axis=z": {
+      "model": "nature_horizons:block/wood/black_walnut/log/wood_stripped",
+      "x": 90
+    }
+  }
+}
