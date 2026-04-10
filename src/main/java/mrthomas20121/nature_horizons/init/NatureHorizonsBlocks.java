@@ -42,7 +42,7 @@ public class NatureHorizonsBlocks {
             (block) -> new BlockItem(block, new Item.Properties()));
 
     public static WoodBlockObject BLACK_WALNUT = BLOCKS.registerWood("black_walnut",
-            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
+            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BROWN).sound(SoundType.WOOD).ignitedByLava()), true);
 
     public static ItemObject<LeavesBlock> BLACKWOOD_LEAVES = BLOCKS.register("blackwood_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
@@ -51,7 +51,7 @@ public class NatureHorizonsBlocks {
             (block) -> new BlockItem(block, new Item.Properties()));
 
     public static WoodBlockObject BLACKWOOD = BLOCKS.registerWood("blackwood",
-            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
+            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK).sound(SoundType.WOOD).ignitedByLava()), true);
 
     public static ItemObject<LeavesBlock> JUNIPER_LEAVES = BLOCKS.register("juniper_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
@@ -60,7 +60,7 @@ public class NatureHorizonsBlocks {
             (block) -> new BlockItem(block, new Item.Properties()));
 
     public static WoodBlockObject JUNIPER = BLOCKS.registerWood("juniper",
-            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
+            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).sound(SoundType.WOOD).ignitedByLava()), true);
 
     public static ItemObject<LeavesBlock> PINE_LEAVES = BLOCKS.register("pine_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
@@ -69,7 +69,7 @@ public class NatureHorizonsBlocks {
             (block) -> new BlockItem(block, new Item.Properties()));
 
     public static WoodBlockObject PINE = BLOCKS.registerWood("pine",
-            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
+            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GRAY).sound(SoundType.WOOD).ignitedByLava()), true);
 
     public static List<WoodBlockObject> WOODS = List.of(ASPEN, BLACK_WALNUT, BLACKWOOD, JUNIPER, PINE);
 

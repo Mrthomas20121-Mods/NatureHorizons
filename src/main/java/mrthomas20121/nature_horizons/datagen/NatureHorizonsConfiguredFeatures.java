@@ -64,7 +64,7 @@ public class NatureHorizonsConfiguredFeatures {
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createBlackWalnutTree() {
-        return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(NatureHorizonsBlocks.BLACK_WALNUT.getLog()), new FancyTrunkPlacer(3, 5, 0), BlockStateProvider.simple(NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get()), new FancyFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 2), new TwoLayersFeatureSize(1, 0, 1))).ignoreVines();
+        return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(NatureHorizonsBlocks.BLACK_WALNUT.getLog()), new FancyTrunkPlacer(4, 5, 1), BlockStateProvider.simple(NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get()), new FancyFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 2), new TwoLayersFeatureSize(1, 0, 1))).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createBlackwoodTree() {

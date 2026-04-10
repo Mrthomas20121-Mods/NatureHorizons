@@ -44,7 +44,7 @@ public class NatureHorizonsBlockstateProvider extends BlockStateProvider {
         addLeaveBlock(NatureHorizonsBlocks.PINE_LEAVES.get(), blockTexture("wood/pine/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.PINE_SAPLING.get(), blockTexture("wood/pine/sapling"));
 
-        addWood(NatureHorizonsBlocks.ASPEN, true, RenderType.solid());
+        addWood(NatureHorizonsBlocks.ASPEN, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.BLACK_WALNUT, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.BLACKWOOD, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.JUNIPER, true, RenderType.cutout());
