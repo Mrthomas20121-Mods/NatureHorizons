@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_juniper_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "nature_horizons:juniper_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "nature_horizons:grilled_juniper_berry_from_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_juniper_berry",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "nature_horizons:grilled_juniper_berry_from_campfire_cooking"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "nature_horizons:golden_walnut"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_walnut": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "nature_horizons:walnut"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_walnut",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "nature_horizons:golden_walnut"
+    ]
+  },
+  "sends_telemetry_event": false
+}

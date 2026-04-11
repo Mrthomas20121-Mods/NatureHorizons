@@ -71,7 +71,7 @@ public class NatureHorizonsBlockLoot extends BlockLootSubProvider {
         dropSelf(wood.get());
         dropSelf(wood.getButton());
         dropSelf(wood.getPressurePlate());
-        dropSelf(wood.getDoor());
+        this.add(wood.getDoor(), this::createDoorTable);
         dropSelf(wood.getTrapdoor());
         dropSelf(wood.getFence());
         dropSelf(wood.getFenceGate());

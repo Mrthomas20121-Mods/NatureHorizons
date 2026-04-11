@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "tag": "forge:nuggets/gold"
+    },
+    "J": {
+      "item": "nature_horizons:walnut"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GJG",
+    "GGG"
+  ],
+  "result": {
+    "item": "nature_horizons:golden_walnut"
+  },
+  "show_notification": true
+}
