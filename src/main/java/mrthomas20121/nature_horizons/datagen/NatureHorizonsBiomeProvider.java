@@ -49,7 +49,7 @@ public class NatureHorizonsBiomeProvider {
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addCommonBerryBushes(biomegenerationsettings$builder);
         Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA);
-        return biome(true, 0.25F, 0.8F, mobspawnsettings$builder, biomegenerationsettings$builder, music);
+        return biome(true, 0.25F, 0.8F, 4159204, 329011, null, null, mobspawnsettings$builder, biomegenerationsettings$builder, music);
     }
 
     private static Biome aspenForest(HolderGetter<PlacedFeature> p_255788_, HolderGetter<ConfiguredWorldCarver<?>> p_256461_, boolean tallAspen) {
@@ -75,7 +75,7 @@ public class NatureHorizonsBiomeProvider {
         BiomeDefaultFeatures.farmAnimals(mobspawnsettings$builder);
         BiomeDefaultFeatures.commonSpawns(mobspawnsettings$builder);
 
-        return biome(true, 0.6f, 0.6F, 4159204, 329011, null, null, mobspawnsettings$builder, biomegenerationsettings$builder, music);
+        return biome(true, 0.6f, 0.6F, mobspawnsettings$builder, biomegenerationsettings$builder, music);
     }
 
     private static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
@@ -94,7 +94,7 @@ public class NatureHorizonsBiomeProvider {
     }
 
     private static Biome biome(boolean p_265746_, float p_265800_, float p_265276_, MobSpawnSettings.Builder p_265425_, BiomeGenerationSettings.Builder p_265371_, @Nullable Music p_265636_) {
-        return biome(p_265746_, p_265800_, p_265276_, 4159204, 329011, 13884799, null, p_265425_, p_265371_, p_265636_);
+        return biome(p_265746_, p_265800_, p_265276_, 4159204, 329011, 0xC9D841, null, p_265425_, p_265371_, p_265636_);
     }
 
     private static Biome biome(boolean p_273483_, float p_272621_, float p_273588_, int p_273605_, int p_272756_, @Nullable Integer p_272889_, @Nullable Integer p_272657_, MobSpawnSettings.Builder p_273300_, BiomeGenerationSettings.Builder p_272700_, @Nullable Music p_272996_) {
