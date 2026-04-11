@@ -7,20 +7,11 @@ import mrthomas20121.nature_horizons.worldgen.NatureHorizonsWorldGen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Locale;
 
 @Mod(NatureHorizons.MOD_ID)
 public class NatureHorizons {
@@ -40,28 +31,11 @@ public class NatureHorizons {
 
 		bus.addListener(NatureHorizonsDatagen::init);
 		bus.addListener(this::setup);
-		MinecraftForge.EVENT_BUS.addListener(this::onRightClickBlock);
 	}
 
 	public void setup(FMLCommonSetupEvent event) {
 
 		NatureHorizonsWorldGen.init();
-	}
-
-	public void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-		if(!event.isCanceled()) {
-			Event.Result result = event.getUseBlock();
-			if(result.equals(Event.Result.DEFAULT) || result.equals(Event.Result.ALLOW)) {
-				BlockHitResult hitVec = event.getHitVec();
-				BlockState blockState = event.getLevel().getBlockState(hitVec.getBlockPos());
-				Player player = event.getEntity();
-				ItemStack mainHandItem = player.getMainHandItem();
-				if(blockState.is(NatureHorizonsTags.CAN_BREAK_HARD_WALNUT) && mainHandItem.is(NatureHorizonsItems.HARD_WALNUT.get())) {
-					mainHandItem.shrink(1);
-					player.addItem(new ItemStack(NatureHorizonsItems.WALNUT));
-				}
-			}
-		}
 	}
 
 	/**

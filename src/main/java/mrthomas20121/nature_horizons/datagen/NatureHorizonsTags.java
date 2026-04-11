@@ -37,7 +37,16 @@ public class NatureHorizonsTags {
             tag(BlockTags.LEAVES).add(
                     NatureHorizonsBlocks.ASPEN_LEAVES.get(), NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(), NatureHorizonsBlocks.JUNIPER_LEAVES.get(), NatureHorizonsBlocks.PINE_LEAVES.get());
 
-            tag(CAN_BREAK_HARD_WALNUT).addTags(Tags.Blocks.STONE, Tags.Blocks.COBBLESTONE, BlockTags.OVERWORLD_NATURAL_LOGS);
+            tag(CAN_BREAK_HARD_WALNUT).addTags(
+                    Tags.Blocks.STONE,
+                    Tags.Blocks.COBBLESTONE,
+                    BlockTags.OVERWORLD_NATURAL_LOGS,
+                    Tags.Blocks.ORES,
+                    Tags.Blocks.OBSIDIAN,
+                    Tags.Blocks.NETHERRACK,
+                    Tags.Blocks.STORAGE_BLOCKS,
+                    Tags.Blocks.SANDSTONE
+            );
 
             for(WoodBlockObject blockObject: NatureHorizonsBlocks.WOODS) {
                 tag(CAN_BREAK_HARD_WALNUT).addTag(blockObject.getLogBlockTag());
