@@ -4,11 +4,11 @@
     "default": "nature_horizons:aspen_tree",
     "features": [
       {
-        "chance": 0.2,
+        "chance": 0.3,
         "feature": "nature_horizons:aspen_tree"
       },
       {
-        "chance": 0.1,
+        "chance": 0.2,
         "feature": "nature_horizons:black_walnut_tree"
       }
     ]
