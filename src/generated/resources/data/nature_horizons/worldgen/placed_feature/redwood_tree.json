@@ -1,5 +1,5 @@
 {
-  "feature": "nature_horizons:blackwood_tree",
+  "feature": "nature_horizons:redwood_tree",
   "placement": [
     {
       "type": "minecraft:block_predicate_filter",

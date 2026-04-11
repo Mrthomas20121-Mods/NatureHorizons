@@ -57,7 +57,7 @@ public class NatureHorizonsConfiguredFeatures {
         Holder<PlacedFeature> ASPEN = placedFeatureHolderGetter.getOrThrow(NatureHorizonsPlacedFeatures.ASPEN_TREE);
         Holder<PlacedFeature> ASPEN_BEES = placedFeatureHolderGetter.getOrThrow(NatureHorizonsPlacedFeatures.ASPEN_TREE);
         Holder<PlacedFeature> BLACK_WALNUT = placedFeatureHolderGetter.getOrThrow(NatureHorizonsPlacedFeatures.BLACK_WALNUT_TREE);
-        Holder<PlacedFeature> SPRUCE = placedFeatureHolderGetter.getOrThrow(TreePlacements.SPRUCE_CHECKED);
+        Holder<PlacedFeature> SPRUCE = placedFeatureHolderGetter.getOrThrow(TreePlacements.MEGA_SPRUCE_CHECKED);
         Holder<PlacedFeature> PINE = placedFeatureHolderGetter.getOrThrow(TreePlacements.PINE_CHECKED);
         Holder<PlacedFeature> REDWOOD = placedFeatureHolderGetter.getOrThrow(NatureHorizonsPlacedFeatures.REDWOOD_TREE);
 
@@ -69,7 +69,7 @@ public class NatureHorizonsConfiguredFeatures {
         register(context, JUNIPER_TREE, Feature.TREE, createJuniperTree().ignoreVines().build());
         register(context, ASPEN_FOREST_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(ASPEN, 0.2F), new WeightedPlacedFeature(BLACK_WALNUT, 0.1F)), ASPEN_BEES));
         register(context, REDWOOD_TREE, Feature.TREE, createRedWoodTree().build());
-        register(context, OLD_GROWTH_REDWOOD_TAIGA, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(SPRUCE, 0.2f), new WeightedPlacedFeature(PINE, 0.2f)), REDWOOD));
+        register(context, OLD_GROWTH_REDWOOD_TAIGA, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(SPRUCE, 0.1f)), REDWOOD));
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createRedWoodTree() {

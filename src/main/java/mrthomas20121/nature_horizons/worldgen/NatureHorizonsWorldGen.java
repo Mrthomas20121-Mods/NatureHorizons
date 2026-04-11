@@ -7,9 +7,8 @@ public class NatureHorizonsWorldGen {
 
     public static void init() {
 
-        BiomePlacement.replaceOverworld(Biomes.FOREST, NatureHorizonsBiomes.ASPEN_FOREST, 0.1f);
-        BiomePlacement.replaceOverworld(Biomes.BIRCH_FOREST, NatureHorizonsBiomes.ASPEN_FOREST, 0.3f);
-        BiomePlacement.replaceOverworld(Biomes.OLD_GROWTH_BIRCH_FOREST, NatureHorizonsBiomes.OLD_GROWTH_ASPEN_FOREST, 0.3f);
-        BiomePlacement.replaceOverworld(Biomes.OLD_GROWTH_SPRUCE_TAIGA, NatureHorizonsBiomes.OLD_GROWTH_REDWOOD_TAIGA, 0.4f);
+        BiomePlacement.replaceOverworld(Biomes.BIRCH_FOREST, NatureHorizonsBiomes.ASPEN_FOREST, 0.5f);
+        BiomePlacement.replaceOverworld(Biomes.OLD_GROWTH_BIRCH_FOREST, NatureHorizonsBiomes.OLD_GROWTH_ASPEN_FOREST, 0.5f);
+        BiomePlacement.replaceOverworld(Biomes.OLD_GROWTH_SPRUCE_TAIGA, NatureHorizonsBiomes.OLD_GROWTH_REDWOOD_TAIGA, 0.5f);
     }
 }

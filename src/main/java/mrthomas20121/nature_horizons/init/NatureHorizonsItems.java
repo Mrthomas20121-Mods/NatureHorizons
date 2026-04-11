@@ -87,18 +87,23 @@ public class NatureHorizonsItems {
                         output.accept(NatureHorizonsBlocks.PINE_LEAVES);
                         output.accept(NatureHorizonsBlocks.PINE_SAPLING);
                         accept(NatureHorizonsBlocks.PINE, output);
+                        output.accept(NatureHorizonsItems.REDWOOD_BOAT.get());
+                        output.accept(NatureHorizonsItems.REDWOOD_CHEST_BOAT.get());
+                        output.accept(NatureHorizonsBlocks.REDWOOD_LEAVES);
+                        output.accept(NatureHorizonsBlocks.REDWOOD_SAPLING);
+                        accept(NatureHorizonsBlocks.REDWOOD, output);
                     })
                     .build()
     );
 
     private static void accept(WoodBlockObject woodBlockObject, CreativeModeTab.Output output) {
         output.accept(woodBlockObject.get());
-        output.accept(woodBlockObject.getStairs());
-        output.accept(woodBlockObject.getSlab());
         output.accept(woodBlockObject.getLog());
         output.accept(woodBlockObject.getWood());
         output.accept(woodBlockObject.getStrippedLog());
         output.accept(woodBlockObject.getStrippedWood());
+        output.accept(woodBlockObject.getStairs());
+        output.accept(woodBlockObject.getSlab());
         output.accept(woodBlockObject.getFence());
         output.accept(woodBlockObject.getFenceGate());
         output.accept(woodBlockObject.getDoor());

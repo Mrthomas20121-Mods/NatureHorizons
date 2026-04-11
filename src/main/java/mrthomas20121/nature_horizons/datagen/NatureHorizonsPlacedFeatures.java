@@ -44,7 +44,8 @@ public class NatureHorizonsPlacedFeatures {
         Holder<ConfiguredFeature<?, ?>> BLACK_WALNUT = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.BLACK_WALNUT_TREE);
         Holder<ConfiguredFeature<?, ?>> BLACKWOOD = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.BLACKWOOD_TREE);
         Holder<ConfiguredFeature<?, ?>> JUNIPER = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.JUNIPER_TREE);
-        Holder<ConfiguredFeature<?, ?>> REDWOOD = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.OLD_GROWTH_REDWOOD_TAIGA);
+        Holder<ConfiguredFeature<?, ?>> REDWOOD = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.REDWOOD_TREE);
+        Holder<ConfiguredFeature<?, ?>> REDWOOD_TREES = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.OLD_GROWTH_REDWOOD_TAIGA);
 
         register(context, ASPEN_FOREST_TREES, ASPEN_FOREST, treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
         register(context, ASPEN_TREE, ASPEN, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.ASPEN_SAPLING.get())));
@@ -53,8 +54,8 @@ public class NatureHorizonsPlacedFeatures {
         register(context, BLACK_WALNUT_TREE, BLACK_WALNUT, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get())));
         register(context, BLACKWOOD_TREE, BLACKWOOD, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.BLACKWOOD_SAPLING.get())));
         register(context, JUNIPER_TREE, JUNIPER, treePlacement(PlacementUtils.countExtra(5, 0.1F, 1), NatureHorizonsBlocks.JUNIPER_SAPLING.get()));
-        register(context, REDWOOD_TREE, BLACKWOOD, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.REDWOOD_SAPLING.get())));
-        register(context, OLD_GROWTH_REDWOOD_TAIGA, REDWOOD, treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
+        register(context, REDWOOD_TREE, REDWOOD, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.REDWOOD_SAPLING.get())));
+        register(context, OLD_GROWTH_REDWOOD_TAIGA, REDWOOD_TREES, treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
     }
 
     public static void register(BootstapContext<PlacedFeature> p_255872_, ResourceKey<PlacedFeature> p_255820_, Holder<ConfiguredFeature<?, ?>> p_255813_, List<PlacementModifier> p_256042_) {

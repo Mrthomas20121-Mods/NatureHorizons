@@ -75,7 +75,7 @@ public class NatureHorizonsBiomeProvider {
         BiomeDefaultFeatures.farmAnimals(mobspawnsettings$builder);
         BiomeDefaultFeatures.commonSpawns(mobspawnsettings$builder);
 
-        return biome(true, 0.6f, 0.6F, mobspawnsettings$builder, biomegenerationsettings$builder, music);
+        return biome(true, 0.6f, 0.6F, 4159204, 329011, null, null, mobspawnsettings$builder, biomegenerationsettings$builder, music);
     }
 
     private static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
