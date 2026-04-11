@@ -25,6 +25,7 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         wood(NatureHorizonsBlocks.BLACKWOOD, "Blackwood");
         wood(NatureHorizonsBlocks.JUNIPER, "Juniper");
         wood(NatureHorizonsBlocks.PINE, "Pine");
+        wood(NatureHorizonsBlocks.REDWOOD, "Redwood");
 
         add(NatureHorizonsBlocks.ASPEN_LEAVES.get(), "Aspen Leaves");
         add(NatureHorizonsBlocks.ASPEN_SAPLING.get(), "Aspen Sapling");
@@ -36,6 +37,8 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         add(NatureHorizonsBlocks.JUNIPER_SAPLING.get(), "Juniper Sapling");
         add(NatureHorizonsBlocks.PINE_LEAVES.get(), "Pine Leaves");
         add(NatureHorizonsBlocks.PINE_SAPLING.get(), "Pine Sapling");
+        add(NatureHorizonsBlocks.REDWOOD_LEAVES.get(), "Redwood Leaves");
+        add(NatureHorizonsBlocks.REDWOOD_SAPLING.get(), "Redwood Sapling");
 
         addItem(NatureHorizonsItems.HARD_WALNUT, "Hard Walnut");
         addItem(NatureHorizonsItems.WALNUT, "Walnut");
@@ -54,6 +57,8 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         addItem(NatureHorizonsItems.JUNIPER_CHEST_BOAT, "Juniper Chest Boat");
         addItem(NatureHorizonsItems.PINE_BOAT, "Pine Boat");
         addItem(NatureHorizonsItems.PINE_CHEST_BOAT, "Pine Chest Boat");
+        addItem(NatureHorizonsItems.REDWOOD_BOAT, "Redwood Boat");
+        addItem(NatureHorizonsItems.REDWOOD_CHEST_BOAT, "Redwood Chest Boat");
 
         addEntityType(NatureHorizonsEntityTypes.ASPEN_BOAT, "Aspen Boat");
         addEntityType(NatureHorizonsEntityTypes.ASPEN_CHEST_BOAT, "Aspen Chest Boat");
@@ -65,6 +70,8 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         addEntityType(NatureHorizonsEntityTypes.JUNIPER_CHEST_BOAT, "Juniper Chest Boat");
         addEntityType(NatureHorizonsEntityTypes.PINE_BOAT, "Pine Boat");
         addEntityType(NatureHorizonsEntityTypes.PINE_CHEST_BOAT, "Pine Chest Boat");
+        addEntityType(NatureHorizonsEntityTypes.REDWOOD_BOAT, "Redwood Boat");
+        addEntityType(NatureHorizonsEntityTypes.REDWOOD_CHEST_BOAT, "Redwood Chest Boat");
     }
 
     private void wood(WoodBlockObject wood, String name) {

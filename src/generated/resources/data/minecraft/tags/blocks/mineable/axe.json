@@ -24,6 +24,11 @@
     "nature_horizons:pine_pressure_plate",
     "nature_horizons:pine_sign",
     "nature_horizons:pine_hanging_sign",
-    "#nature_horizons:pine_logs"
+    "#nature_horizons:pine_logs",
+    "nature_horizons:redwood_fence_gate",
+    "nature_horizons:redwood_pressure_plate",
+    "nature_horizons:redwood_sign",
+    "nature_horizons:redwood_hanging_sign",
+    "#nature_horizons:redwood_logs"
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "feature": "nature_horizons:blackwood_tree",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "nature_horizons:redwood_sapling",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
+    }
+  ]
+}

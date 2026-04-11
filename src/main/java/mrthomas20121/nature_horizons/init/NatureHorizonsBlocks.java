@@ -71,7 +71,16 @@ public class NatureHorizonsBlocks {
     public static WoodBlockObject PINE = BLOCKS.registerWood("pine",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GRAY).sound(SoundType.WOOD).ignitedByLava()), true);
 
-    public static List<WoodBlockObject> WOODS = List.of(ASPEN, BLACK_WALNUT, BLACKWOOD, JUNIPER, PINE);
+    public static ItemObject<LeavesBlock> REDWOOD_LEAVES = BLOCKS.register("redwood_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SaplingBlock> REDWOOD_SAPLING = BLOCKS.register("redwood_sapling", () -> sapling(new RedwoodTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static WoodBlockObject REDWOOD = BLOCKS.registerWood("redwood",
+            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GRAY).sound(SoundType.WOOD).ignitedByLava()), true);
+
+    public static List<WoodBlockObject> WOODS = List.of(ASPEN, BLACK_WALNUT, BLACKWOOD, JUNIPER, PINE, REDWOOD);
 
     private static SaplingBlock sapling(AbstractTreeGrower grower) {
         return new SaplingBlock(grower, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY));

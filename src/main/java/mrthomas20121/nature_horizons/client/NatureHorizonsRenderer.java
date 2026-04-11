@@ -24,6 +24,8 @@ public class NatureHorizonsRenderer {
     private static final ResourceLocation JUNIPER_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/juniper.png");
     private static final ResourceLocation PINE_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/pine.png");
     private static final ResourceLocation PINE_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/pine.png");
+    private static final ResourceLocation REDWOOD_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/redwood.png");
+    private static final ResourceLocation REDWOOD_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/redwood.png");
 
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
@@ -47,6 +49,10 @@ public class NatureHorizonsRenderer {
                 (context) -> new NatureHorizonsBoatRenderer(context, false, PINE_CHEST_BOAT, PINE_BOAT, NatureHorizonsModelLayers.PINE_CHEST_BOAT, NatureHorizonsModelLayers.PINE_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.PINE_CHEST_BOAT.get(),
                 (context) -> new NatureHorizonsBoatRenderer(context, true, PINE_CHEST_BOAT, PINE_BOAT, NatureHorizonsModelLayers.PINE_CHEST_BOAT, NatureHorizonsModelLayers.PINE_BOAT));
+        event.registerEntityRenderer(NatureHorizonsEntityTypes.REDWOOD_BOAT.get(),
+                (context) -> new NatureHorizonsBoatRenderer(context, false, REDWOOD_CHEST_BOAT, REDWOOD_BOAT, NatureHorizonsModelLayers.REDWOOD_CHEST_BOAT, NatureHorizonsModelLayers.REDWOOD_BOAT));
+        event.registerEntityRenderer(NatureHorizonsEntityTypes.REDWOOD_CHEST_BOAT.get(),
+                (context) -> new NatureHorizonsBoatRenderer(context, true, REDWOOD_CHEST_BOAT, REDWOOD_BOAT, NatureHorizonsModelLayers.REDWOOD_CHEST_BOAT, NatureHorizonsModelLayers.REDWOOD_BOAT));
     }
 
     @SubscribeEvent
@@ -61,5 +67,7 @@ public class NatureHorizonsRenderer {
         event.registerLayerDefinition(NatureHorizonsModelLayers.JUNIPER_CHEST_BOAT, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.PINE_BOAT, BoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.PINE_CHEST_BOAT, ChestBoatModel::createBodyModel);
+        event.registerLayerDefinition(NatureHorizonsModelLayers.REDWOOD_BOAT, BoatModel::createBodyModel);
+        event.registerLayerDefinition(NatureHorizonsModelLayers.REDWOOD_CHEST_BOAT, ChestBoatModel::createBodyModel);
     }
 }

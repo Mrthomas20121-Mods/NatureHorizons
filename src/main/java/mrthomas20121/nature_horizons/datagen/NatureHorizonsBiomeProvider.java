@@ -9,6 +9,8 @@ import net.minecraft.sounds.Music;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
@@ -23,6 +25,31 @@ public class NatureHorizonsBiomeProvider {
         HolderGetter<ConfiguredWorldCarver<?>> configuredWorldCarverHolderGetter = context.lookup(Registries.CONFIGURED_CARVER);
         context.register(NatureHorizonsBiomes.ASPEN_FOREST, aspenForest(placedFeatureHolderGetter, configuredWorldCarverHolderGetter, false));
         context.register(NatureHorizonsBiomes.OLD_GROWTH_ASPEN_FOREST, aspenForest(placedFeatureHolderGetter, configuredWorldCarverHolderGetter, true));
+        context.register(NatureHorizonsBiomes.OLD_GROWTH_REDWOOD_TAIGA, oldGrowthTaiga(placedFeatureHolderGetter, configuredWorldCarverHolderGetter));
+    }
+
+    public static Biome oldGrowthTaiga(HolderGetter<PlacedFeature> p_255849_, HolderGetter<ConfiguredWorldCarver<?>> p_256578_) {
+        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.farmAnimals(mobspawnsettings$builder);
+        mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 8, 4, 4));
+        mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3));
+        mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 8, 2, 4));
+        BiomeDefaultFeatures.commonSpawns(mobspawnsettings$builder);
+
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(p_255849_, p_256578_);
+        globalOverworldGeneration(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addMossyStoneBlock(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addFerns(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.OLD_GROWTH_REDWOOD_TAIGA);
+        BiomeDefaultFeatures.addDefaultFlowers(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addGiantTaigaVegetation(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addCommonBerryBushes(biomegenerationsettings$builder);
+        Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA);
+        return biome(true, 0.25F, 0.8F, mobspawnsettings$builder, biomegenerationsettings$builder, music);
     }
 
     private static Biome aspenForest(HolderGetter<PlacedFeature> p_255788_, HolderGetter<ConfiguredWorldCarver<?>> p_256461_, boolean tallAspen) {

@@ -39,6 +39,8 @@ public class NatureHorizonsItems {
     public static ItemObject<JuniperBoatItem> JUNIPER_CHEST_BOAT = ITEMS.register("juniper_chest_boat", () -> new JuniperBoatItem(true));
     public static ItemObject<PineBoatItem> PINE_BOAT = ITEMS.register("pine_boat", () -> new PineBoatItem(false));
     public static ItemObject<PineBoatItem> PINE_CHEST_BOAT = ITEMS.register("pine_chest_boat", () -> new PineBoatItem(true));
+    public static ItemObject<RedwoodBoatItem> REDWOOD_BOAT = ITEMS.register("redwood_boat", () -> new RedwoodBoatItem(false));
+    public static ItemObject<RedwoodBoatItem> REDWOOD_CHEST_BOAT = ITEMS.register("redwood_chest_boat", () -> new RedwoodBoatItem(true));
 
     @SubscribeEvent
     public static void creativeTabEvent(BuildCreativeModeTabContentsEvent event) {

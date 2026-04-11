@@ -22,6 +22,9 @@ public class NatureHorizonsModelLayers {
     public static final ModelLayerLocation PINE_CHEST_BOAT = register("pine_chest_boat");
     public static final ModelLayerLocation PINE_BOAT = register("pine_boat");
 
+    public static final ModelLayerLocation REDWOOD_CHEST_BOAT = register("redwood_chest_boat");
+    public static final ModelLayerLocation REDWOOD_BOAT = register("redwood_boat");
+
     private static ModelLayerLocation register(String name) {
         return register(name, "main");
     }

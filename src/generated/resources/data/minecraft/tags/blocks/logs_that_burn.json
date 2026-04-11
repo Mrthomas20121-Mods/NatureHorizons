@@ -9,6 +9,8 @@
     "nature_horizons:juniper_log",
     "nature_horizons:stripped_juniper_log",
     "nature_horizons:pine_log",
-    "nature_horizons:stripped_pine_log"
+    "nature_horizons:stripped_pine_log",
+    "nature_horizons:redwood_log",
+    "nature_horizons:stripped_redwood_log"
   ]
 }

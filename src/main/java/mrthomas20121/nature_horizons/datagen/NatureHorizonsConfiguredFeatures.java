@@ -1,14 +1,18 @@
 package mrthomas20121.nature_horizons.datagen;
 
+import com.google.common.collect.ImmutableList;
 import mrthomas20121.nature_horizons.NatureHorizons;
 import mrthomas20121.nature_horizons.init.NatureHorizonsBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
@@ -18,9 +22,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaPineFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.AlterGroundDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
@@ -36,6 +43,8 @@ public class NatureHorizonsConfiguredFeatures {
     public static ResourceKey<ConfiguredFeature<?, ?>> BLACK_WALNUT_TREE = feature("black_walnut_tree");
     public static ResourceKey<ConfiguredFeature<?, ?>> BLACKWOOD_TREE = feature("blackwood_tree");
     public static ResourceKey<ConfiguredFeature<?, ?>> JUNIPER_TREE = feature("juniper_tree");
+    public static ResourceKey<ConfiguredFeature<?, ?>> REDWOOD_TREE = feature("redwood_tree");
+    public static ResourceKey<ConfiguredFeature<?, ?>> OLD_GROWTH_REDWOOD_TAIGA = feature("old_growth_redwood_taiga");
 
     private static ResourceKey<ConfiguredFeature<?, ?>> feature(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, NatureHorizons.getResource(name));
@@ -48,6 +57,9 @@ public class NatureHorizonsConfiguredFeatures {
         Holder<PlacedFeature> ASPEN = placedFeatureHolderGetter.getOrThrow(NatureHorizonsPlacedFeatures.ASPEN_TREE);
         Holder<PlacedFeature> ASPEN_BEES = placedFeatureHolderGetter.getOrThrow(NatureHorizonsPlacedFeatures.ASPEN_TREE);
         Holder<PlacedFeature> BLACK_WALNUT = placedFeatureHolderGetter.getOrThrow(NatureHorizonsPlacedFeatures.BLACK_WALNUT_TREE);
+        Holder<PlacedFeature> SPRUCE = placedFeatureHolderGetter.getOrThrow(TreePlacements.SPRUCE_CHECKED);
+        Holder<PlacedFeature> PINE = placedFeatureHolderGetter.getOrThrow(TreePlacements.PINE_CHECKED);
+        Holder<PlacedFeature> REDWOOD = placedFeatureHolderGetter.getOrThrow(NatureHorizonsPlacedFeatures.REDWOOD_TREE);
 
         register(context, ASPEN_TREE, Feature.TREE, createAspenTree().build());
         register(context, TALL_ASPEN_TREE, Feature.TREE, createTallAspenTree().build());
@@ -56,7 +68,12 @@ public class NatureHorizonsConfiguredFeatures {
         register(context, BLACKWOOD_TREE, Feature.TREE, createBlackwoodTree().build());
         register(context, JUNIPER_TREE, Feature.TREE, createJuniperTree().ignoreVines().build());
         register(context, ASPEN_FOREST_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(ASPEN, 0.2F), new WeightedPlacedFeature(BLACK_WALNUT, 0.1F)), ASPEN_BEES));
+        register(context, REDWOOD_TREE, Feature.TREE, createRedWoodTree().build());
+        register(context, OLD_GROWTH_REDWOOD_TAIGA, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(SPRUCE, 0.2f), new WeightedPlacedFeature(PINE, 0.2f)), REDWOOD));
+    }
 
+    private static TreeConfiguration.TreeConfigurationBuilder createRedWoodTree() {
+        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(NatureHorizonsBlocks.REDWOOD.getLog()), new GiantTrunkPlacer(14, 2, 14), BlockStateProvider.simple(NatureHorizonsBlocks.REDWOOD_LEAVES.get()), new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(13, 17)), new TwoLayersFeatureSize(1, 1, 2)).decorators(ImmutableList.of(new AlterGroundDecorator(BlockStateProvider.simple(Blocks.PODZOL))));
     }
 
     public static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> p_256315_, ResourceKey<ConfiguredFeature<?, ?>> p_255983_, F p_255949_, FC p_256398_) {
