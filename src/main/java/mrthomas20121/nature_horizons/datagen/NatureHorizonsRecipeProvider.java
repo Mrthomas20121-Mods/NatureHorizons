@@ -5,7 +5,6 @@ import mrthomas20121.nature_horizons.init.NatureHorizonsBlocks;
 import mrthomas20121.nature_horizons.init.NatureHorizonsItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.world.item.BoatItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -27,11 +26,12 @@ public class NatureHorizonsRecipeProvider extends RecipeProvider implements IRec
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-        woodCrafting(consumer, NatureHorizonsBlocks.ASPEN, "aspen");
-        woodCrafting(consumer, NatureHorizonsBlocks.BLACK_WALNUT, "black_walnut");
-        woodCrafting(consumer, NatureHorizonsBlocks.BLACKWOOD, "blackwood");
-        woodCrafting(consumer, NatureHorizonsBlocks.JUNIPER, "juniper");
-        woodCrafting(consumer, NatureHorizonsBlocks.PINE, "pine");
+        woodCrafting(consumer, NatureHorizonsBlocks.ASPEN, "aspen/");
+        woodCrafting(consumer, NatureHorizonsBlocks.BLACK_WALNUT, "black_walnut/");
+        woodCrafting(consumer, NatureHorizonsBlocks.BLACKWOOD, "blackwood/");
+        woodCrafting(consumer, NatureHorizonsBlocks.JUNIPER, "juniper/");
+        woodCrafting(consumer, NatureHorizonsBlocks.PINE, "pine/");
+        woodCrafting(consumer, NatureHorizonsBlocks.REDWOOD, "redwood/");
 
         simpleCookingRecipe(consumer, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING_RECIPE, 500,
                 NatureHorizonsItems.JUNIPER_BERRY.get(), NatureHorizonsItems.GRILLED_JUNIPER_BERRY.get(), 0.35f);
@@ -57,26 +57,27 @@ public class NatureHorizonsRecipeProvider extends RecipeProvider implements IRec
                 .unlockedBy(getHasName(NatureHorizonsItems.WALNUT.get()), has(NatureHorizonsItems.WALNUT.get()))
                 .save(consumer);
 
-        boat(consumer, NatureHorizonsItems.ASPEN_BOAT.get(), NatureHorizonsItems.ASPEN_CHEST_BOAT.get(), NatureHorizonsBlocks.ASPEN.get());
-        boat(consumer, NatureHorizonsItems.BLACK_WALNUT_BOAT.get(), NatureHorizonsItems.BLACK_WALNUT_CHEST_BOAT.get(), NatureHorizonsBlocks.BLACK_WALNUT.get());
-        boat(consumer, NatureHorizonsItems.BLACKWOOD_BOAT.get(), NatureHorizonsItems.BLACKWOOD_CHEST_BOAT.get(), NatureHorizonsBlocks.BLACKWOOD.get());
-        boat(consumer, NatureHorizonsItems.JUNIPER_BOAT.get(), NatureHorizonsItems.JUNIPER_CHEST_BOAT.get(), NatureHorizonsBlocks.JUNIPER.get());
-        boat(consumer, NatureHorizonsItems.PINE_BOAT.get(), NatureHorizonsItems.PINE_CHEST_BOAT.get(), NatureHorizonsBlocks.PINE.get());
+        boat(consumer, NatureHorizonsItems.ASPEN_BOAT.get(), NatureHorizonsItems.ASPEN_CHEST_BOAT.get(), NatureHorizonsBlocks.ASPEN.get(),"aspen/");
+        boat(consumer, NatureHorizonsItems.BLACK_WALNUT_BOAT.get(), NatureHorizonsItems.BLACK_WALNUT_CHEST_BOAT.get(), NatureHorizonsBlocks.BLACK_WALNUT.get(), "black_walnut/");
+        boat(consumer, NatureHorizonsItems.BLACKWOOD_BOAT.get(), NatureHorizonsItems.BLACKWOOD_CHEST_BOAT.get(), NatureHorizonsBlocks.BLACKWOOD.get(), "blackwood/");
+        boat(consumer, NatureHorizonsItems.JUNIPER_BOAT.get(), NatureHorizonsItems.JUNIPER_CHEST_BOAT.get(), NatureHorizonsBlocks.JUNIPER.get(), "juniper/");
+        boat(consumer, NatureHorizonsItems.PINE_BOAT.get(), NatureHorizonsItems.PINE_CHEST_BOAT.get(), NatureHorizonsBlocks.PINE.get(), "pine/");
+        boat(consumer, NatureHorizonsItems.REDWOOD_BOAT.get(), NatureHorizonsItems.REDWOOD_CHEST_BOAT.get(), NatureHorizonsBlocks.REDWOOD.get(), "redwood/");
     }
 
-    private void boat(Consumer<FinishedRecipe> consumer, Item boatItem, Item chestBoatItem, Block planks) {
+    private void boat(Consumer<FinishedRecipe> consumer, Item boatItem, Item chestBoatItem, Block planks, String folder) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, boatItem)
                 .define('P', planks)
                 .pattern("P P")
                 .pattern("PPP")
                 .unlockedBy(getHasName(planks), has(planks))
-                .save(consumer);
+                .save(consumer, NatureHorizons.getResource(folder+"/boat"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, chestBoatItem)
                 .requires(Tags.Items.CHESTS_WOODEN)
                 .requires(boatItem)
                 .unlockedBy(getHasName(planks), has(planks))
-                .save(consumer);
+                .save(consumer, NatureHorizons.getResource(folder+"/chest_boat"));
     };
 
     protected static void simpleCookingRecipe(Consumer<FinishedRecipe> p_249398_, String p_249709_, RecipeSerializer<? extends AbstractCookingRecipe> p_251876_, int p_249258_, ItemLike p_250669_, ItemLike p_250224_, float p_252138_) {
