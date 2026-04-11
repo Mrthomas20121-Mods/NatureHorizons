@@ -18,7 +18,7 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
     protected void addTranslations() {
         add("itemGroup.nature_horizons.wood", "Nature Horizons Blocks");
 
-        add("item.nature_horizons.hard_walnut_item.tooltip", "Right click with an Axe in main hand and Hard Walnut in your offhand to open");
+        add("item.nature_horizons.hard_walnut_item.tooltip", "Right click on a hard block to open");
 
         wood(NatureHorizonsBlocks.ASPEN, "Aspen");
         wood(NatureHorizonsBlocks.BLACK_WALNUT, "Black Walnut");

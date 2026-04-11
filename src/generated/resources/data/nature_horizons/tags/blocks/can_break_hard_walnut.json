@@ -1,0 +1,12 @@
+{
+  "values": [
+    "#forge:stone",
+    "#forge:cobblestone",
+    "#minecraft:overworld_natural_logs",
+    "#nature_horizons:aspen_logs",
+    "#nature_horizons:black_walnut_logs",
+    "#nature_horizons:blackwood_logs",
+    "#nature_horizons:juniper_logs",
+    "#nature_horizons:pine_logs"
+  ]
+}

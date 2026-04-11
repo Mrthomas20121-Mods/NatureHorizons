@@ -8,7 +8,9 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -18,6 +20,10 @@ import java.util.concurrent.CompletableFuture;
 
 public class NatureHorizonsTags {
 
+    public static TagKey<Block> CAN_BREAK_HARD_WALNUT = BlockTags.create(NatureHorizons.getResource("can_break_hard_walnut"));
+
+    public static void init() {}
+
     public static class Blocks extends BlockTagsProvider {
 
         public Blocks(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
@@ -25,12 +31,16 @@ public class NatureHorizonsTags {
         }
 
         @Override
+        @SuppressWarnings("unchecked")
         protected void addTags(HolderLookup.Provider provider) {
 
             tag(BlockTags.LEAVES).add(
                     NatureHorizonsBlocks.ASPEN_LEAVES.get(), NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(), NatureHorizonsBlocks.JUNIPER_LEAVES.get(), NatureHorizonsBlocks.PINE_LEAVES.get());
 
+            tag(CAN_BREAK_HARD_WALNUT).addTags(Tags.Blocks.STONE, Tags.Blocks.COBBLESTONE, BlockTags.OVERWORLD_NATURAL_LOGS);
+
             for(WoodBlockObject blockObject: NatureHorizonsBlocks.WOODS) {
+                tag(CAN_BREAK_HARD_WALNUT).addTag(blockObject.getLogBlockTag());
                 tag(BlockTags.MINEABLE_WITH_AXE).add(blockObject.getFenceGate(), blockObject.getPressurePlate(), blockObject.getSign(), blockObject.getHangingSign()).addTag(blockObject.getLogBlockTag());
                 tag(BlockTags.WOODEN_FENCES).add(blockObject.getFence());
                 tag(BlockTags.FENCES).add(blockObject.getFence());
@@ -42,6 +52,7 @@ public class NatureHorizonsTags {
                 tag(BlockTags.PLANKS).add(blockObject.get());
                 tag(BlockTags.LOGS_THAT_BURN).add(blockObject.getLog(), blockObject.getStrippedLog());
                 tag(blockObject.getLogBlockTag()).add(blockObject.getLog(), blockObject.getStrippedLog(), blockObject.getWood(), blockObject.getStrippedWood());
+                tag(BlockTags.OVERWORLD_NATURAL_LOGS).addTag(blockObject.getLogBlockTag());
             }
         }
     }
