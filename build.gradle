@@ -111,7 +111,7 @@ repositories {
 
 mixin {
     // MixinGradle Settings
-    add sourceSets.main, 'mixins.nature_horizons.refmap.json'
+    add sourceSets.main, 'nature_horizons.refmap.json'
     config 'mixins.nature_horizons.json'
 }
 
