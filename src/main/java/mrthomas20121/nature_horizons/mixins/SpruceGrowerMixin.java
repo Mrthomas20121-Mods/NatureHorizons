@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SpruceTreeGrower.class)
 public class SpruceGrowerMixin {
 
-    @Inject(method = "getConfiguredMegaFeature(Lnet/minecraft/util/RandomSource;)Lnet/minecraft/resources/ResourceKey;", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "getConfiguredMegaFeature(Lnet/minecraft/util/RandomSource;)Lnet/minecraft/resources/ResourceKey;", at = @At("HEAD"), cancellable = true)
     private void nature_horizons_getConfiguredMegaFeature(RandomSource p_255928_, CallbackInfoReturnable<ResourceKey<ConfiguredFeature<?, ?>>> cir) {
         cir.setReturnValue(TreeFeatures.MEGA_SPRUCE);
     }
