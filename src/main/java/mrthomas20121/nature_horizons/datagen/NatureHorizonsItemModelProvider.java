@@ -29,6 +29,8 @@ public class NatureHorizonsItemModelProvider extends ItemModelProvider {
         basicItem(NatureHorizonsItems.BLACK_WALNUT_CHEST_BOAT.get());
         basicItem(NatureHorizonsItems.BLACKWOOD_BOAT.get());
         basicItem(NatureHorizonsItems.BLACKWOOD_CHEST_BOAT.get());
+        basicItem(NatureHorizonsItems.JAPANESE_MAPLE_BOAT.get());
+        basicItem(NatureHorizonsItems.JAPANESE_MAPLE_CHEST_BOAT.get());
         basicItem(NatureHorizonsItems.JUNIPER_BOAT.get());
         basicItem(NatureHorizonsItems.JUNIPER_CHEST_BOAT.get());
         basicItem(NatureHorizonsItems.PINE_BOAT.get());

@@ -29,6 +29,7 @@ public class NatureHorizonsRecipeProvider extends RecipeProvider implements IRec
         woodCrafting(consumer, NatureHorizonsBlocks.ASPEN, "aspen/");
         woodCrafting(consumer, NatureHorizonsBlocks.BLACK_WALNUT, "black_walnut/");
         woodCrafting(consumer, NatureHorizonsBlocks.BLACKWOOD, "blackwood/");
+        woodCrafting(consumer, NatureHorizonsBlocks.JAPANESE_MAPLE, "japanese_maple/");
         woodCrafting(consumer, NatureHorizonsBlocks.JUNIPER, "juniper/");
         woodCrafting(consumer, NatureHorizonsBlocks.PINE, "pine/");
         woodCrafting(consumer, NatureHorizonsBlocks.REDWOOD, "redwood/");
@@ -60,6 +61,7 @@ public class NatureHorizonsRecipeProvider extends RecipeProvider implements IRec
         boat(consumer, NatureHorizonsItems.ASPEN_BOAT.get(), NatureHorizonsItems.ASPEN_CHEST_BOAT.get(), NatureHorizonsBlocks.ASPEN.get(),"aspen/");
         boat(consumer, NatureHorizonsItems.BLACK_WALNUT_BOAT.get(), NatureHorizonsItems.BLACK_WALNUT_CHEST_BOAT.get(), NatureHorizonsBlocks.BLACK_WALNUT.get(), "black_walnut/");
         boat(consumer, NatureHorizonsItems.BLACKWOOD_BOAT.get(), NatureHorizonsItems.BLACKWOOD_CHEST_BOAT.get(), NatureHorizonsBlocks.BLACKWOOD.get(), "blackwood/");
+        boat(consumer, NatureHorizonsItems.JAPANESE_MAPLE_BOAT.get(), NatureHorizonsItems.JAPANESE_MAPLE_CHEST_BOAT.get(), NatureHorizonsBlocks.JAPANESE_MAPLE.get(),"japanese_maple/");
         boat(consumer, NatureHorizonsItems.JUNIPER_BOAT.get(), NatureHorizonsItems.JUNIPER_CHEST_BOAT.get(), NatureHorizonsBlocks.JUNIPER.get(), "juniper/");
         boat(consumer, NatureHorizonsItems.PINE_BOAT.get(), NatureHorizonsItems.PINE_CHEST_BOAT.get(), NatureHorizonsBlocks.PINE.get(), "pine/");
         boat(consumer, NatureHorizonsItems.REDWOOD_BOAT.get(), NatureHorizonsItems.REDWOOD_CHEST_BOAT.get(), NatureHorizonsBlocks.REDWOOD.get(), "redwood/");

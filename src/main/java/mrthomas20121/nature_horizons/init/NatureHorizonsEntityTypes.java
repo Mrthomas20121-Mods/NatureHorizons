@@ -29,6 +29,12 @@ public class NatureHorizonsEntityTypes {
     public static final RegistryObject<EntityType<BlackwoodChestBoat>> BLACKWOOD_CHEST_BOAT = ENTITY_TYPES.register("blackwood_chest_boat",
             () -> EntityType.Builder.<BlackwoodChestBoat>of(BlackwoodChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 
+    public static final RegistryObject<EntityType<JapaneseMapleBoat>> JAPANESE_MAPLE_BOAT = ENTITY_TYPES.register("japanese_maple_boat",
+            () -> EntityType.Builder.<JapaneseMapleBoat>of(JapaneseMapleBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+
+    public static final RegistryObject<EntityType<JapaneseMapleChestBoat>> JAPANESE_MAPLE_CHEST_BOAT = ENTITY_TYPES.register("japanese_maple_chest_boat",
+            () -> EntityType.Builder.<JapaneseMapleChestBoat>of(JapaneseMapleChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+
     public static final RegistryObject<EntityType<JuniperBoat>> JUNIPER_BOAT = ENTITY_TYPES.register("juniper_boat",
             () -> EntityType.Builder.<JuniperBoat>of(JuniperBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 

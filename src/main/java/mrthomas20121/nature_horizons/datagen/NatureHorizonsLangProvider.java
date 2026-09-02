@@ -23,6 +23,7 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         wood(NatureHorizonsBlocks.ASPEN, "Aspen");
         wood(NatureHorizonsBlocks.BLACK_WALNUT, "Black Walnut");
         wood(NatureHorizonsBlocks.BLACKWOOD, "Blackwood");
+        wood(NatureHorizonsBlocks.JAPANESE_MAPLE, "Japanese Maple");
         wood(NatureHorizonsBlocks.JUNIPER, "Juniper");
         wood(NatureHorizonsBlocks.PINE, "Pine");
         wood(NatureHorizonsBlocks.REDWOOD, "Redwood");
@@ -33,6 +34,12 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         add(NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get(), "Black Walnut Sapling");
         add(NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(), "Blackwood Leaves");
         add(NatureHorizonsBlocks.BLACKWOOD_SAPLING.get(), "Blackwood Sapling");
+        add(NatureHorizonsBlocks.JAPANESE_MAPLE_LEAVES.get(), "Japanese Maple Leaves");
+        add(NatureHorizonsBlocks.JAPANESE_MAPLE_SAPLING.get(), "Japanese Maple Sapling");
+        add(NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_LEAVES.get(), "Crimson Japanese Maple Leaves");
+        add(NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_SAPLING.get(), "Crimson Japanese Maple Sapling");
+        add(NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_LEAVES.get(), "Orange Japanese Maple Leaves");
+        add(NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING.get(), "Orange Japanese Maple Sapling");
         add(NatureHorizonsBlocks.JUNIPER_LEAVES.get(), "Juniper Leaves");
         add(NatureHorizonsBlocks.JUNIPER_SAPLING.get(), "Juniper Sapling");
         add(NatureHorizonsBlocks.PINE_LEAVES.get(), "Pine Leaves");
@@ -53,6 +60,8 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         addItem(NatureHorizonsItems.BLACK_WALNUT_CHEST_BOAT, "Black Walnut Chest Boat");
         addItem(NatureHorizonsItems.BLACKWOOD_BOAT, "Blackwood Boat");
         addItem(NatureHorizonsItems.BLACKWOOD_CHEST_BOAT, "Blackwood Chest Boat");
+        addItem(NatureHorizonsItems.JAPANESE_MAPLE_BOAT, "Japanese Maple Boat");
+        addItem(NatureHorizonsItems.JAPANESE_MAPLE_CHEST_BOAT, "Japanese Maple Chest Boat");
         addItem(NatureHorizonsItems.JUNIPER_BOAT, "Juniper Boat");
         addItem(NatureHorizonsItems.JUNIPER_CHEST_BOAT, "Juniper Chest Boat");
         addItem(NatureHorizonsItems.PINE_BOAT, "Pine Boat");

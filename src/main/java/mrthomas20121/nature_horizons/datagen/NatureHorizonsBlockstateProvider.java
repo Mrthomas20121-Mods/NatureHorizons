@@ -39,6 +39,12 @@ public class NatureHorizonsBlockstateProvider extends BlockStateProvider {
         addSaplingBlock(NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get(), blockTexture("wood/black_walnut/sapling"));
         addLeaveBlock(NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(), blockTexture("wood/blackwood/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.BLACKWOOD_SAPLING.get(), blockTexture("wood/blackwood/sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.JAPANESE_MAPLE_LEAVES.get(), blockTexture("wood/japanese_maple/leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.JAPANESE_MAPLE_SAPLING.get(), blockTexture("wood/japanese_maple/sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_LEAVES.get(), blockTexture("wood/japanese_maple/crimson_leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_SAPLING.get(), blockTexture("wood/japanese_maple/crimson_sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_LEAVES.get(), blockTexture("wood/japanese_maple/orange_leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING.get(), blockTexture("wood/japanese_maple/orange_sapling"));
         addLeaveBlock(NatureHorizonsBlocks.JUNIPER_LEAVES.get(), blockTexture("wood/juniper/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.JUNIPER_SAPLING.get(), blockTexture("wood/juniper/sapling"));
         addLeaveBlock(NatureHorizonsBlocks.PINE_LEAVES.get(), blockTexture("wood/pine/leaves"));
@@ -49,6 +55,7 @@ public class NatureHorizonsBlockstateProvider extends BlockStateProvider {
         addWood(NatureHorizonsBlocks.ASPEN, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.BLACK_WALNUT, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.BLACKWOOD, true, RenderType.cutout());
+        addWood(NatureHorizonsBlocks.JAPANESE_MAPLE, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.JUNIPER, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.PINE, true, RenderType.solid());
         addWood(NatureHorizonsBlocks.REDWOOD, true, RenderType.cutout());

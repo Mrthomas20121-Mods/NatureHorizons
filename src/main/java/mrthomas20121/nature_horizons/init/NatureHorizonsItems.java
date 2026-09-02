@@ -35,6 +35,8 @@ public class NatureHorizonsItems {
     public static ItemObject<BlackWalnutBoatItem> BLACK_WALNUT_CHEST_BOAT = ITEMS.register("black_walnut_chest_boat", () -> new BlackWalnutBoatItem(true));
     public static ItemObject<BlackwoodBoatItem> BLACKWOOD_BOAT = ITEMS.register("blackwood_boat", () -> new BlackwoodBoatItem(false));
     public static ItemObject<BlackwoodBoatItem> BLACKWOOD_CHEST_BOAT = ITEMS.register("blackwood_chest_boat", () -> new BlackwoodBoatItem(true));
+    public static ItemObject<JapaneseMapleBoatItem> JAPANESE_MAPLE_BOAT = ITEMS.register("japanese_maple_boat", () -> new JapaneseMapleBoatItem(false));
+    public static ItemObject<JapaneseMapleBoatItem> JAPANESE_MAPLE_CHEST_BOAT = ITEMS.register("japanese_maple_chest_boat", () -> new JapaneseMapleBoatItem(true));
     public static ItemObject<JuniperBoatItem> JUNIPER_BOAT = ITEMS.register("juniper_boat", () -> new JuniperBoatItem(false));
     public static ItemObject<JuniperBoatItem> JUNIPER_CHEST_BOAT = ITEMS.register("juniper_chest_boat", () -> new JuniperBoatItem(true));
     public static ItemObject<PineBoatItem> PINE_BOAT = ITEMS.register("pine_boat", () -> new PineBoatItem(false));
@@ -77,6 +79,15 @@ public class NatureHorizonsItems {
                         output.accept(NatureHorizonsBlocks.BLACKWOOD_LEAVES);
                         output.accept(NatureHorizonsBlocks.BLACKWOOD_SAPLING);
                         accept(NatureHorizonsBlocks.BLACKWOOD, output);
+                        output.accept(NatureHorizonsItems.JAPANESE_MAPLE_BOAT.get());
+                        output.accept(NatureHorizonsItems.JAPANESE_MAPLE_CHEST_BOAT.get());
+                        output.accept(NatureHorizonsBlocks.JAPANESE_MAPLE_LEAVES);
+                        output.accept(NatureHorizonsBlocks.JAPANESE_MAPLE_SAPLING);
+                        output.accept(NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_LEAVES);
+                        output.accept(NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_SAPLING);
+                        output.accept(NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_LEAVES);
+                        output.accept(NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING);
+                        accept(NatureHorizonsBlocks.JAPANESE_MAPLE, output);
                         output.accept(NatureHorizonsItems.JUNIPER_BOAT.get());
                         output.accept(NatureHorizonsItems.JUNIPER_CHEST_BOAT.get());
                         output.accept(NatureHorizonsBlocks.JUNIPER_LEAVES);

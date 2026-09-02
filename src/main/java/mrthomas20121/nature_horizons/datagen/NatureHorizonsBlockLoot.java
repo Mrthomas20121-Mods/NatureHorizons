@@ -51,6 +51,9 @@ public class NatureHorizonsBlockLoot extends BlockLootSubProvider {
         this.add(NatureHorizonsBlocks.ASPEN_LEAVES.get(), (block) -> createLeavesDrops(block, NatureHorizonsBlocks.ASPEN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get(), (block) -> createFruitLeavesDrops(block, NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get(), NatureHorizonsItems.HARD_WALNUT.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, NatureHorizonsBlocks.BLACKWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(NatureHorizonsBlocks.JAPANESE_MAPLE_LEAVES.get(), (block) -> createLeavesDrops(block, NatureHorizonsBlocks.JAPANESE_MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_LEAVES.get(), (block) -> createLeavesDrops(block, NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_LEAVES.get(), (block) -> createLeavesDrops(block, NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(NatureHorizonsBlocks.JUNIPER_LEAVES.get(), (block) -> createFruitLeavesDrops(block, NatureHorizonsBlocks.JUNIPER_SAPLING.get(), NatureHorizonsItems.JUNIPER_BERRY.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(NatureHorizonsBlocks.PINE_LEAVES.get(), (block) -> createLeavesDrops(block, NatureHorizonsBlocks.PINE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(NatureHorizonsBlocks.REDWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, NatureHorizonsBlocks.REDWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
@@ -58,6 +61,9 @@ public class NatureHorizonsBlockLoot extends BlockLootSubProvider {
         this.dropSelf(NatureHorizonsBlocks.ASPEN_SAPLING.get());
         this.dropSelf(NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get());
         this.dropSelf(NatureHorizonsBlocks.BLACKWOOD_SAPLING.get());
+        this.dropSelf(NatureHorizonsBlocks.JAPANESE_MAPLE_SAPLING.get());
+        this.dropSelf(NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_SAPLING.get());
+        this.dropSelf(NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING.get());
         this.dropSelf(NatureHorizonsBlocks.JUNIPER_SAPLING.get());
         this.dropSelf(NatureHorizonsBlocks.PINE_SAPLING.get());
         this.dropSelf(NatureHorizonsBlocks.REDWOOD_SAPLING.get());
@@ -65,6 +71,7 @@ public class NatureHorizonsBlockLoot extends BlockLootSubProvider {
         wood(NatureHorizonsBlocks.ASPEN);
         wood(NatureHorizonsBlocks.BLACK_WALNUT);
         wood(NatureHorizonsBlocks.BLACKWOOD);
+        wood(NatureHorizonsBlocks.JAPANESE_MAPLE);
         wood(NatureHorizonsBlocks.JUNIPER);
         wood(NatureHorizonsBlocks.PINE);
         wood(NatureHorizonsBlocks.REDWOOD);

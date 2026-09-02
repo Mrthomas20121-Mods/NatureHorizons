@@ -29,6 +29,11 @@
     "nature_horizons:redwood_pressure_plate",
     "nature_horizons:redwood_sign",
     "nature_horizons:redwood_hanging_sign",
-    "#nature_horizons:redwood_logs"
+    "#nature_horizons:redwood_logs",
+    "nature_horizons:japanese_maple_fence_gate",
+    "nature_horizons:japanese_maple_pressure_plate",
+    "nature_horizons:japanese_maple_sign",
+    "nature_horizons:japanese_maple_hanging_sign",
+    "#nature_horizons:japanese_maple_logs"
   ]
 }

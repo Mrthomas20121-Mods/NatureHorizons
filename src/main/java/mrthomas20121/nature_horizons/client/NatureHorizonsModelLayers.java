@@ -16,6 +16,9 @@ public class NatureHorizonsModelLayers {
     public static final ModelLayerLocation BLACKWOOD_CHEST_BOAT = register("blackwood_chest_boat");
     public static final ModelLayerLocation BLACKWOOD_BOAT = register("blackwood_boat");
 
+    public static final ModelLayerLocation JAPANESE_MAPLE_CHEST_BOAT = register("japanese_maple_chest_boat");
+    public static final ModelLayerLocation JAPANESE_MAPLE_BOAT = register("japanese_maple_boat");
+
     public static final ModelLayerLocation JUNIPER_CHEST_BOAT = register("juniper_chest_boat");
     public static final ModelLayerLocation JUNIPER_BOAT = register("juniper_boat");
 

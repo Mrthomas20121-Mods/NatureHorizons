@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nature_horizons:block/wood/japanese_maple/slab"
+    },
+    "type=double": {
+      "model": "nature_horizons:block/wood/japanese_maple/planks"
+    },
+    "type=top": {
+      "model": "nature_horizons:block/wood/japanese_maple/slab_top"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:chests/wooden"
+    },
+    {
+      "item": "nature_horizons:japanese_maple_boat"
+    }
+  ],
+  "result": {
+    "item": "nature_horizons:japanese_maple_chest_boat"
+  }
+}
