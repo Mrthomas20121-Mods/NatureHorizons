@@ -56,19 +56,19 @@ public class NatureHorizonsBlocks {
     public static ItemObject<LeavesBlock> JAPANESE_MAPLE_LEAVES = BLOCKS.register("japanese_maple_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
 
-    public static ItemObject<SaplingBlock> JAPANESE_MAPLE_SAPLING = BLOCKS.register("japanese_maple_sapling", () -> sapling(new JuniperTreeGrower()),
+    public static ItemObject<SaplingBlock> JAPANESE_MAPLE_SAPLING = BLOCKS.register("japanese_maple_sapling", () -> sapling(new JapaneseMapleTreeGrower()),
             (block) -> new BlockItem(block, new Item.Properties()));
 
     public static ItemObject<LeavesBlock> CRIMSON_JAPANESE_MAPLE_LEAVES = BLOCKS.register("crimson_japanese_maple_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
 
-    public static ItemObject<SaplingBlock> CRIMSON_JAPANESE_MAPLE_SAPLING = BLOCKS.register("crimson_japanese_maple_sapling", () -> sapling(new JuniperTreeGrower()),
+    public static ItemObject<SaplingBlock> CRIMSON_JAPANESE_MAPLE_SAPLING = BLOCKS.register("crimson_japanese_maple_sapling", () -> sapling(new CrismonJapaneseMapleTreeGrower()),
             (block) -> new BlockItem(block, new Item.Properties()));
 
     public static ItemObject<LeavesBlock> ORANGE_JAPANESE_MAPLE_LEAVES = BLOCKS.register("orange_japanese_maple_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
 
-    public static ItemObject<SaplingBlock> ORANGE_JAPANESE_MAPLE_SAPLING = BLOCKS.register("orange_japanese_maple_sapling", () -> sapling(new JuniperTreeGrower()),
+    public static ItemObject<SaplingBlock> ORANGE_JAPANESE_MAPLE_SAPLING = BLOCKS.register("orange_japanese_maple_sapling", () -> sapling(new ORangeJapaneseMapleTreeGrower()),
             (block) -> new BlockItem(block, new Item.Properties()));
 
     public static WoodBlockObject JAPANESE_MAPLE = BLOCKS.registerWood("japanese_maple",

@@ -24,6 +24,7 @@ public class NatureHorizonsBiomeProvider {
         HolderGetter<PlacedFeature> placedFeatureHolderGetter = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> configuredWorldCarverHolderGetter = context.lookup(Registries.CONFIGURED_CARVER);
         context.register(NatureHorizonsBiomes.ASPEN_FOREST, aspenForest(placedFeatureHolderGetter, configuredWorldCarverHolderGetter, false));
+        context.register(NatureHorizonsBiomes.JAPANESE_MAPLE_FOREST, japanese_maple_forest(placedFeatureHolderGetter, configuredWorldCarverHolderGetter));
         context.register(NatureHorizonsBiomes.OLD_GROWTH_ASPEN_FOREST, aspenForest(placedFeatureHolderGetter, configuredWorldCarverHolderGetter, true));
         context.register(NatureHorizonsBiomes.OLD_GROWTH_REDWOOD_TAIGA, oldGrowthTaiga(placedFeatureHolderGetter, configuredWorldCarverHolderGetter));
     }
@@ -50,6 +51,24 @@ public class NatureHorizonsBiomeProvider {
         BiomeDefaultFeatures.addCommonBerryBushes(biomegenerationsettings$builder);
         Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA);
         return biome(true, 0.25F, 0.8F, 4159204, 329011, null, null, mobspawnsettings$builder, biomegenerationsettings$builder, music);
+    }
+
+    public static Biome japanese_maple_forest(HolderGetter<PlacedFeature> p_273564_, HolderGetter<ConfiguredWorldCarver<?>> p_273374_) {
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(p_273564_, p_273374_);
+        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
+        mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 2)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 2, 2, 6)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 2, 4));
+        BiomeDefaultFeatures.commonSpawns(mobspawnsettings$builder);
+        globalOverworldGeneration(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.TREES_JAPANESE_MAPLE);
+        BiomeDefaultFeatures.addMeadowVegetation(biomegenerationsettings$builder);
+
+        BiomeDefaultFeatures.addExtraEmeralds(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addInfestedStone(biomegenerationsettings$builder);
+        Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_MEADOW);
+        return biome(true, 0.5F, 0.8F, 937679, 329011, (Integer)null, (Integer)null, mobspawnsettings$builder, biomegenerationsettings$builder, music);
     }
 
     private static Biome aspenForest(HolderGetter<PlacedFeature> p_255788_, HolderGetter<ConfiguredWorldCarver<?>> p_256461_, boolean tallAspen) {
@@ -94,7 +113,7 @@ public class NatureHorizonsBiomeProvider {
     }
 
     private static Biome biome(boolean p_265746_, float p_265800_, float p_265276_, MobSpawnSettings.Builder p_265425_, BiomeGenerationSettings.Builder p_265371_, @Nullable Music p_265636_) {
-        return biome(p_265746_, p_265800_, p_265276_, 4159204, 329011, 0xC9D841, null, p_265425_, p_265371_, p_265636_);
+        return biome(p_265746_, p_265800_, p_265276_, 4159204, 329011, 0x93BA6D, null, p_265425_, p_265371_, p_265636_);
     }
 
     private static Biome biome(boolean p_273483_, float p_272621_, float p_273588_, int p_273605_, int p_272756_, @Nullable Integer p_272889_, @Nullable Integer p_272657_, MobSpawnSettings.Builder p_273300_, BiomeGenerationSettings.Builder p_272700_, @Nullable Music p_272996_) {

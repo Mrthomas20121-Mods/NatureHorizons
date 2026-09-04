@@ -1,4 +1,8 @@
 {
+  "biome.nature_horizons.aspen_forest": "Aspen Forest",
+  "biome.nature_horizons.japanese_maple_forest": "Japanese Maple Forest",
+  "biome.nature_horizons.old_growth_aspen_forest": "Old Growth Aspen Forest",
+  "biome.nature_horizons.old_growth_redwood_taiga": "Old Growth Redwood Taiga",
   "block.nature_horizons.aspen_button": "Aspen Buttons",
   "block.nature_horizons.aspen_door": "Aspen Door",
   "block.nature_horizons.aspen_fence": "Aspen Fence",
@@ -128,6 +132,8 @@
   "entity.nature_horizons.black_walnut_chest_boat": "Black Walnut Chest Boat",
   "entity.nature_horizons.blackwood_boat": "Blackwood Boat",
   "entity.nature_horizons.blackwood_chest_boat": "Blackwood Chest Boat",
+  "entity.nature_horizons.japanese_maple_boat": "Japanese Maple Boat",
+  "entity.nature_horizons.japanese_maple_chest_boat": "Japanese Maple Chest Boat",
   "entity.nature_horizons.juniper_boat": "Juniper Boat",
   "entity.nature_horizons.juniper_chest_boat": "Juniper Chest Boat",
   "entity.nature_horizons.pine_boat": "Pine Boat",

@@ -25,6 +25,10 @@ public class NatureHorizonsPlacedFeatures {
     public static ResourceKey<PlacedFeature> TALL_ASPEN_TREE = feature("tall_aspen_tree");
     public static ResourceKey<PlacedFeature> BLACK_WALNUT_TREE = feature("black_walnut_tree");
     public static ResourceKey<PlacedFeature> BLACKWOOD_TREE = feature("blackwood_tree");
+    public static ResourceKey<PlacedFeature> TREES_JAPANESE_MAPLE = feature("trees_japanese_maple");
+    public static ResourceKey<PlacedFeature> JAPANESE_MAPLE_TREE = feature("japanese_maple_tree");
+    public static ResourceKey<PlacedFeature> CRIMSON_JAPANESE_MAPLE_TREE = feature("crimson_japanese_maple_tree");
+    public static ResourceKey<PlacedFeature> ORANGE_JAPANESE_MAPLE_TREE = feature("orange_japanese_maple_tree");
     public static ResourceKey<PlacedFeature> JUNIPER_TREE = feature("juniper_tree");
     public static ResourceKey<PlacedFeature> REDWOOD_TREE = feature("redwood_tree");
     public static ResourceKey<PlacedFeature> OLD_GROWTH_REDWOOD_TAIGA = feature("old_growth_redwood_taiga");
@@ -43,6 +47,10 @@ public class NatureHorizonsPlacedFeatures {
         Holder<ConfiguredFeature<?, ?>> TALL_ASPEN = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.TALL_ASPEN_TREE);
         Holder<ConfiguredFeature<?, ?>> BLACK_WALNUT = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.BLACK_WALNUT_TREE);
         Holder<ConfiguredFeature<?, ?>> BLACKWOOD = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.BLACKWOOD_TREE);
+        Holder<ConfiguredFeature<?, ?>> MEADOW = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.TREES_JAPANESE_MAPLE);
+        Holder<ConfiguredFeature<?, ?>> JAPANESE_MAPLE = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.JAPANESE_MAPLE_TREE);
+        Holder<ConfiguredFeature<?, ?>> CRIMSON_JAPANESE_MAPLE = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.CRIMSON_JAPANESE_MAPLE_TREE);
+        Holder<ConfiguredFeature<?, ?>> ORANGE_JAPANESE_MAPLE = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.ORANGE_JAPANESE_MAPLE_TREE);
         Holder<ConfiguredFeature<?, ?>> JUNIPER = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.JUNIPER_TREE);
         Holder<ConfiguredFeature<?, ?>> REDWOOD = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.REDWOOD_TREE);
         Holder<ConfiguredFeature<?, ?>> REDWOOD_TREES = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.OLD_GROWTH_REDWOOD_TAIGA);
@@ -53,6 +61,12 @@ public class NatureHorizonsPlacedFeatures {
         register(context, TALL_ASPEN_TREE, TALL_ASPEN, treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), NatureHorizonsBlocks.ASPEN_SAPLING.get()));
         register(context, BLACK_WALNUT_TREE, BLACK_WALNUT, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get())));
         register(context, BLACKWOOD_TREE, BLACKWOOD, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.BLACKWOOD_SAPLING.get())));
+
+        register(context, JAPANESE_MAPLE_TREE, JAPANESE_MAPLE, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.JAPANESE_MAPLE_SAPLING.get())));
+        register(context, CRIMSON_JAPANESE_MAPLE_TREE, CRIMSON_JAPANESE_MAPLE, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_SAPLING.get())));
+        register(context, ORANGE_JAPANESE_MAPLE_TREE, ORANGE_JAPANESE_MAPLE, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING.get())));
+        register(context, TREES_JAPANESE_MAPLE, MEADOW, treePlacement(PlacementUtils.countExtra(8, 0.1F, 1)));
+
         register(context, JUNIPER_TREE, JUNIPER, treePlacement(PlacementUtils.countExtra(5, 0.1F, 1), NatureHorizonsBlocks.JUNIPER_SAPLING.get()));
         register(context, REDWOOD_TREE, REDWOOD, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.REDWOOD_SAPLING.get())));
         register(context, OLD_GROWTH_REDWOOD_TAIGA, REDWOOD_TREES, treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));

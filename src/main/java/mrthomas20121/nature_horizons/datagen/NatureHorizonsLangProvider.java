@@ -4,7 +4,11 @@ import mrthomas20121.nature_horizons.NatureHorizons;
 import mrthomas20121.nature_horizons.init.NatureHorizonsBlocks;
 import mrthomas20121.nature_horizons.init.NatureHorizonsEntityTypes;
 import mrthomas20121.nature_horizons.init.NatureHorizonsItems;
+import mrthomas20121.nature_horizons.worldgen.NatureHorizonsBiomes;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.common.data.LanguageProvider;
 import slimeknights.mantle.registration.object.WoodBlockObject;
 
@@ -75,12 +79,19 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         addEntityType(NatureHorizonsEntityTypes.BLACK_WALNUT_CHEST_BOAT, "Black Walnut Chest Boat");
         addEntityType(NatureHorizonsEntityTypes.BLACKWOOD_BOAT, "Blackwood Boat");
         addEntityType(NatureHorizonsEntityTypes.BLACKWOOD_CHEST_BOAT, "Blackwood Chest Boat");
+        addEntityType(NatureHorizonsEntityTypes.JAPANESE_MAPLE_BOAT, "Japanese Maple Boat");
+        addEntityType(NatureHorizonsEntityTypes.JAPANESE_MAPLE_CHEST_BOAT, "Japanese Maple Chest Boat");
         addEntityType(NatureHorizonsEntityTypes.JUNIPER_BOAT, "Juniper Boat");
         addEntityType(NatureHorizonsEntityTypes.JUNIPER_CHEST_BOAT, "Juniper Chest Boat");
         addEntityType(NatureHorizonsEntityTypes.PINE_BOAT, "Pine Boat");
         addEntityType(NatureHorizonsEntityTypes.PINE_CHEST_BOAT, "Pine Chest Boat");
         addEntityType(NatureHorizonsEntityTypes.REDWOOD_BOAT, "Redwood Boat");
         addEntityType(NatureHorizonsEntityTypes.REDWOOD_CHEST_BOAT, "Redwood Chest Boat");
+
+        add(NatureHorizonsBiomes.ASPEN_FOREST, "Aspen Forest");
+        add(NatureHorizonsBiomes.JAPANESE_MAPLE_FOREST, "Japanese Maple Forest");
+        add(NatureHorizonsBiomes.OLD_GROWTH_ASPEN_FOREST, "Old Growth Aspen Forest");
+        add(NatureHorizonsBiomes.OLD_GROWTH_REDWOOD_TAIGA, "Old Growth Redwood Taiga");
     }
 
     private void wood(WoodBlockObject wood, String name) {
@@ -100,4 +111,9 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         add(wood.getSlab(), name +  " Slab");
         add(wood.getStairs(), name +  " Stairs");
     }
+
+    private void add(ResourceKey<Biome> key, String name) {
+        ResourceLocation location = key.location();
+        add("biome."+ location.getNamespace() +"."+ location.getPath(), name);
+    };
 }

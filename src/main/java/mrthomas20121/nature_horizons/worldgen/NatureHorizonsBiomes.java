@@ -8,6 +8,7 @@ import net.minecraft.world.level.biome.Biome;
 public class NatureHorizonsBiomes {
 
     public static ResourceKey<Biome> ASPEN_FOREST = biome("aspen_forest");
+    public static ResourceKey<Biome> JAPANESE_MAPLE_FOREST = biome("japanese_maple_forest");
     public static ResourceKey<Biome> OLD_GROWTH_ASPEN_FOREST = biome("old_growth_aspen_forest");
     public static ResourceKey<Biome> OLD_GROWTH_REDWOOD_TAIGA = biome("old_growth_redwood_taiga");
 

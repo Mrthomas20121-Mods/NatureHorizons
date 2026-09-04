@@ -19,7 +19,6 @@ public class NatureHorizonsBiomeModifierProvider {
 
     public static ResourceKey<BiomeModifier> REMOVE_OAK_BADLANDS = modifier("remove_oak_badlands");
     public static ResourceKey<BiomeModifier> BADLANDS_JUNIPER = modifier("badlands_juniper");
-    //public static ResourceKey<BiomeModifier> SAVANNA_BLACKWOOD = modifier("savanna_blackwood");
 
     private static ResourceKey<BiomeModifier> modifier(String name) {
         return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, NatureHorizons.getResource(name));
@@ -28,7 +27,9 @@ public class NatureHorizonsBiomeModifierProvider {
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         HolderGetter<Biome> biomeHolderGetter = context.lookup(Registries.BIOME);
         HolderGetter<PlacedFeature> featureHolderGetter = context.lookup(Registries.PLACED_FEATURE);
-        context.register(REMOVE_OAK_BADLANDS, ForgeBiomeModifiers.RemoveFeaturesBiomeModifier.allSteps(biomeHolderGetter.getOrThrow(BiomeTags.IS_BADLANDS),
+
+        context.register(REMOVE_OAK_BADLANDS, ForgeBiomeModifiers.RemoveFeaturesBiomeModifier.allSteps(
+                biomeHolderGetter.getOrThrow(BiomeTags.IS_BADLANDS),
                 HolderSet.direct(featureHolderGetter.getOrThrow(VegetationPlacements.TREES_BADLANDS))));
 
         context.register(BADLANDS_JUNIPER, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
