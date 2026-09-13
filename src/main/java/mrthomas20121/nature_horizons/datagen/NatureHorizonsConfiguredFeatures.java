@@ -24,10 +24,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaPineFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.AlterGroundDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
@@ -54,6 +51,7 @@ public class NatureHorizonsConfiguredFeatures {
     public static ResourceKey<ConfiguredFeature<?, ?>> CRIMSON_JAPANESE_MAPLE_TREE = feature("crimson_japanese_maple_tree");
     public static ResourceKey<ConfiguredFeature<?, ?>> ORANGE_JAPANESE_MAPLE_TREE = feature("orange_japanese_maple_tree");
     public static ResourceKey<ConfiguredFeature<?, ?>> JUNIPER_TREE = feature("juniper_tree");
+    public static ResourceKey<ConfiguredFeature<?, ?>> AURIC_TREE = feature("auric_tree");
     public static ResourceKey<ConfiguredFeature<?, ?>> REDWOOD_TREE = feature("redwood_tree");
     public static ResourceKey<ConfiguredFeature<?, ?>> OLD_GROWTH_REDWOOD_TAIGA = feature("old_growth_redwood_taiga");
 
@@ -81,17 +79,23 @@ public class NatureHorizonsConfiguredFeatures {
         register(context, ASPEN_TREE_BEE, Feature.TREE, createAspenTree().decorators(List.of(beehivedecorator)).build());
         register(context, BLACK_WALNUT_TREE, Feature.TREE, createBlackWalnutTree().build());
         register(context, BLACKWOOD_TREE, Feature.TREE, createBlackwoodTree().build());
-        register(context, JAPANESE_MAPLE_TREE, Feature.TREE, japanese_maple(NatureHorizonsBlocks.JAPANESE_MAPLE, NatureHorizonsBlocks.JAPANESE_MAPLE_LEAVES.get()).build());
-        register(context, CRIMSON_JAPANESE_MAPLE_TREE, Feature.TREE, japanese_maple(NatureHorizonsBlocks.JAPANESE_MAPLE, NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_LEAVES.get()).build());
-        register(context, ORANGE_JAPANESE_MAPLE_TREE, Feature.TREE, japanese_maple(NatureHorizonsBlocks.JAPANESE_MAPLE, NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_LEAVES.get()).build());
+        register(context, JAPANESE_MAPLE_TREE, Feature.TREE, createJapaneseMaple(NatureHorizonsBlocks.JAPANESE_MAPLE, NatureHorizonsBlocks.JAPANESE_MAPLE_LEAVES.get()).build());
+        register(context, CRIMSON_JAPANESE_MAPLE_TREE, Feature.TREE, createJapaneseMaple(NatureHorizonsBlocks.JAPANESE_MAPLE, NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_LEAVES.get()).build());
+        register(context, ORANGE_JAPANESE_MAPLE_TREE, Feature.TREE, createJapaneseMaple(NatureHorizonsBlocks.JAPANESE_MAPLE, NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_LEAVES.get()).build());
         register(context, JUNIPER_TREE, Feature.TREE, createJuniperTree().ignoreVines().build());
+        register(context, AURIC_TREE, Feature.TREE, createAuric().build());
+
         register(context, ASPEN_FOREST_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(ASPEN, 0.3F), new WeightedPlacedFeature(BLACK_WALNUT, 0.2F)), ASPEN_BEES));
         register(context, TREES_JAPANESE_MAPLE, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(ORANGE_JAPANESE_MAPLE, 0.3F), new WeightedPlacedFeature(CRIMSON_JAPANESE_MAPLE, 0.2F)), JAPANESE_MAPLE));
         register(context, REDWOOD_TREE, Feature.TREE, createRedWoodTree().build());
         register(context, OLD_GROWTH_REDWOOD_TAIGA, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(SPRUCE, 0.1f), new WeightedPlacedFeature(PINE, 0.1f)), REDWOOD));
     }
 
-    private static TreeConfiguration.TreeConfigurationBuilder japanese_maple(WoodBlockObject woodBlockObject, LeavesBlock leavesBlock) {
+    private static TreeConfiguration.TreeConfigurationBuilder createAuric() {
+        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(NatureHorizonsBlocks.AURIC.getLog()), new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(NatureHorizonsBlocks.AURIC_LEAVES.get()), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), new TwoLayersFeatureSize(1, 0, 0)).dirt(BlockStateProvider.simple(Blocks.SAND));
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createJapaneseMaple(WoodBlockObject woodBlockObject, LeavesBlock leavesBlock) {
         return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(woodBlockObject.getLog()), new CherryTrunkPlacer(6, 1, 0, new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(1), 1).add(ConstantInt.of(2), 1).add(ConstantInt.of(3), 1).build()), UniformInt.of(2, 4), UniformInt.of(-4, -3), UniformInt.of(-1, 0)), BlockStateProvider.simple(leavesBlock), new CherryFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(6), 0.25F, 0.5F, 0.16666667F, 0.33333334F), new TwoLayersFeatureSize(1, 0, 2))).ignoreVines();
     }
 

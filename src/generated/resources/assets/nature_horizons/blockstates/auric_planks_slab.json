@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nature_horizons:block/wood/auric/slab"
+    },
+    "type=double": {
+      "model": "nature_horizons:block/wood/auric/planks"
+    },
+    "type=top": {
+      "model": "nature_horizons:block/wood/auric/slab_top"
+    }
+  }
+}

@@ -20,10 +20,12 @@ public class NatureHorizonsRenderer {
     private static final ResourceLocation BLACK_WALNUT_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/black_walnut.png");
     private static final ResourceLocation BLACKWOOD_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/blackwood.png");
     private static final ResourceLocation BLACKWOOD_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/blackwood.png");
-    private static final ResourceLocation JUNIPER_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/juniper.png");
-    private static final ResourceLocation JUNIPER_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/juniper.png");
     private static final ResourceLocation JAPANESE_MAPLE_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/japanese_maple.png");
     private static final ResourceLocation JAPANESE_MAPLE_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/japanese_maple.png");
+    private static final ResourceLocation JUNIPER_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/juniper.png");
+    private static final ResourceLocation JUNIPER_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/juniper.png");
+    private static final ResourceLocation AURIC_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/auric.png");
+    private static final ResourceLocation AURIC_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/auric.png");
     private static final ResourceLocation PINE_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/pine.png");
     private static final ResourceLocation PINE_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/pine.png");
     private static final ResourceLocation REDWOOD_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/redwood.png");
@@ -51,6 +53,10 @@ public class NatureHorizonsRenderer {
                 (context) -> new NatureHorizonsBoatRenderer(context, false, JUNIPER_CHEST_BOAT, JUNIPER_BOAT, NatureHorizonsModelLayers.JUNIPER_CHEST_BOAT, NatureHorizonsModelLayers.JUNIPER_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.JUNIPER_CHEST_BOAT.get(),
                 (context) -> new NatureHorizonsBoatRenderer(context, true, JUNIPER_CHEST_BOAT, JUNIPER_BOAT, NatureHorizonsModelLayers.JUNIPER_CHEST_BOAT, NatureHorizonsModelLayers.JUNIPER_BOAT));
+        event.registerEntityRenderer(NatureHorizonsEntityTypes.AURIC_BOAT.get(),
+                (context) -> new NatureHorizonsBoatRenderer(context, false, AURIC_CHEST_BOAT, AURIC_BOAT, NatureHorizonsModelLayers.AURIC_CHEST_BOAT, NatureHorizonsModelLayers.AURIC_BOAT));
+        event.registerEntityRenderer(NatureHorizonsEntityTypes.AURIC_CHEST_BOAT.get(),
+                (context) -> new NatureHorizonsBoatRenderer(context, true, AURIC_CHEST_BOAT, AURIC_BOAT, NatureHorizonsModelLayers.AURIC_CHEST_BOAT, NatureHorizonsModelLayers.AURIC_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.PINE_BOAT.get(),
                 (context) -> new NatureHorizonsBoatRenderer(context, false, PINE_CHEST_BOAT, PINE_BOAT, NatureHorizonsModelLayers.PINE_CHEST_BOAT, NatureHorizonsModelLayers.PINE_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.PINE_CHEST_BOAT.get(),
@@ -73,6 +79,8 @@ public class NatureHorizonsRenderer {
         event.registerLayerDefinition(NatureHorizonsModelLayers.JAPANESE_MAPLE_CHEST_BOAT, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.JUNIPER_BOAT, BoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.JUNIPER_CHEST_BOAT, ChestBoatModel::createBodyModel);
+        event.registerLayerDefinition(NatureHorizonsModelLayers.AURIC_BOAT, BoatModel::createBodyModel);
+        event.registerLayerDefinition(NatureHorizonsModelLayers.AURIC_CHEST_BOAT, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.PINE_BOAT, BoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.PINE_CHEST_BOAT, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.REDWOOD_BOAT, BoatModel::createBodyModel);

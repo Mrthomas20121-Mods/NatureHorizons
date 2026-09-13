@@ -1,17 +1,19 @@
 package mrthomas20121.nature_horizons.init;
 
 import mrthomas20121.nature_horizons.NatureHorizons;
+import mrthomas20121.nature_horizons.block.SandSaplingBlock;
 import mrthomas20121.nature_horizons.worldgen.tree.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
-import net.minecraft.world.level.block.grower.JungleTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
@@ -72,7 +74,7 @@ public class NatureHorizonsBlocks {
             (block) -> new BlockItem(block, new Item.Properties()));
 
     public static WoodBlockObject JAPANESE_MAPLE = BLOCKS.registerWood("japanese_maple",
-            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).sound(SoundType.WOOD).ignitedByLava()), true);
+            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).sound(SoundType.WOOD).ignitedByLava()), true);
 
     public static ItemObject<LeavesBlock> JUNIPER_LEAVES = BLOCKS.register("juniper_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
@@ -82,6 +84,15 @@ public class NatureHorizonsBlocks {
 
     public static WoodBlockObject JUNIPER = BLOCKS.registerWood("juniper",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).sound(SoundType.WOOD).ignitedByLava()), true);
+
+    public static ItemObject<LeavesBlock> AURIC_LEAVES = BLOCKS.register("auric_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SandSaplingBlock> AURIC_SAPLING = BLOCKS.register("auric_sapling", () -> sandSapling(new AuricTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static WoodBlockObject AURIC = BLOCKS.registerWood("auric",
+            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
 
     public static ItemObject<LeavesBlock> PINE_LEAVES = BLOCKS.register("pine_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
@@ -101,26 +112,45 @@ public class NatureHorizonsBlocks {
     public static WoodBlockObject REDWOOD = BLOCKS.registerWood("redwood",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GRAY).sound(SoundType.WOOD).ignitedByLava()), true);
 
-    public static List<WoodBlockObject> WOODS = List.of(ASPEN, BLACK_WALNUT, BLACKWOOD, JUNIPER, PINE, REDWOOD, JAPANESE_MAPLE);
+    public static List<WoodBlockObject> WOODS = List.of(ASPEN, BLACK_WALNUT, BLACKWOOD, JUNIPER, AURIC, PINE, REDWOOD, JAPANESE_MAPLE);
+
+    public static void initCompostable() {
+        addCompostableWithSameChance(0.3f, ASPEN_SAPLING, ASPEN_LEAVES);
+        addCompostableWithSameChance(0.3f, BLACK_WALNUT_SAPLING, BLACK_WALNUT_LEAVES);
+        addCompostable(0.75f, NatureHorizonsItems.WALNUT);
+        addCompostable(0.55f, NatureHorizonsItems.HARD_WALNUT);
+        addCompostableWithSameChance(0.3f, BLACKWOOD_SAPLING, BLACKWOOD_SAPLING);
+        addCompostableWithSameChance(0.3f,
+                JAPANESE_MAPLE_LEAVES, JAPANESE_MAPLE_SAPLING,
+                CRIMSON_JAPANESE_MAPLE_LEAVES, CRIMSON_JAPANESE_MAPLE_SAPLING,
+                ORANGE_JAPANESE_MAPLE_LEAVES, ORANGE_JAPANESE_MAPLE_SAPLING);
+        addCompostableWithSameChance(0.3f, JUNIPER_SAPLING, JUNIPER_LEAVES);
+        addCompostable(0.65f, NatureHorizonsItems.JUNIPER_BERRY);
+        addCompostableWithSameChance(0.3f, AURIC_SAPLING, AURIC_LEAVES);
+        addCompostableWithSameChance(0.3f, PINE_SAPLING, PINE_LEAVES);
+        addCompostableWithSameChance(0.3f, REDWOOD_SAPLING, REDWOOD_LEAVES);
+    }
+
+    private static void addCompostable(float chance, ItemLike itemLike) {
+        ComposterBlock.COMPOSTABLES.put(itemLike.asItem(), chance);
+    }
+
+    private static void addCompostableWithSameChance(float chance, ItemLike... items) {
+        for(ItemLike item: items) {
+            addCompostable(chance, item);
+        }
+    }
 
     private static SaplingBlock sapling(AbstractTreeGrower grower) {
         return new SaplingBlock(grower, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY));
     }
 
+    private static SandSaplingBlock sandSapling(AbstractTreeGrower grower) {
+        return new SandSaplingBlock(grower, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY));
+    }
+
     private static LeavesBlock leaves(SoundType p_152615_) {
         return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks().sound(p_152615_).noOcclusion().isValidSpawn(NatureHorizonsBlocks::ocelotOrParrot).isSuffocating(NatureHorizonsBlocks::never).isViewBlocking(NatureHorizonsBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(NatureHorizonsBlocks::never));
-    }
-
-    private static Boolean never(BlockState p_50779_, BlockGetter p_50780_, BlockPos p_50781_, EntityType<?> p_50782_) {
-        return false;
-    }
-
-    private static Boolean always(BlockState p_50810_, BlockGetter p_50811_, BlockPos p_50812_, EntityType<?> p_50813_) {
-        return true;
-    }
-
-    private static boolean always(BlockState p_50775_, BlockGetter p_50776_, BlockPos p_50777_) {
-        return true;
     }
 
     private static boolean never(BlockState p_50806_, BlockGetter p_50807_, BlockPos p_50808_) {

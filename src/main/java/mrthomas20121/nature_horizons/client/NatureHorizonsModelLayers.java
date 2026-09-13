@@ -22,6 +22,9 @@ public class NatureHorizonsModelLayers {
     public static final ModelLayerLocation JUNIPER_CHEST_BOAT = register("juniper_chest_boat");
     public static final ModelLayerLocation JUNIPER_BOAT = register("juniper_boat");
 
+    public static final ModelLayerLocation AURIC_CHEST_BOAT = register("auric_chest_boat");
+    public static final ModelLayerLocation AURIC_BOAT = register("auric_boat");
+
     public static final ModelLayerLocation PINE_CHEST_BOAT = register("pine_chest_boat");
     public static final ModelLayerLocation PINE_BOAT = register("pine_boat");
 

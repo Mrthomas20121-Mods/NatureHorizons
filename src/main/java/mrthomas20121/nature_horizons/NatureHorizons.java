@@ -34,8 +34,9 @@ public class NatureHorizons {
 	}
 
 	public void setup(FMLCommonSetupEvent event) {
-
 		NatureHorizonsWorldGen.init();
+		// init compostable blocks/items
+		NatureHorizonsBlocks.initCompostable();
 	}
 
 	/**

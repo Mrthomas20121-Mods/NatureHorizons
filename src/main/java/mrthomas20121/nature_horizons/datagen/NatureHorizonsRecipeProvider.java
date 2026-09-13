@@ -31,6 +31,7 @@ public class NatureHorizonsRecipeProvider extends RecipeProvider implements IRec
         woodCrafting(consumer, NatureHorizonsBlocks.BLACKWOOD, "blackwood/");
         woodCrafting(consumer, NatureHorizonsBlocks.JAPANESE_MAPLE, "japanese_maple/");
         woodCrafting(consumer, NatureHorizonsBlocks.JUNIPER, "juniper/");
+        woodCrafting(consumer, NatureHorizonsBlocks.AURIC, "parched/");
         woodCrafting(consumer, NatureHorizonsBlocks.PINE, "pine/");
         woodCrafting(consumer, NatureHorizonsBlocks.REDWOOD, "redwood/");
 
@@ -63,8 +64,11 @@ public class NatureHorizonsRecipeProvider extends RecipeProvider implements IRec
         boat(consumer, NatureHorizonsItems.BLACKWOOD_BOAT.get(), NatureHorizonsItems.BLACKWOOD_CHEST_BOAT.get(), NatureHorizonsBlocks.BLACKWOOD.get(), "blackwood/");
         boat(consumer, NatureHorizonsItems.JAPANESE_MAPLE_BOAT.get(), NatureHorizonsItems.JAPANESE_MAPLE_CHEST_BOAT.get(), NatureHorizonsBlocks.JAPANESE_MAPLE.get(),"japanese_maple/");
         boat(consumer, NatureHorizonsItems.JUNIPER_BOAT.get(), NatureHorizonsItems.JUNIPER_CHEST_BOAT.get(), NatureHorizonsBlocks.JUNIPER.get(), "juniper/");
+        boat(consumer, NatureHorizonsItems.AURIC_BOAT.get(), NatureHorizonsItems.AURIC_CHEST_BOAT.get(), NatureHorizonsBlocks.AURIC.get(), "parched/");
         boat(consumer, NatureHorizonsItems.PINE_BOAT.get(), NatureHorizonsItems.PINE_CHEST_BOAT.get(), NatureHorizonsBlocks.PINE.get(), "pine/");
         boat(consumer, NatureHorizonsItems.REDWOOD_BOAT.get(), NatureHorizonsItems.REDWOOD_CHEST_BOAT.get(), NatureHorizonsBlocks.REDWOOD.get(), "redwood/");
+
+        
     }
 
     private void boat(Consumer<FinishedRecipe> consumer, Item boatItem, Item chestBoatItem, Block planks, String folder) {

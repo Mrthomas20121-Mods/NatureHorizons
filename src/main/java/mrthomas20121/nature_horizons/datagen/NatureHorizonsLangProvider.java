@@ -29,6 +29,7 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         wood(NatureHorizonsBlocks.BLACKWOOD, "Blackwood");
         wood(NatureHorizonsBlocks.JAPANESE_MAPLE, "Japanese Maple");
         wood(NatureHorizonsBlocks.JUNIPER, "Juniper");
+        wood(NatureHorizonsBlocks.AURIC, "Auric");
         wood(NatureHorizonsBlocks.PINE, "Pine");
         wood(NatureHorizonsBlocks.REDWOOD, "Redwood");
 
@@ -46,6 +47,8 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         add(NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING.get(), "Orange Japanese Maple Sapling");
         add(NatureHorizonsBlocks.JUNIPER_LEAVES.get(), "Juniper Leaves");
         add(NatureHorizonsBlocks.JUNIPER_SAPLING.get(), "Juniper Sapling");
+        add(NatureHorizonsBlocks.AURIC_LEAVES.get(), "Auric Leaves");
+        add(NatureHorizonsBlocks.AURIC_SAPLING.get(), "Auric Sapling");
         add(NatureHorizonsBlocks.PINE_LEAVES.get(), "Pine Leaves");
         add(NatureHorizonsBlocks.PINE_SAPLING.get(), "Pine Sapling");
         add(NatureHorizonsBlocks.REDWOOD_LEAVES.get(), "Redwood Leaves");
@@ -68,6 +71,8 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         addItem(NatureHorizonsItems.JAPANESE_MAPLE_CHEST_BOAT, "Japanese Maple Chest Boat");
         addItem(NatureHorizonsItems.JUNIPER_BOAT, "Juniper Boat");
         addItem(NatureHorizonsItems.JUNIPER_CHEST_BOAT, "Juniper Chest Boat");
+        addItem(NatureHorizonsItems.AURIC_BOAT, "Auric Boat");
+        addItem(NatureHorizonsItems.AURIC_CHEST_BOAT, "Auric Chest Boat");
         addItem(NatureHorizonsItems.PINE_BOAT, "Pine Boat");
         addItem(NatureHorizonsItems.PINE_CHEST_BOAT, "Pine Chest Boat");
         addItem(NatureHorizonsItems.REDWOOD_BOAT, "Redwood Boat");
@@ -83,6 +88,8 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         addEntityType(NatureHorizonsEntityTypes.JAPANESE_MAPLE_CHEST_BOAT, "Japanese Maple Chest Boat");
         addEntityType(NatureHorizonsEntityTypes.JUNIPER_BOAT, "Juniper Boat");
         addEntityType(NatureHorizonsEntityTypes.JUNIPER_CHEST_BOAT, "Juniper Chest Boat");
+        addEntityType(NatureHorizonsEntityTypes.AURIC_BOAT, "Auric Boat");
+        addEntityType(NatureHorizonsEntityTypes.AURIC_CHEST_BOAT, "Auric Chest Boat");
         addEntityType(NatureHorizonsEntityTypes.PINE_BOAT, "Pine Boat");
         addEntityType(NatureHorizonsEntityTypes.PINE_CHEST_BOAT, "Pine Chest Boat");
         addEntityType(NatureHorizonsEntityTypes.REDWOOD_BOAT, "Redwood Boat");

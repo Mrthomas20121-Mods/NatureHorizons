@@ -35,7 +35,7 @@ public class NatureHorizonsTags {
         protected void addTags(HolderLookup.Provider provider) {
 
             tag(BlockTags.LEAVES).add(
-                    NatureHorizonsBlocks.ASPEN_LEAVES.get(), NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get(), NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(),
+                    NatureHorizonsBlocks.AURIC_LEAVES.get(), NatureHorizonsBlocks.ASPEN_LEAVES.get(), NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get(), NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(),
                     NatureHorizonsBlocks.JAPANESE_MAPLE_LEAVES.get(), NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_LEAVES.get(), NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_LEAVES.get(),
                     NatureHorizonsBlocks.JUNIPER_LEAVES.get(), NatureHorizonsBlocks.PINE_LEAVES.get(), NatureHorizonsBlocks.REDWOOD_LEAVES.get());
 
@@ -51,6 +51,7 @@ public class NatureHorizonsTags {
             );
 
             tag(BlockTags.SAPLINGS).add(
+                    NatureHorizonsBlocks.AURIC_SAPLING.get(),
                     NatureHorizonsBlocks.ASPEN_SAPLING.get(), NatureHorizonsBlocks.BLACKWOOD_SAPLING.get(),
                     NatureHorizonsBlocks.JAPANESE_MAPLE_SAPLING.get(), NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_SAPLING.get(), NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING.get(),
                     NatureHorizonsBlocks.JUNIPER_SAPLING.get(), NatureHorizonsBlocks.PINE_SAPLING.get());

@@ -9,6 +9,7 @@ import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.world.BiomeModifier;
@@ -19,6 +20,7 @@ public class NatureHorizonsBiomeModifierProvider {
 
     public static ResourceKey<BiomeModifier> REMOVE_OAK_BADLANDS = modifier("remove_oak_badlands");
     public static ResourceKey<BiomeModifier> BADLANDS_JUNIPER = modifier("badlands_juniper");
+    public static ResourceKey<BiomeModifier> DESERT_AURIC = modifier("desert_auric");
 
     private static ResourceKey<BiomeModifier> modifier(String name) {
         return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, NatureHorizons.getResource(name));
@@ -35,6 +37,11 @@ public class NatureHorizonsBiomeModifierProvider {
         context.register(BADLANDS_JUNIPER, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomeHolderGetter.getOrThrow(BiomeTags.IS_BADLANDS),
                 HolderSet.direct(featureHolderGetter.getOrThrow(NatureHorizonsPlacedFeatures.JUNIPER_TREE)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(DESERT_AURIC, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomeHolderGetter.getOrThrow(Biomes.DESERT)),
+                HolderSet.direct(featureHolderGetter.getOrThrow(NatureHorizonsPlacedFeatures.SHRUBLAND_TREES)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
     }
 }

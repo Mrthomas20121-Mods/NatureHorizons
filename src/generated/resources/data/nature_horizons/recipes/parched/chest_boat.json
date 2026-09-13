@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:chests/wooden"
+    },
+    {
+      "item": "nature_horizons:auric_boat"
+    }
+  ],
+  "result": {
+    "item": "nature_horizons:auric_chest_boat"
+  }
+}

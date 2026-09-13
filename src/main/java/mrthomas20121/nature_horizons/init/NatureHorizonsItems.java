@@ -39,6 +39,8 @@ public class NatureHorizonsItems {
     public static ItemObject<JapaneseMapleBoatItem> JAPANESE_MAPLE_CHEST_BOAT = ITEMS.register("japanese_maple_chest_boat", () -> new JapaneseMapleBoatItem(true));
     public static ItemObject<JuniperBoatItem> JUNIPER_BOAT = ITEMS.register("juniper_boat", () -> new JuniperBoatItem(false));
     public static ItemObject<JuniperBoatItem> JUNIPER_CHEST_BOAT = ITEMS.register("juniper_chest_boat", () -> new JuniperBoatItem(true));
+    public static ItemObject<AuricBoatItem> AURIC_BOAT = ITEMS.register("auric_boat", () -> new AuricBoatItem(false));
+    public static ItemObject<AuricBoatItem> AURIC_CHEST_BOAT = ITEMS.register("auric_chest_boat", () -> new AuricBoatItem(true));
     public static ItemObject<PineBoatItem> PINE_BOAT = ITEMS.register("pine_boat", () -> new PineBoatItem(false));
     public static ItemObject<PineBoatItem> PINE_CHEST_BOAT = ITEMS.register("pine_chest_boat", () -> new PineBoatItem(true));
     public static ItemObject<RedwoodBoatItem> REDWOOD_BOAT = ITEMS.register("redwood_boat", () -> new RedwoodBoatItem(false));
@@ -93,6 +95,11 @@ public class NatureHorizonsItems {
                         output.accept(NatureHorizonsBlocks.JUNIPER_LEAVES);
                         output.accept(NatureHorizonsBlocks.JUNIPER_SAPLING);
                         accept(NatureHorizonsBlocks.JUNIPER, output);
+                        output.accept(NatureHorizonsItems.AURIC_BOAT.get());
+                        output.accept(NatureHorizonsItems.AURIC_CHEST_BOAT.get());
+                        output.accept(NatureHorizonsBlocks.AURIC_LEAVES);
+                        output.accept(NatureHorizonsBlocks.AURIC_SAPLING);
+                        accept(NatureHorizonsBlocks.AURIC, output);
                         output.accept(NatureHorizonsItems.PINE_BOAT.get());
                         output.accept(NatureHorizonsItems.PINE_CHEST_BOAT.get());
                         output.accept(NatureHorizonsBlocks.PINE_LEAVES);

@@ -30,6 +30,8 @@ public class NatureHorizonsPlacedFeatures {
     public static ResourceKey<PlacedFeature> CRIMSON_JAPANESE_MAPLE_TREE = feature("crimson_japanese_maple_tree");
     public static ResourceKey<PlacedFeature> ORANGE_JAPANESE_MAPLE_TREE = feature("orange_japanese_maple_tree");
     public static ResourceKey<PlacedFeature> JUNIPER_TREE = feature("juniper_tree");
+    public static ResourceKey<PlacedFeature> AURIC_TREE = feature("auric_tree");
+    public static ResourceKey<PlacedFeature> SHRUBLAND_TREES = feature("shrubland_trees");
     public static ResourceKey<PlacedFeature> REDWOOD_TREE = feature("redwood_tree");
     public static ResourceKey<PlacedFeature> OLD_GROWTH_REDWOOD_TAIGA = feature("old_growth_redwood_taiga");
 
@@ -52,6 +54,7 @@ public class NatureHorizonsPlacedFeatures {
         Holder<ConfiguredFeature<?, ?>> CRIMSON_JAPANESE_MAPLE = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.CRIMSON_JAPANESE_MAPLE_TREE);
         Holder<ConfiguredFeature<?, ?>> ORANGE_JAPANESE_MAPLE = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.ORANGE_JAPANESE_MAPLE_TREE);
         Holder<ConfiguredFeature<?, ?>> JUNIPER = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.JUNIPER_TREE);
+        Holder<ConfiguredFeature<?, ?>> AURIC = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.AURIC_TREE);
         Holder<ConfiguredFeature<?, ?>> REDWOOD = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.REDWOOD_TREE);
         Holder<ConfiguredFeature<?, ?>> REDWOOD_TREES = holdergetter.getOrThrow(NatureHorizonsConfiguredFeatures.OLD_GROWTH_REDWOOD_TAIGA);
 
@@ -67,6 +70,8 @@ public class NatureHorizonsPlacedFeatures {
         register(context, ORANGE_JAPANESE_MAPLE_TREE, ORANGE_JAPANESE_MAPLE, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING.get())));
         register(context, TREES_JAPANESE_MAPLE, MEADOW, treePlacement(PlacementUtils.countExtra(8, 0.1F, 1)));
 
+        register(context, AURIC_TREE, AURIC, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.AURIC_SAPLING.get())));
+        register(context, SHRUBLAND_TREES, AURIC, treePlacement(PlacementUtils.countExtra(0, 0.1F, 1)));
         register(context, JUNIPER_TREE, JUNIPER, treePlacement(PlacementUtils.countExtra(5, 0.1F, 1), NatureHorizonsBlocks.JUNIPER_SAPLING.get()));
         register(context, REDWOOD_TREE, REDWOOD, List.of(PlacementUtils.filteredByBlockSurvival(NatureHorizonsBlocks.REDWOOD_SAPLING.get())));
         register(context, OLD_GROWTH_REDWOOD_TAIGA, REDWOOD_TREES, treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
