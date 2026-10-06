@@ -48,6 +48,8 @@ public class NatureHorizonsBlockLoot extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
+        this.dropSelf(NatureHorizonsBlocks.ROCKSALT.get());
+
         this.add(NatureHorizonsBlocks.ASPEN_LEAVES.get(), (block) -> createLeavesDrops(block, NatureHorizonsBlocks.ASPEN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get(), (block) -> createFruitLeavesDrops(block, NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get(), NatureHorizonsItems.HARD_WALNUT.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, NatureHorizonsBlocks.BLACKWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));

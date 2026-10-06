@@ -24,6 +24,8 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
 
         add("item.nature_horizons.hard_walnut_item.tooltip", "Right click on a hard block to open");
 
+        addBlock(NatureHorizonsBlocks.ROCKSALT, "Rocksalt");
+
         wood(NatureHorizonsBlocks.ASPEN, "Aspen");
         wood(NatureHorizonsBlocks.BLACK_WALNUT, "Black Walnut");
         wood(NatureHorizonsBlocks.BLACKWOOD, "Blackwood");
@@ -99,6 +101,7 @@ public class NatureHorizonsLangProvider extends LanguageProvider {
         add(NatureHorizonsBiomes.JAPANESE_MAPLE_FOREST, "Japanese Maple Forest");
         add(NatureHorizonsBiomes.OLD_GROWTH_ASPEN_FOREST, "Old Growth Aspen Forest");
         add(NatureHorizonsBiomes.OLD_GROWTH_REDWOOD_TAIGA, "Old Growth Redwood Taiga");
+        add(NatureHorizonsBiomes.SALT_CAVE, "Salt Cave");
     }
 
     private void wood(WoodBlockObject wood, String name) {

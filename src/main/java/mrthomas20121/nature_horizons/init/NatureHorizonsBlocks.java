@@ -9,10 +9,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.ComposterBlock;
-import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -27,6 +24,9 @@ import java.util.List;
 public class NatureHorizonsBlocks {
 
     public static BlockDeferredRegister BLOCKS = new BlockDeferredRegister(NatureHorizons.MOD_ID);
+
+    public static ItemObject<Block> ROCKSALT = BLOCKS.register("rocksalt", () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.CLAY).sound(SoundType.AMETHYST)),
+            (block) -> new BlockItem(block, new Item.Properties()));
 
     public static ItemObject<LeavesBlock> ASPEN_LEAVES = BLOCKS.register("aspen_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));

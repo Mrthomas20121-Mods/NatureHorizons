@@ -28,6 +28,7 @@ public class NatureHorizons {
 		NatureHorizonsItems.ITEMS.register(bus);
 		NatureHorizonsEntityTypes.ENTITY_TYPES.register(bus);
 		NatureHorizonsItems.CREATIVE_TABS.register(bus);
+		NatureHorizonsFeatures.FEATURES.register(bus);
 
 		bus.addListener(NatureHorizonsDatagen::init);
 		bus.addListener(this::setup);
@@ -35,6 +36,7 @@ public class NatureHorizons {
 
 	public void setup(FMLCommonSetupEvent event) {
 		NatureHorizonsWorldGen.init();
+
 		// init compostable blocks/items
 		NatureHorizonsBlocks.initCompostable();
 	}

@@ -33,6 +33,8 @@ public class NatureHorizonsBlockstateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
+        simpleBlock(NatureHorizonsBlocks.ROCKSALT.get(), blockTexture("rocksalt"));
+
         addLeaveBlock(NatureHorizonsBlocks.ASPEN_LEAVES.get(), blockTexture("wood/aspen/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.ASPEN_SAPLING.get(), blockTexture("wood/aspen/sapling"));
         addLeaveBlock(NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get(), blockTexture("wood/black_walnut/leaves"));
@@ -62,6 +64,10 @@ public class NatureHorizonsBlockstateProvider extends BlockStateProvider {
         addWood(NatureHorizonsBlocks.AURIC, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.PINE, true, RenderType.solid());
         addWood(NatureHorizonsBlocks.REDWOOD, true, RenderType.cutout());
+    }
+
+    protected void simpleBlock(Block block, ResourceLocation texture) {
+        simpleBlockWithItem(block, models().cubeAll(name(block), texture));
     }
 
     protected void addLeaveBlock(LeavesBlock block, ResourceLocation texture) {

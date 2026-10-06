@@ -10,6 +10,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -21,6 +22,7 @@ import java.util.concurrent.CompletableFuture;
 public class NatureHorizonsTags {
 
     public static TagKey<Block> CAN_BREAK_HARD_WALNUT = BlockTags.create(NatureHorizons.getResource("can_break_hard_walnut"));
+    public static TagKey<Block> ROCKSALT_REPLACEABLE = BlockTags.create(NatureHorizons.getResource("rocksalt_replaceable"));
 
     public static void init() {}
 
@@ -33,6 +35,8 @@ public class NatureHorizonsTags {
         @Override
         @SuppressWarnings("unchecked")
         protected void addTags(HolderLookup.Provider provider) {
+
+            tag(ROCKSALT_REPLACEABLE).addTag(BlockTags.BASE_STONE_OVERWORLD);
 
             tag(BlockTags.LEAVES).add(
                     NatureHorizonsBlocks.AURIC_LEAVES.get(), NatureHorizonsBlocks.ASPEN_LEAVES.get(), NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get(), NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(),

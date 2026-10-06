@@ -5,6 +5,8 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.CavePlacements;
+import net.minecraft.data.worldgen.placement.OrePlacements;
 import net.minecraft.sounds.Music;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
@@ -27,6 +29,50 @@ public class NatureHorizonsBiomeProvider {
         context.register(NatureHorizonsBiomes.JAPANESE_MAPLE_FOREST, japanese_maple_forest(placedFeatureHolderGetter, configuredWorldCarverHolderGetter));
         context.register(NatureHorizonsBiomes.OLD_GROWTH_ASPEN_FOREST, aspenForest(placedFeatureHolderGetter, configuredWorldCarverHolderGetter, true));
         context.register(NatureHorizonsBiomes.OLD_GROWTH_REDWOOD_TAIGA, oldGrowthTaiga(placedFeatureHolderGetter, configuredWorldCarverHolderGetter));
+        context.register(NatureHorizonsBiomes.SALT_CAVE, saltCaves(placedFeatureHolderGetter, configuredWorldCarverHolderGetter));
+    }
+
+    public static void addRockSalt(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, NatureHorizonsPlacedFeatures.LARGE_ROCKSALT);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.ROCKSALT_CEILING);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.ROCKSALT_PATCH);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, NatureHorizonsPlacedFeatures.CALCITE);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, NatureHorizonsPlacedFeatures.DIORITE);
+    }
+
+    public static void addDefaultOres(BiomeGenerationSettings.Builder p_194723_) {
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_COAL_UPPER);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_COAL_LOWER);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_IRON_UPPER);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_IRON_MIDDLE);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_IRON_SMALL);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_GOLD);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_GOLD_LOWER);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_REDSTONE);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_REDSTONE_LOWER);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND_LARGE);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND_BURIED);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_LAPIS);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_LAPIS_BURIED);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_COPPER);
+        p_194723_.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, CavePlacements.UNDERWATER_MAGMA);
+    }
+
+    public static Biome saltCaves(HolderGetter<PlacedFeature> p_256253_, HolderGetter<ConfiguredWorldCarver<?>> p_255644_) {
+        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.caveSpawns(mobspawnsettings$builder);
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(p_256253_, p_255644_);
+        saltCaveOverworldGeneration(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
+        addDefaultOres(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addPlainVegetation(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomegenerationsettings$builder);
+        addRockSalt(biomegenerationsettings$builder);
+        Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DRIPSTONE_CAVES);
+        return biome(true, 0.8F, 0.4F, mobspawnsettings$builder, biomegenerationsettings$builder, music);
     }
 
     public static Biome oldGrowthTaiga(HolderGetter<PlacedFeature> p_255849_, HolderGetter<ConfiguredWorldCarver<?>> p_256578_) {
@@ -102,6 +148,18 @@ public class NatureHorizonsBiomeProvider {
         BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
         BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
+        BiomeDefaultFeatures.addDefaultSprings(builder);
+        BiomeDefaultFeatures.addSurfaceFreezing(builder);
+    }
+
+    private static void saltCaveOverworldGeneration(BiomeGenerationSettings.Builder builder) {
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_DIRT);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_GRAVEL);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_TUFF);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN);
         BiomeDefaultFeatures.addDefaultSprings(builder);
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }

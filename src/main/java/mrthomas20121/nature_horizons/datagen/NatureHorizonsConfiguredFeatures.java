@@ -3,26 +3,27 @@ package mrthomas20121.nature_horizons.datagen;
 import com.google.common.collect.ImmutableList;
 import mrthomas20121.nature_horizons.NatureHorizons;
 import mrthomas20121.nature_horizons.init.NatureHorizonsBlocks;
+import mrthomas20121.nature_horizons.init.NatureHorizonsFeatures;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
-import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.util.valueproviders.WeightedListInt;
+import net.minecraft.util.valueproviders.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
@@ -32,7 +33,12 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.CherryTrunkPlacer
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.placement.BiomeFilter;
+import net.minecraft.world.level.levelgen.placement.CountPlacement;
+import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
+import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import slimeknights.mantle.registration.object.WoodBlockObject;
 
 import java.util.List;
@@ -55,6 +61,12 @@ public class NatureHorizonsConfiguredFeatures {
     public static ResourceKey<ConfiguredFeature<?, ?>> REDWOOD_TREE = feature("redwood_tree");
     public static ResourceKey<ConfiguredFeature<?, ?>> OLD_GROWTH_REDWOOD_TAIGA = feature("old_growth_redwood_taiga");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_ROCKSALT = feature("large_rocksalt");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ROCKSALT_CEILING = feature("rocksalt_ceiling");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ROCKSALT_PATCH = feature("rocksalt_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CALCITE = feature("calcite");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DIORITE = feature("diorite");
+
     private static ResourceKey<ConfiguredFeature<?, ?>> feature(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, NatureHorizons.getResource(name));
     }
@@ -74,6 +86,22 @@ public class NatureHorizonsConfiguredFeatures {
         Holder<PlacedFeature> ORANGE_JAPANESE_MAPLE = placedFeatureHolderGetter.getOrThrow(NatureHorizonsPlacedFeatures.ORANGE_JAPANESE_MAPLE_TREE);
         Holder<PlacedFeature> REDWOOD = placedFeatureHolderGetter.getOrThrow(NatureHorizonsPlacedFeatures.REDWOOD_TREE);
 
+        RuleTest stoneTest = new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD);
+
+        register(context, CALCITE, Feature.ORE, new OreConfiguration(stoneTest, Blocks.CALCITE.defaultBlockState(), 44));
+        register(context, DIORITE, Feature.ORE, new OreConfiguration(stoneTest, Blocks.DIORITE.defaultBlockState(), 44));
+        register(context, ROCKSALT_CEILING, Feature.BLOCK_COLUMN, new BlockColumnConfiguration(
+                List.of(
+                        BlockColumnConfiguration.layer(UniformInt.of(1, 2), BlockStateProvider.simple(Blocks.DIORITE)),
+                        BlockColumnConfiguration.layer(UniformInt.of(3, 5), BlockStateProvider.simple(NatureHorizonsBlocks.ROCKSALT.get()))
+                ),
+                Direction.DOWN,
+                BlockPredicate.ONLY_IN_AIR_PREDICATE,
+                false
+        ));
+
+        register(context, ROCKSALT_PATCH, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(NatureHorizonsBlocks.ROCKSALT.get())), List.of(Blocks.STONE, Blocks.DEEPSLATE)));
+
         register(context, ASPEN_TREE, Feature.TREE, createAspenTree().build());
         register(context, TALL_ASPEN_TREE, Feature.TREE, createTallAspenTree().build());
         register(context, ASPEN_TREE_BEE, Feature.TREE, createAspenTree().decorators(List.of(beehivedecorator)).build());
@@ -89,6 +117,8 @@ public class NatureHorizonsConfiguredFeatures {
         register(context, TREES_JAPANESE_MAPLE, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(ORANGE_JAPANESE_MAPLE, 0.3F), new WeightedPlacedFeature(CRIMSON_JAPANESE_MAPLE, 0.2F)), JAPANESE_MAPLE));
         register(context, REDWOOD_TREE, Feature.TREE, createRedWoodTree().build());
         register(context, OLD_GROWTH_REDWOOD_TAIGA, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(SPRUCE, 0.1f), new WeightedPlacedFeature(PINE, 0.1f)), REDWOOD));
+
+        register(context, LARGE_ROCKSALT, NatureHorizonsFeatures.LARGE_ROCKSALT.get(), new LargeDripstoneConfiguration(30, UniformInt.of(3, 15), UniformFloat.of(0.4F, 2.0F), 0.33F, UniformFloat.of(0.3F, 0.9F), UniformFloat.of(0.4F, 1.0F), UniformFloat.of(0.0F, 0.4F), 4, 0.6F));
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createAuric() {

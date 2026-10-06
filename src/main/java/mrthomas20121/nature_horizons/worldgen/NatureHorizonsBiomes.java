@@ -11,6 +11,7 @@ public class NatureHorizonsBiomes {
     public static ResourceKey<Biome> JAPANESE_MAPLE_FOREST = biome("japanese_maple_forest");
     public static ResourceKey<Biome> OLD_GROWTH_ASPEN_FOREST = biome("old_growth_aspen_forest");
     public static ResourceKey<Biome> OLD_GROWTH_REDWOOD_TAIGA = biome("old_growth_redwood_taiga");
+    public static ResourceKey<Biome> SALT_CAVE = biome("salt_cave");
 
     private static ResourceKey<Biome> biome(String name) {
         return ResourceKey.create(Registries.BIOME, NatureHorizons.getResource(name));

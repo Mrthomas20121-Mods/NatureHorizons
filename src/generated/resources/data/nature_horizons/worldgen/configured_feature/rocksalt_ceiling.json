@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:block_column",
+  "config": {
+    "allowed_placement": {
+      "type": "minecraft:matching_blocks",
+      "blocks": "minecraft:air"
+    },
+    "direction": "down",
+    "layers": [
+      {
+        "height": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 2,
+            "min_inclusive": 1
+          }
+        },
+        "provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:diorite"
+          }
+        }
+      },
+      {
+        "height": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 5,
+            "min_inclusive": 3
+          }
+        },
+        "provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "nature_horizons:rocksalt"
+          }
+        }
+      }
+    ],
+    "prioritize_tip": false
+  }
+}
