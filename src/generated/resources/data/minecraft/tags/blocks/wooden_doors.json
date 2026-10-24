@@ -1,12 +1,16 @@
 {
   "values": [
     "nature_horizons:aspen_door",
+    "nature_horizons:balsa_door",
     "nature_horizons:black_walnut_door",
     "nature_horizons:blackwood_door",
+    "nature_horizons:ipe_door",
+    "nature_horizons:japanese_maple_door",
     "nature_horizons:juniper_door",
-    "nature_horizons:auric_door",
+    "nature_horizons:mahogany_door",
+    "nature_horizons:nanmu_door",
     "nature_horizons:pine_door",
     "nature_horizons:redwood_door",
-    "nature_horizons:japanese_maple_door"
+    "nature_horizons:willow_door"
   ]
 }

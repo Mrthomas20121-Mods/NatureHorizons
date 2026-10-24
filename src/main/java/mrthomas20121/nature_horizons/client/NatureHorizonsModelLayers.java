@@ -10,11 +10,17 @@ public class NatureHorizonsModelLayers {
     public static final ModelLayerLocation ASPEN_CHEST_BOAT = register("aspen_chest_boat");
     public static final ModelLayerLocation ASPEN_BOAT = register("aspen_boat");
 
+    public static final ModelLayerLocation BALSA_CHEST_BOAT = register("balsa_chest_boat");
+    public static final ModelLayerLocation BALSA_BOAT = register("balsa_boat");
+
     public static final ModelLayerLocation BLACK_WALNUT_CHEST_BOAT = register("black_walnut_chest_boat");
     public static final ModelLayerLocation BLACK_WALNUT_BOAT = register("black_walnut_boat");
 
     public static final ModelLayerLocation BLACKWOOD_CHEST_BOAT = register("blackwood_chest_boat");
     public static final ModelLayerLocation BLACKWOOD_BOAT = register("blackwood_boat");
+
+    public static final ModelLayerLocation IPE_CHEST_BOAT = register("ipe_chest_boat");
+    public static final ModelLayerLocation IPE_BOAT = register("ipe_boat");
 
     public static final ModelLayerLocation JAPANESE_MAPLE_CHEST_BOAT = register("japanese_maple_chest_boat");
     public static final ModelLayerLocation JAPANESE_MAPLE_BOAT = register("japanese_maple_boat");
@@ -22,8 +28,11 @@ public class NatureHorizonsModelLayers {
     public static final ModelLayerLocation JUNIPER_CHEST_BOAT = register("juniper_chest_boat");
     public static final ModelLayerLocation JUNIPER_BOAT = register("juniper_boat");
 
-    public static final ModelLayerLocation AURIC_CHEST_BOAT = register("auric_chest_boat");
-    public static final ModelLayerLocation AURIC_BOAT = register("auric_boat");
+    public static final ModelLayerLocation MAHOGANY_CHEST_BOAT = register("mahogany_chest_boat");
+    public static final ModelLayerLocation MAHOGANY_BOAT = register("mahogany_boat");
+
+    public static final ModelLayerLocation NANMU_CHEST_BOAT = register("nanmu_chest_boat");
+    public static final ModelLayerLocation NANMU_BOAT = register("nanmu_boat");
 
     public static final ModelLayerLocation PINE_CHEST_BOAT = register("pine_chest_boat");
     public static final ModelLayerLocation PINE_BOAT = register("pine_boat");

@@ -1,6 +1,6 @@
 {
   "values": [
-    "nature_horizons:auric_leaves",
+    "nature_horizons:nanmu_leaves",
     "nature_horizons:aspen_leaves",
     "nature_horizons:black_walnut_leaves",
     "nature_horizons:blackwood_leaves",
@@ -9,6 +9,7 @@
     "nature_horizons:orange_japanese_maple_leaves",
     "nature_horizons:juniper_leaves",
     "nature_horizons:pine_leaves",
-    "nature_horizons:redwood_leaves"
+    "nature_horizons:redwood_leaves",
+    "nature_horizons:willow_leaves"
   ]
 }

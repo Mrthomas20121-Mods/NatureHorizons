@@ -25,19 +25,27 @@ public class NatureHorizonsItemModelProvider extends ItemModelProvider {
 
         basicItem(NatureHorizonsItems.ASPEN_BOAT.get());
         basicItem(NatureHorizonsItems.ASPEN_CHEST_BOAT.get());
+        basicItem(NatureHorizonsItems.BALSA_BOAT.get());
+        basicItem(NatureHorizonsItems.BALSA_CHEST_BOAT.get());
         basicItem(NatureHorizonsItems.BLACK_WALNUT_BOAT.get());
         basicItem(NatureHorizonsItems.BLACK_WALNUT_CHEST_BOAT.get());
         basicItem(NatureHorizonsItems.BLACKWOOD_BOAT.get());
         basicItem(NatureHorizonsItems.BLACKWOOD_CHEST_BOAT.get());
+        basicItem(NatureHorizonsItems.IPE_BOAT.get());
+        basicItem(NatureHorizonsItems.IPE_CHEST_BOAT.get());
         basicItem(NatureHorizonsItems.JAPANESE_MAPLE_BOAT.get());
         basicItem(NatureHorizonsItems.JAPANESE_MAPLE_CHEST_BOAT.get());
         basicItem(NatureHorizonsItems.JUNIPER_BOAT.get());
         basicItem(NatureHorizonsItems.JUNIPER_CHEST_BOAT.get());
-        basicItem(NatureHorizonsItems.AURIC_BOAT.get());
-        basicItem(NatureHorizonsItems.AURIC_CHEST_BOAT.get());
+        basicItem(NatureHorizonsItems.MAHOGANY_BOAT.get());
+        basicItem(NatureHorizonsItems.MAHOGANY_CHEST_BOAT.get());
+        basicItem(NatureHorizonsItems.NANMU_BOAT.get());
+        basicItem(NatureHorizonsItems.NANMU_CHEST_BOAT.get());
         basicItem(NatureHorizonsItems.PINE_BOAT.get());
         basicItem(NatureHorizonsItems.PINE_CHEST_BOAT.get());
         basicItem(NatureHorizonsItems.REDWOOD_BOAT.get());
         basicItem(NatureHorizonsItems.REDWOOD_CHEST_BOAT.get());
+        basicItem(NatureHorizonsItems.WILLOW_BOAT.get());
+        basicItem(NatureHorizonsItems.WILLOW_CHEST_BOAT.get());
     }
 }

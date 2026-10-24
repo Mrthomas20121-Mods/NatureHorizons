@@ -29,6 +29,8 @@ public class NatureHorizons {
 		NatureHorizonsEntityTypes.ENTITY_TYPES.register(bus);
 		NatureHorizonsItems.CREATIVE_TABS.register(bus);
 		NatureHorizonsFeatures.FEATURES.register(bus);
+		NatureHorizonsTrunkPlacers.FOLIAGE_PLACERS.register(bus);
+		NatureHorizonsFoliagePlacers.FOLIAGE_PLACERS.register(bus);
 
 		bus.addListener(NatureHorizonsDatagen::init);
 		bus.addListener(this::setup);

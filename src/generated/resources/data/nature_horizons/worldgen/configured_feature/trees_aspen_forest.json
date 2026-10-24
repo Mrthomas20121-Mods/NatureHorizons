@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "nature_horizons:aspen_checked",
+    "features": [
+      {
+        "chance": 0.2,
+        "feature": "nature_horizons:black_walnut_checked"
+      },
+      {
+        "chance": 0.1,
+        "feature": "nature_horizons:aspen_bees_checked"
+      }
+    ]
+  }
+}

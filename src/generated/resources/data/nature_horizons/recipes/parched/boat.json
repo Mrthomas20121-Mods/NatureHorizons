@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "P": {
-      "item": "nature_horizons:auric_planks"
+      "item": "nature_horizons:nanmu_planks"
     }
   },
   "pattern": [
@@ -11,7 +11,7 @@
     "PPP"
   ],
   "result": {
-    "item": "nature_horizons:auric_boat"
+    "item": "nature_horizons:nanmu_boat"
   },
   "show_notification": true
 }

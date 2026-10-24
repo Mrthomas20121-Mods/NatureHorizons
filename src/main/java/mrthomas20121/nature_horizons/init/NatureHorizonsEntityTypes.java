@@ -17,6 +17,12 @@ public class NatureHorizonsEntityTypes {
     public static final RegistryObject<EntityType<AspenChestBoat>> ASPEN_CHEST_BOAT = ENTITY_TYPES.register("aspen_chest_boat",
             () -> EntityType.Builder.<AspenChestBoat>of(AspenChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 
+    public static final RegistryObject<EntityType<BalsaBoat>> BALSA_BOAT = ENTITY_TYPES.register("balsa_boat",
+            () -> EntityType.Builder.<BalsaBoat>of(BalsaBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+
+    public static final RegistryObject<EntityType<BalsaChestBoat>> BALSA_CHEST_BOAT = ENTITY_TYPES.register("balsa_chest_boat",
+            () -> EntityType.Builder.<BalsaChestBoat>of(BalsaChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+
     public static final RegistryObject<EntityType<BlackWalnutBoat>> BLACK_WALNUT_BOAT = ENTITY_TYPES.register("black_walnut_boat",
             () -> EntityType.Builder.<BlackWalnutBoat>of(BlackWalnutBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 
@@ -28,6 +34,12 @@ public class NatureHorizonsEntityTypes {
 
     public static final RegistryObject<EntityType<BlackwoodChestBoat>> BLACKWOOD_CHEST_BOAT = ENTITY_TYPES.register("blackwood_chest_boat",
             () -> EntityType.Builder.<BlackwoodChestBoat>of(BlackwoodChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+
+    public static final RegistryObject<EntityType<IpeBoat>> IPE_BOAT = ENTITY_TYPES.register("ipe_boat",
+            () -> EntityType.Builder.<IpeBoat>of(IpeBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+
+    public static final RegistryObject<EntityType<IpeChestBoat>> IPE_CHEST_BOAT = ENTITY_TYPES.register("ipe_chest_boat",
+            () -> EntityType.Builder.<IpeChestBoat>of(IpeChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 
     public static final RegistryObject<EntityType<JapaneseMapleBoat>> JAPANESE_MAPLE_BOAT = ENTITY_TYPES.register("japanese_maple_boat",
             () -> EntityType.Builder.<JapaneseMapleBoat>of(JapaneseMapleBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
@@ -41,11 +53,17 @@ public class NatureHorizonsEntityTypes {
     public static final RegistryObject<EntityType<JuniperChestBoat>> JUNIPER_CHEST_BOAT = ENTITY_TYPES.register("juniper_chest_boat",
             () -> EntityType.Builder.<JuniperChestBoat>of(JuniperChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 
-    public static final RegistryObject<EntityType<AuricBoat>> AURIC_BOAT = ENTITY_TYPES.register("auric_boat",
-            () -> EntityType.Builder.<AuricBoat>of(AuricBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+    public static final RegistryObject<EntityType<MahoganyBoat>> MAHOGANY_BOAT = ENTITY_TYPES.register("mahogany_boat",
+            () -> EntityType.Builder.<MahoganyBoat>of(MahoganyBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 
-    public static final RegistryObject<EntityType<AuricChestBoat>> AURIC_CHEST_BOAT = ENTITY_TYPES.register("auric_chest_boat",
-            () -> EntityType.Builder.<AuricChestBoat>of(AuricChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+    public static final RegistryObject<EntityType<MahoganyChestBoat>> MAHOGANY_CHEST_BOAT = ENTITY_TYPES.register("mahogany_chest_boat",
+            () -> EntityType.Builder.<MahoganyChestBoat>of(MahoganyChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+
+    public static final RegistryObject<EntityType<NanmuBoat>> NANMU_BOAT = ENTITY_TYPES.register("nanmu_boat",
+            () -> EntityType.Builder.<NanmuBoat>of(NanmuBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+
+    public static final RegistryObject<EntityType<NanmuChestBoat>> NANMU_CHEST_BOAT = ENTITY_TYPES.register("nanmu_chest_boat",
+            () -> EntityType.Builder.<NanmuChestBoat>of(NanmuChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 
     public static final RegistryObject<EntityType<PineBoat>> PINE_BOAT = ENTITY_TYPES.register("pine_boat",
             () -> EntityType.Builder.<PineBoat>of(PineBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
@@ -58,4 +76,10 @@ public class NatureHorizonsEntityTypes {
 
     public static final RegistryObject<EntityType<RedwoodChestBoat>> REDWOOD_CHEST_BOAT = ENTITY_TYPES.register("redwood_chest_boat",
             () -> EntityType.Builder.<RedwoodChestBoat>of(RedwoodChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+
+    public static final RegistryObject<EntityType<WillowBoat>> WILLOW_BOAT = ENTITY_TYPES.register("willow_boat",
+            () -> EntityType.Builder.<WillowBoat>of(WillowBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+
+    public static final RegistryObject<EntityType<WillowChestBoat>> WILLOW_CHEST_BOAT = ENTITY_TYPES.register("willow_chest_boat",
+            () -> EntityType.Builder.<WillowChestBoat>of(WillowChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 }

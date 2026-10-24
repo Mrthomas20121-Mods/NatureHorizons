@@ -1,12 +1,16 @@
 {
   "values": [
     "nature_horizons:aspen_button",
+    "nature_horizons:balsa_button",
     "nature_horizons:black_walnut_button",
     "nature_horizons:blackwood_button",
+    "nature_horizons:ipe_button",
+    "nature_horizons:japanese_maple_button",
     "nature_horizons:juniper_button",
-    "nature_horizons:auric_button",
+    "nature_horizons:mahogany_button",
+    "nature_horizons:nanmu_button",
     "nature_horizons:pine_button",
     "nature_horizons:redwood_button",
-    "nature_horizons:japanese_maple_button"
+    "nature_horizons:willow_button"
   ]
 }

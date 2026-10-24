@@ -1,12 +1,16 @@
 {
   "values": [
     "#nature_horizons:aspen_logs",
+    "#nature_horizons:balsa_logs",
     "#nature_horizons:black_walnut_logs",
     "#nature_horizons:blackwood_logs",
+    "#nature_horizons:ipe_logs",
+    "#nature_horizons:japanese_maple_logs",
     "#nature_horizons:juniper_logs",
-    "#nature_horizons:auric_logs",
+    "#nature_horizons:mahogany_logs",
+    "#nature_horizons:nanmu_logs",
     "#nature_horizons:pine_logs",
     "#nature_horizons:redwood_logs",
-    "#nature_horizons:japanese_maple_logs"
+    "#nature_horizons:willow_logs"
   ]
 }

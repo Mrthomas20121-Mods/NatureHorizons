@@ -10,7 +10,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -39,9 +38,9 @@ public class NatureHorizonsTags {
             tag(ROCKSALT_REPLACEABLE).addTag(BlockTags.BASE_STONE_OVERWORLD);
 
             tag(BlockTags.LEAVES).add(
-                    NatureHorizonsBlocks.AURIC_LEAVES.get(), NatureHorizonsBlocks.ASPEN_LEAVES.get(), NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get(), NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(),
+                    NatureHorizonsBlocks.NANMU_LEAVES.get(), NatureHorizonsBlocks.ASPEN_LEAVES.get(), NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get(), NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(),
                     NatureHorizonsBlocks.JAPANESE_MAPLE_LEAVES.get(), NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_LEAVES.get(), NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_LEAVES.get(),
-                    NatureHorizonsBlocks.JUNIPER_LEAVES.get(), NatureHorizonsBlocks.PINE_LEAVES.get(), NatureHorizonsBlocks.REDWOOD_LEAVES.get());
+                    NatureHorizonsBlocks.JUNIPER_LEAVES.get(), NatureHorizonsBlocks.PINE_LEAVES.get(), NatureHorizonsBlocks.REDWOOD_LEAVES.get(), NatureHorizonsBlocks.WILLOW_LEAVES.get());
 
             tag(CAN_BREAK_HARD_WALNUT).addTags(
                     Tags.Blocks.STONE,
@@ -55,10 +54,10 @@ public class NatureHorizonsTags {
             );
 
             tag(BlockTags.SAPLINGS).add(
-                    NatureHorizonsBlocks.AURIC_SAPLING.get(),
+                    NatureHorizonsBlocks.NANMU_SAPLING.get(),
                     NatureHorizonsBlocks.ASPEN_SAPLING.get(), NatureHorizonsBlocks.BLACKWOOD_SAPLING.get(),
                     NatureHorizonsBlocks.JAPANESE_MAPLE_SAPLING.get(), NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_SAPLING.get(), NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING.get(),
-                    NatureHorizonsBlocks.JUNIPER_SAPLING.get(), NatureHorizonsBlocks.PINE_SAPLING.get());
+                    NatureHorizonsBlocks.JUNIPER_SAPLING.get(), NatureHorizonsBlocks.PINE_SAPLING.get(), NatureHorizonsBlocks.REDWOOD_SAPLING.get(), NatureHorizonsBlocks.WILLOW_SAPLING.get());
 
             for(WoodBlockObject blockObject: NatureHorizonsBlocks.WOODS) {
                 tag(CAN_BREAK_HARD_WALNUT).addTag(blockObject.getLogBlockTag());
@@ -90,9 +89,20 @@ public class NatureHorizonsTags {
             tag(ItemTags.PIGLIN_LOVED).add(NatureHorizonsItems.GOLDEN_WALNUT.get(), NatureHorizonsItems.GOLDEN_JUNIPER_BERRY.get());
 
             tag(ItemTags.SAPLINGS).add(
-                    NatureHorizonsBlocks.ASPEN_SAPLING.get().asItem(), NatureHorizonsBlocks.BLACKWOOD_SAPLING.get().asItem(),
-                    NatureHorizonsBlocks.JAPANESE_MAPLE_SAPLING.get().asItem(), NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_SAPLING.get().asItem(), NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING.get().asItem(),
-                    NatureHorizonsBlocks.JUNIPER_SAPLING.get().asItem(), NatureHorizonsBlocks.PINE_SAPLING.get().asItem());
+                    NatureHorizonsBlocks.ASPEN_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.BALSA_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.BLACKWOOD_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.PINK_IPE_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.GOLDEN_IPE_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.WHITE_IPE_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.JAPANESE_MAPLE_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.JUNIPER_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.MAHOGANY_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.NANMU_SAPLING.get().asItem(),
+                    NatureHorizonsBlocks.PINE_SAPLING.get().asItem());
 
             for(WoodBlockObject blockObject: NatureHorizonsBlocks.WOODS) {
                 tag(ItemTags.WOODEN_FENCES).add(blockObject.getFence().asItem());

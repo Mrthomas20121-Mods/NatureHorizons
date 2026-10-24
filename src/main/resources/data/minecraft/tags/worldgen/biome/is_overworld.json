@@ -2,6 +2,9 @@
   "values": [
     "nature_horizons:aspen_forest",
     "nature_horizons:old_growth_aspen_forest",
-    "nature_horizons:old_growth_redwood_taiga"
+    "nature_horizons:old_growth_redwood_taiga",
+    "nature_horizons:woodland",
+    "nature_horizons:tropical_forest",
+    "nature_horizons:salt_caves"
   ]
 }

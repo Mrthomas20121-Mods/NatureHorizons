@@ -1,12 +1,16 @@
 {
   "values": [
     "nature_horizons:aspen_planks",
+    "nature_horizons:balsa_planks",
     "nature_horizons:black_walnut_planks",
     "nature_horizons:blackwood_planks",
+    "nature_horizons:ipe_planks",
+    "nature_horizons:japanese_maple_planks",
     "nature_horizons:juniper_planks",
-    "nature_horizons:auric_planks",
+    "nature_horizons:mahogany_planks",
+    "nature_horizons:nanmu_planks",
     "nature_horizons:pine_planks",
     "nature_horizons:redwood_planks",
-    "nature_horizons:japanese_maple_planks"
+    "nature_horizons:willow_planks"
   ]
 }

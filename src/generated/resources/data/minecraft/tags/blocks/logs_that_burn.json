@@ -2,19 +2,27 @@
   "values": [
     "nature_horizons:aspen_log",
     "nature_horizons:stripped_aspen_log",
+    "nature_horizons:balsa_log",
+    "nature_horizons:stripped_balsa_log",
     "nature_horizons:black_walnut_log",
     "nature_horizons:stripped_black_walnut_log",
     "nature_horizons:blackwood_log",
     "nature_horizons:stripped_blackwood_log",
+    "nature_horizons:ipe_log",
+    "nature_horizons:stripped_ipe_log",
+    "nature_horizons:japanese_maple_log",
+    "nature_horizons:stripped_japanese_maple_log",
     "nature_horizons:juniper_log",
     "nature_horizons:stripped_juniper_log",
-    "nature_horizons:auric_log",
-    "nature_horizons:stripped_auric_log",
+    "nature_horizons:mahogany_log",
+    "nature_horizons:stripped_mahogany_log",
+    "nature_horizons:nanmu_log",
+    "nature_horizons:stripped_nanmu_log",
     "nature_horizons:pine_log",
     "nature_horizons:stripped_pine_log",
     "nature_horizons:redwood_log",
     "nature_horizons:stripped_redwood_log",
-    "nature_horizons:japanese_maple_log",
-    "nature_horizons:stripped_japanese_maple_log"
+    "nature_horizons:willow_log",
+    "nature_horizons:stripped_willow_log"
   ]
 }

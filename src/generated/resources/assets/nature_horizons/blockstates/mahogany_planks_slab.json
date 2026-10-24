@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nature_horizons:block/wood/mahogany/slab"
+    },
+    "type=double": {
+      "model": "nature_horizons:block/wood/mahogany/planks"
+    },
+    "type=top": {
+      "model": "nature_horizons:block/wood/mahogany/slab_top"
+    }
+  }
+}

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_auric_planks": {
+    "has_nanmu_planks": {
       "conditions": {
         "items": [
           {
             "items": [
-              "nature_horizons:auric_planks"
+              "nature_horizons:nanmu_planks"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_auric_planks",
+      "has_nanmu_planks",
       "has_the_recipe"
     ]
   ],

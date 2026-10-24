@@ -1,7 +1,6 @@
 package mrthomas20121.nature_horizons.worldgen.tree;
 
-import mrthomas20121.nature_horizons.datagen.NatureHorizonsConfiguredFeatures;
-import net.minecraft.data.worldgen.features.TreeFeatures;
+import mrthomas20121.nature_horizons.datagen.feature.NatureHorizonsTreeFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractMegaTreeGrower;
@@ -16,6 +15,6 @@ public class RedwoodTreeGrower extends AbstractMegaTreeGrower {
 
     @Override
     protected @Nullable ResourceKey<ConfiguredFeature<?, ?>> getConfiguredMegaFeature(RandomSource p_222904_) {
-        return NatureHorizonsConfiguredFeatures.REDWOOD_TREE;
+        return NatureHorizonsTreeFeatures.REDWOOD_TREE;
     }
 }

@@ -1,12 +1,16 @@
 {
   "values": [
     "nature_horizons:aspen_fence",
+    "nature_horizons:balsa_fence",
     "nature_horizons:black_walnut_fence",
     "nature_horizons:blackwood_fence",
+    "nature_horizons:ipe_fence",
+    "nature_horizons:japanese_maple_fence",
     "nature_horizons:juniper_fence",
-    "nature_horizons:auric_fence",
+    "nature_horizons:mahogany_fence",
+    "nature_horizons:nanmu_fence",
     "nature_horizons:pine_fence",
     "nature_horizons:redwood_fence",
-    "nature_horizons:japanese_maple_fence"
+    "nature_horizons:willow_fence"
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nature_horizons:block/wood/nanmu/slab"
+    },
+    "type=double": {
+      "model": "nature_horizons:block/wood/nanmu/planks"
+    },
+    "type=top": {
+      "model": "nature_horizons:block/wood/nanmu/slab_top"
+    }
+  }
+}

@@ -1,5 +1,7 @@
 package mrthomas20121.nature_horizons.datagen;
 
+import mrthomas20121.nature_horizons.datagen.feature.NatureHorizonsCavePlacements;
+import mrthomas20121.nature_horizons.datagen.feature.NatureHorizonsVegetationPlacements;
 import mrthomas20121.nature_horizons.worldgen.NatureHorizonsBiomes;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -26,18 +28,20 @@ public class NatureHorizonsBiomeProvider {
         HolderGetter<PlacedFeature> placedFeatureHolderGetter = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> configuredWorldCarverHolderGetter = context.lookup(Registries.CONFIGURED_CARVER);
         context.register(NatureHorizonsBiomes.ASPEN_FOREST, aspenForest(placedFeatureHolderGetter, configuredWorldCarverHolderGetter, false));
-        context.register(NatureHorizonsBiomes.JAPANESE_MAPLE_FOREST, japanese_maple_forest(placedFeatureHolderGetter, configuredWorldCarverHolderGetter));
+        context.register(NatureHorizonsBiomes.JAPANESE_MAPLE_FOREST, japaneseMapleForest(placedFeatureHolderGetter, configuredWorldCarverHolderGetter));
         context.register(NatureHorizonsBiomes.OLD_GROWTH_ASPEN_FOREST, aspenForest(placedFeatureHolderGetter, configuredWorldCarverHolderGetter, true));
         context.register(NatureHorizonsBiomes.OLD_GROWTH_REDWOOD_TAIGA, oldGrowthTaiga(placedFeatureHolderGetter, configuredWorldCarverHolderGetter));
+        context.register(NatureHorizonsBiomes.TROPICAL_FOREST, tropicalForest(placedFeatureHolderGetter, configuredWorldCarverHolderGetter));
+        context.register(NatureHorizonsBiomes.WOODLAND, woodland(placedFeatureHolderGetter, configuredWorldCarverHolderGetter));
         context.register(NatureHorizonsBiomes.SALT_CAVE, saltCaves(placedFeatureHolderGetter, configuredWorldCarverHolderGetter));
     }
 
     public static void addRockSalt(BiomeGenerationSettings.Builder builder) {
-        builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, NatureHorizonsPlacedFeatures.LARGE_ROCKSALT);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.ROCKSALT_CEILING);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.ROCKSALT_PATCH);
-        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, NatureHorizonsPlacedFeatures.CALCITE);
-        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, NatureHorizonsPlacedFeatures.DIORITE);
+        builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, NatureHorizonsCavePlacements.LARGE_ROCKSALT);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsCavePlacements.ROCKSALT_CEILING);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsCavePlacements.ROCKSALT_PATCH);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, NatureHorizonsCavePlacements.CALCITE);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, NatureHorizonsCavePlacements.DIORITE);
     }
 
     public static void addDefaultOres(BiomeGenerationSettings.Builder p_194723_) {
@@ -75,6 +79,67 @@ public class NatureHorizonsBiomeProvider {
         return biome(true, 0.8F, 0.4F, mobspawnsettings$builder, biomegenerationsettings$builder, music);
     }
 
+    public static Biome tropicalForest(HolderGetter<PlacedFeature> p_256033_, HolderGetter<ConfiguredWorldCarver<?>> p_255651_) {
+        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.baseJungleSpawns(mobspawnsettings$builder);
+        mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PARROT, 40, 1, 2)).addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.OCELOT, 2, 1, 3)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PANDA, 1, 1, 2));
+        return baseJungle(p_256033_, p_255651_, 0.9F, false, false, true, mobspawnsettings$builder, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE));
+    }
+
+    private static Biome baseJungle(HolderGetter<PlacedFeature> p_285208_, HolderGetter<ConfiguredWorldCarver<?>> p_285276_, float p_285079_, boolean p_285393_, boolean p_285109_, boolean p_285122_, MobSpawnSettings.Builder p_285449_, Music p_285440_) {
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(p_285208_, p_285276_);
+        globalOverworldGeneration(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+        if (p_285393_) {
+            BiomeDefaultFeatures.addBambooVegetation(biomegenerationsettings$builder);
+        } else {
+            if (p_285122_) {
+                BiomeDefaultFeatures.addLightBambooVegetation(biomegenerationsettings$builder);
+            }
+
+            if (p_285109_) {
+                BiomeDefaultFeatures.addSparseJungleTrees(biomegenerationsettings$builder);
+            } else {
+                biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsVegetationPlacements.TREES_TROPICAL_FOREST);
+            }
+        }
+
+        BiomeDefaultFeatures.addWarmFlowers(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addJungleGrass(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addJungleVines(biomegenerationsettings$builder);
+        if (p_285109_) {
+            BiomeDefaultFeatures.addSparseJungleMelons(biomegenerationsettings$builder);
+        } else {
+            BiomeDefaultFeatures.addJungleMelons(biomegenerationsettings$builder);
+        }
+
+        return biome(true, 0.95F, p_285079_, 0x36AF3E, p_285449_, biomegenerationsettings$builder, p_285440_);
+    }
+
+    public static Biome woodland(HolderGetter<PlacedFeature> p_255788_, HolderGetter<ConfiguredWorldCarver<?>> p_256461_) {
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(p_255788_, p_256461_);
+        globalOverworldGeneration(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addForestFlowers(biomegenerationsettings$builder);
+
+        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addForestGrass(biomegenerationsettings$builder);
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsVegetationPlacements.TREES_WOODLAND);
+        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.farmAnimals(mobspawnsettings$builder);
+        BiomeDefaultFeatures.commonSpawns(mobspawnsettings$builder);
+        //mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3));
+
+        return biome(true, 0.8f, 0.7F, 0x5D7F2B, mobspawnsettings$builder, biomegenerationsettings$builder, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
+    }
+
     public static Biome oldGrowthTaiga(HolderGetter<PlacedFeature> p_255849_, HolderGetter<ConfiguredWorldCarver<?>> p_256578_) {
         MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.farmAnimals(mobspawnsettings$builder);
@@ -89,7 +154,7 @@ public class NatureHorizonsBiomeProvider {
         BiomeDefaultFeatures.addFerns(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.OLD_GROWTH_REDWOOD_TAIGA);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsVegetationPlacements.TREES_OLD_GROWTH_REDWOOD_TAIGA);
         BiomeDefaultFeatures.addDefaultFlowers(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addGiantTaigaVegetation(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
@@ -99,7 +164,7 @@ public class NatureHorizonsBiomeProvider {
         return biome(true, 0.25F, 0.8F, 4159204, 329011, null, null, mobspawnsettings$builder, biomegenerationsettings$builder, music);
     }
 
-    public static Biome japanese_maple_forest(HolderGetter<PlacedFeature> p_273564_, HolderGetter<ConfiguredWorldCarver<?>> p_273374_) {
+    public static Biome japaneseMapleForest(HolderGetter<PlacedFeature> p_273564_, HolderGetter<ConfiguredWorldCarver<?>> p_273374_) {
         BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(p_273564_, p_273374_);
         MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
         mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 2)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 2, 2, 6)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 2, 4));
@@ -108,7 +173,7 @@ public class NatureHorizonsBiomeProvider {
         BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.TREES_JAPANESE_MAPLE);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsVegetationPlacements.TREES_WOODLAND);
         BiomeDefaultFeatures.addMeadowVegetation(biomegenerationsettings$builder);
 
         BiomeDefaultFeatures.addExtraEmeralds(biomegenerationsettings$builder);
@@ -126,9 +191,9 @@ public class NatureHorizonsBiomeProvider {
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
         if (tallAspen) {
-            biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.TALL_ASPEN_TREE);
+            biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsVegetationPlacements.TREES_OLD_GROWTH_ASPEN_FOREST);
         } else {
-            biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsPlacedFeatures.ASPEN_FOREST_TREES);
+            biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NatureHorizonsVegetationPlacements.TREES_ASPEN_FOREST);
         }
 
         BiomeDefaultFeatures.addDefaultFlowers(biomegenerationsettings$builder);
@@ -140,7 +205,7 @@ public class NatureHorizonsBiomeProvider {
         BiomeDefaultFeatures.farmAnimals(mobspawnsettings$builder);
         BiomeDefaultFeatures.commonSpawns(mobspawnsettings$builder);
 
-        return biome(true, 0.6f, 0.6F, mobspawnsettings$builder, biomegenerationsettings$builder, music);
+        return biome(true, 0.6f, 0.6F, 0x8BB23C, mobspawnsettings$builder, biomegenerationsettings$builder, music);
     }
 
     private static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
@@ -170,8 +235,12 @@ public class NatureHorizonsBiomeProvider {
         return Mth.hsvToRgb(0.62222224F - $$1 * 0.05F, 0.5F + $$1 * 0.1F, 1.0F);
     }
 
-    private static Biome biome(boolean p_265746_, float p_265800_, float p_265276_, MobSpawnSettings.Builder p_265425_, BiomeGenerationSettings.Builder p_265371_, @Nullable Music p_265636_) {
-        return biome(p_265746_, p_265800_, p_265276_, 4159204, 329011, 0x93BA6D, null, p_265425_, p_265371_, p_265636_);
+    private static Biome biome(boolean p_265746_, float p_265800_, float p_265276_, MobSpawnSettings.Builder mobBuilder, BiomeGenerationSettings.Builder biomeSettingsBuilder, @Nullable Music music) {
+        return biome(p_265746_, p_265800_, p_265276_, 4159204, 329011, 0x93BA6D, null, mobBuilder, biomeSettingsBuilder, music);
+    }
+
+    private static Biome biome(boolean p_265746_, float p_265800_, float p_265276_, Integer colorOverride, MobSpawnSettings.Builder mobBuilder, BiomeGenerationSettings.Builder biomeSettingsBuilder, @Nullable Music music) {
+        return biome(p_265746_, p_265800_, p_265276_, 4159204, 329011, colorOverride, null, mobBuilder, biomeSettingsBuilder, music);
     }
 
     private static Biome biome(boolean p_273483_, float p_272621_, float p_273588_, int p_273605_, int p_272756_, @Nullable Integer p_272889_, @Nullable Integer p_272657_, MobSpawnSettings.Builder p_273300_, BiomeGenerationSettings.Builder p_272700_, @Nullable Music p_272996_) {

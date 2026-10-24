@@ -16,16 +16,22 @@ public class NatureHorizonsRenderer {
 
     private static final ResourceLocation ASPEN_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/aspen.png");
     private static final ResourceLocation ASPEN_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/aspen.png");
+    private static final ResourceLocation BALSA_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/balsa.png");
+    private static final ResourceLocation BALSA_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/balsa.png");
     private static final ResourceLocation BLACK_WALNUT_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/black_walnut.png");
     private static final ResourceLocation BLACK_WALNUT_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/black_walnut.png");
     private static final ResourceLocation BLACKWOOD_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/blackwood.png");
     private static final ResourceLocation BLACKWOOD_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/blackwood.png");
+    private static final ResourceLocation IPE_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/ipe.png");
+    private static final ResourceLocation IPE_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/ipe.png");
     private static final ResourceLocation JAPANESE_MAPLE_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/japanese_maple.png");
     private static final ResourceLocation JAPANESE_MAPLE_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/japanese_maple.png");
     private static final ResourceLocation JUNIPER_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/juniper.png");
     private static final ResourceLocation JUNIPER_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/juniper.png");
-    private static final ResourceLocation AURIC_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/auric.png");
-    private static final ResourceLocation AURIC_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/auric.png");
+    private static final ResourceLocation MAHOGANY_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/mahogany.png");
+    private static final ResourceLocation MAHOGANY_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/mahogany.png");
+    private static final ResourceLocation NANMU_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/nanmu.png");
+    private static final ResourceLocation NANMU_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/nanmu.png");
     private static final ResourceLocation PINE_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/pine.png");
     private static final ResourceLocation PINE_CHEST_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/chest_boat/pine.png");
     private static final ResourceLocation REDWOOD_BOAT = new ResourceLocation(NatureHorizons.MOD_ID, "textures/entity/boat/redwood.png");
@@ -37,6 +43,10 @@ public class NatureHorizonsRenderer {
                 (context) -> new NatureHorizonsBoatRenderer(context, false, ASPEN_CHEST_BOAT, ASPEN_BOAT, NatureHorizonsModelLayers.ASPEN_CHEST_BOAT, NatureHorizonsModelLayers.ASPEN_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.ASPEN_CHEST_BOAT.get(),
                 (context) -> new NatureHorizonsBoatRenderer(context, true, ASPEN_CHEST_BOAT, ASPEN_BOAT, NatureHorizonsModelLayers.ASPEN_CHEST_BOAT, NatureHorizonsModelLayers.ASPEN_BOAT));
+        event.registerEntityRenderer(NatureHorizonsEntityTypes.BALSA_BOAT.get(),
+                (context) -> new NatureHorizonsBoatRenderer(context, false, BALSA_CHEST_BOAT, BALSA_BOAT, NatureHorizonsModelLayers.BALSA_CHEST_BOAT, NatureHorizonsModelLayers.BALSA_BOAT));
+        event.registerEntityRenderer(NatureHorizonsEntityTypes.BALSA_CHEST_BOAT.get(),
+                (context) -> new NatureHorizonsBoatRenderer(context, true, BALSA_CHEST_BOAT, BALSA_BOAT, NatureHorizonsModelLayers.BALSA_CHEST_BOAT, NatureHorizonsModelLayers.BALSA_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.BLACK_WALNUT_BOAT.get(),
                 (context) -> new NatureHorizonsBoatRenderer(context, false, BLACK_WALNUT_CHEST_BOAT, BLACK_WALNUT_BOAT, NatureHorizonsModelLayers.BLACK_WALNUT_CHEST_BOAT, NatureHorizonsModelLayers.BLACK_WALNUT_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.BLACK_WALNUT_CHEST_BOAT.get(),
@@ -45,6 +55,10 @@ public class NatureHorizonsRenderer {
                 (context) -> new NatureHorizonsBoatRenderer(context, false, BLACKWOOD_CHEST_BOAT, BLACKWOOD_BOAT, NatureHorizonsModelLayers.BLACKWOOD_CHEST_BOAT, NatureHorizonsModelLayers.BLACKWOOD_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.BLACKWOOD_CHEST_BOAT.get(),
                 (context) -> new NatureHorizonsBoatRenderer(context, true, BLACKWOOD_CHEST_BOAT, BLACKWOOD_BOAT, NatureHorizonsModelLayers.BLACKWOOD_CHEST_BOAT, NatureHorizonsModelLayers.BLACKWOOD_BOAT));
+        event.registerEntityRenderer(NatureHorizonsEntityTypes.IPE_BOAT.get(),
+                (context) -> new NatureHorizonsBoatRenderer(context, false, IPE_CHEST_BOAT, IPE_BOAT, NatureHorizonsModelLayers.IPE_CHEST_BOAT, NatureHorizonsModelLayers.IPE_BOAT));
+        event.registerEntityRenderer(NatureHorizonsEntityTypes.IPE_CHEST_BOAT.get(),
+                (context) -> new NatureHorizonsBoatRenderer(context, true, IPE_CHEST_BOAT, IPE_BOAT, NatureHorizonsModelLayers.IPE_CHEST_BOAT, NatureHorizonsModelLayers.IPE_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.JAPANESE_MAPLE_BOAT.get(),
                 (context) -> new NatureHorizonsBoatRenderer(context, false, JAPANESE_MAPLE_CHEST_BOAT, JAPANESE_MAPLE_BOAT, NatureHorizonsModelLayers.JAPANESE_MAPLE_CHEST_BOAT, NatureHorizonsModelLayers.JAPANESE_MAPLE_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.JAPANESE_MAPLE_CHEST_BOAT.get(),
@@ -53,10 +67,14 @@ public class NatureHorizonsRenderer {
                 (context) -> new NatureHorizonsBoatRenderer(context, false, JUNIPER_CHEST_BOAT, JUNIPER_BOAT, NatureHorizonsModelLayers.JUNIPER_CHEST_BOAT, NatureHorizonsModelLayers.JUNIPER_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.JUNIPER_CHEST_BOAT.get(),
                 (context) -> new NatureHorizonsBoatRenderer(context, true, JUNIPER_CHEST_BOAT, JUNIPER_BOAT, NatureHorizonsModelLayers.JUNIPER_CHEST_BOAT, NatureHorizonsModelLayers.JUNIPER_BOAT));
-        event.registerEntityRenderer(NatureHorizonsEntityTypes.AURIC_BOAT.get(),
-                (context) -> new NatureHorizonsBoatRenderer(context, false, AURIC_CHEST_BOAT, AURIC_BOAT, NatureHorizonsModelLayers.AURIC_CHEST_BOAT, NatureHorizonsModelLayers.AURIC_BOAT));
-        event.registerEntityRenderer(NatureHorizonsEntityTypes.AURIC_CHEST_BOAT.get(),
-                (context) -> new NatureHorizonsBoatRenderer(context, true, AURIC_CHEST_BOAT, AURIC_BOAT, NatureHorizonsModelLayers.AURIC_CHEST_BOAT, NatureHorizonsModelLayers.AURIC_BOAT));
+        event.registerEntityRenderer(NatureHorizonsEntityTypes.MAHOGANY_BOAT.get(),
+                (context) -> new NatureHorizonsBoatRenderer(context, false, MAHOGANY_CHEST_BOAT, MAHOGANY_BOAT, NatureHorizonsModelLayers.MAHOGANY_CHEST_BOAT, NatureHorizonsModelLayers.MAHOGANY_BOAT));
+        event.registerEntityRenderer(NatureHorizonsEntityTypes.MAHOGANY_CHEST_BOAT.get(),
+                (context) -> new NatureHorizonsBoatRenderer(context, true, MAHOGANY_CHEST_BOAT, MAHOGANY_BOAT, NatureHorizonsModelLayers.MAHOGANY_CHEST_BOAT, NatureHorizonsModelLayers.MAHOGANY_BOAT));
+        event.registerEntityRenderer(NatureHorizonsEntityTypes.NANMU_BOAT.get(),
+                (context) -> new NatureHorizonsBoatRenderer(context, false, NANMU_CHEST_BOAT, NANMU_BOAT, NatureHorizonsModelLayers.NANMU_CHEST_BOAT, NatureHorizonsModelLayers.NANMU_BOAT));
+        event.registerEntityRenderer(NatureHorizonsEntityTypes.NANMU_CHEST_BOAT.get(),
+                (context) -> new NatureHorizonsBoatRenderer(context, true, NANMU_CHEST_BOAT, NANMU_BOAT, NatureHorizonsModelLayers.NANMU_CHEST_BOAT, NatureHorizonsModelLayers.NANMU_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.PINE_BOAT.get(),
                 (context) -> new NatureHorizonsBoatRenderer(context, false, PINE_CHEST_BOAT, PINE_BOAT, NatureHorizonsModelLayers.PINE_CHEST_BOAT, NatureHorizonsModelLayers.PINE_BOAT));
         event.registerEntityRenderer(NatureHorizonsEntityTypes.PINE_CHEST_BOAT.get(),
@@ -71,16 +89,22 @@ public class NatureHorizonsRenderer {
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(NatureHorizonsModelLayers.ASPEN_BOAT, BoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.ASPEN_CHEST_BOAT, ChestBoatModel::createBodyModel);
+        event.registerLayerDefinition(NatureHorizonsModelLayers.BALSA_BOAT, BoatModel::createBodyModel);
+        event.registerLayerDefinition(NatureHorizonsModelLayers.BALSA_CHEST_BOAT, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.BLACK_WALNUT_BOAT, BoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.BLACK_WALNUT_CHEST_BOAT, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.BLACKWOOD_BOAT, BoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.BLACKWOOD_CHEST_BOAT, ChestBoatModel::createBodyModel);
+        event.registerLayerDefinition(NatureHorizonsModelLayers.IPE_BOAT, BoatModel::createBodyModel);
+        event.registerLayerDefinition(NatureHorizonsModelLayers.IPE_CHEST_BOAT, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.JAPANESE_MAPLE_BOAT, BoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.JAPANESE_MAPLE_CHEST_BOAT, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.JUNIPER_BOAT, BoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.JUNIPER_CHEST_BOAT, ChestBoatModel::createBodyModel);
-        event.registerLayerDefinition(NatureHorizonsModelLayers.AURIC_BOAT, BoatModel::createBodyModel);
-        event.registerLayerDefinition(NatureHorizonsModelLayers.AURIC_CHEST_BOAT, ChestBoatModel::createBodyModel);
+        event.registerLayerDefinition(NatureHorizonsModelLayers.MAHOGANY_BOAT, BoatModel::createBodyModel);
+        event.registerLayerDefinition(NatureHorizonsModelLayers.MAHOGANY_CHEST_BOAT, ChestBoatModel::createBodyModel);
+        event.registerLayerDefinition(NatureHorizonsModelLayers.NANMU_BOAT, BoatModel::createBodyModel);
+        event.registerLayerDefinition(NatureHorizonsModelLayers.NANMU_CHEST_BOAT, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.PINE_BOAT, BoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.PINE_CHEST_BOAT, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(NatureHorizonsModelLayers.REDWOOD_BOAT, BoatModel::createBodyModel);

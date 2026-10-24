@@ -37,10 +37,18 @@ public class NatureHorizonsBlockstateProvider extends BlockStateProvider {
 
         addLeaveBlock(NatureHorizonsBlocks.ASPEN_LEAVES.get(), blockTexture("wood/aspen/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.ASPEN_SAPLING.get(), blockTexture("wood/aspen/sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.BALSA_LEAVES.get(), blockTexture("wood/balsa/leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.BALSA_SAPLING.get(), blockTexture("wood/balsa/sapling"));
         addLeaveBlock(NatureHorizonsBlocks.BLACK_WALNUT_LEAVES.get(), blockTexture("wood/black_walnut/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.BLACK_WALNUT_SAPLING.get(), blockTexture("wood/black_walnut/sapling"));
         addLeaveBlock(NatureHorizonsBlocks.BLACKWOOD_LEAVES.get(), blockTexture("wood/blackwood/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.BLACKWOOD_SAPLING.get(), blockTexture("wood/blackwood/sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.PINK_IPE_LEAVES.get(), blockTexture("wood/ipe/pink_leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.PINK_IPE_SAPLING.get(), blockTexture("wood/ipe/pink_sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.GOLDEN_IPE_LEAVES.get(), blockTexture("wood/ipe/golden_leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.GOLDEN_IPE_SAPLING.get(), blockTexture("wood/ipe/golden_sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.WHITE_IPE_LEAVES.get(), blockTexture("wood/ipe/white_leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.WHITE_IPE_SAPLING.get(), blockTexture("wood/ipe/white_sapling"));
         addLeaveBlock(NatureHorizonsBlocks.JAPANESE_MAPLE_LEAVES.get(), blockTexture("wood/japanese_maple/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.JAPANESE_MAPLE_SAPLING.get(), blockTexture("wood/japanese_maple/sapling"));
         addLeaveBlock(NatureHorizonsBlocks.CRIMSON_JAPANESE_MAPLE_LEAVES.get(), blockTexture("wood/japanese_maple/crimson_leaves"));
@@ -49,21 +57,29 @@ public class NatureHorizonsBlockstateProvider extends BlockStateProvider {
         addSaplingBlock(NatureHorizonsBlocks.ORANGE_JAPANESE_MAPLE_SAPLING.get(), blockTexture("wood/japanese_maple/orange_sapling"));
         addLeaveBlock(NatureHorizonsBlocks.JUNIPER_LEAVES.get(), blockTexture("wood/juniper/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.JUNIPER_SAPLING.get(), blockTexture("wood/juniper/sapling"));
-        addLeaveBlock(NatureHorizonsBlocks.AURIC_LEAVES.get(), blockTexture("wood/auric/leaves"));
-        addSaplingBlock(NatureHorizonsBlocks.AURIC_SAPLING.get(), blockTexture("wood/auric/sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.MAHOGANY_LEAVES.get(), blockTexture("wood/mahogany/leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.MAHOGANY_SAPLING.get(), blockTexture("wood/mahogany/sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.NANMU_LEAVES.get(), blockTexture("wood/nanmu/leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.NANMU_SAPLING.get(), blockTexture("wood/nanmu/sapling"));
         addLeaveBlock(NatureHorizonsBlocks.PINE_LEAVES.get(), blockTexture("wood/pine/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.PINE_SAPLING.get(), blockTexture("wood/pine/sapling"));
         addLeaveBlock(NatureHorizonsBlocks.REDWOOD_LEAVES.get(), blockTexture("wood/redwood/leaves"));
         addSaplingBlock(NatureHorizonsBlocks.REDWOOD_SAPLING.get(), blockTexture("wood/redwood/sapling"));
+        addLeaveBlock(NatureHorizonsBlocks.WILLOW_LEAVES.get(), blockTexture("wood/willow/leaves"));
+        addSaplingBlock(NatureHorizonsBlocks.WILLOW_SAPLING.get(), blockTexture("wood/willow/sapling"));
 
         addWood(NatureHorizonsBlocks.ASPEN, true, RenderType.cutout());
+        addWood(NatureHorizonsBlocks.BALSA, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.BLACK_WALNUT, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.BLACKWOOD, true, RenderType.cutout());
+        addWood(NatureHorizonsBlocks.IPE, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.JAPANESE_MAPLE, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.JUNIPER, true, RenderType.cutout());
-        addWood(NatureHorizonsBlocks.AURIC, true, RenderType.cutout());
+        addWood(NatureHorizonsBlocks.MAHOGANY, true, RenderType.cutout());
+        addWood(NatureHorizonsBlocks.NANMU, true, RenderType.cutout());
         addWood(NatureHorizonsBlocks.PINE, true, RenderType.solid());
         addWood(NatureHorizonsBlocks.REDWOOD, true, RenderType.cutout());
+        addWood(NatureHorizonsBlocks.WILLOW, true, RenderType.cutout());
     }
 
     protected void simpleBlock(Block block, ResourceLocation texture) {
@@ -88,6 +104,10 @@ public class NatureHorizonsBlockstateProvider extends BlockStateProvider {
         ModelFile blockModel = basicBlock(block.get(), folder + name, texture);
         slab(block.getSlab(), folder + "slab", blockModel, texture, texture, texture);
         stairs(block.getStairs(), folder + "stairs", texture, texture, texture);
+    }
+
+    public ModelFile cubeAll(Block block, ResourceLocation texture) {
+        return models().cubeAll(name(block), texture);
     }
 
     /** Creates all models for a building block object */
@@ -212,6 +232,29 @@ public class NatureHorizonsBlockstateProvider extends BlockStateProvider {
      */
     public ModelFile cubeColumn(Block block, String location, ResourceLocation side, ResourceLocation top) {
         return basicBlock(block, models().cubeColumn(location, side, top));
+    }
+
+    /**
+     * Creates a model for a cube with a top bottom and side texture and an item form
+     * @param block     Block
+     * @param location  Location for the block model
+     * @param side      Texture for sides
+     * @param top       Texture for top
+     * @return model file for the basic block
+     */
+    public ModelFile cubeBottomTop(Block block, String location, ResourceLocation side, ResourceLocation bottom, ResourceLocation top) {
+        return basicBlock(block, models().cubeBottomTop(location, side, bottom, top));
+    }
+
+    /**
+     * Adds a block with axis textures
+     * @param block        Block to add, expected to be instance of RotatedPillarBlock
+     * @param name     Location for the model
+     * @param texture      Side texture
+     */
+    public void wallBlock(WallBlock block, String name, ResourceLocation texture) {
+        wallBlockWithRenderType(block, name, NatureHorizons.getResource("block/"+name), RenderType.cutout().toString());
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(NatureHorizons.getResource(name+"_wall_inventory")));
     }
 
     /**

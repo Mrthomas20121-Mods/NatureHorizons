@@ -1,7 +1,6 @@
 package mrthomas20121.nature_horizons.init;
 
 import mrthomas20121.nature_horizons.NatureHorizons;
-import mrthomas20121.nature_horizons.block.SandSaplingBlock;
 import mrthomas20121.nature_horizons.worldgen.tree.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
@@ -37,6 +36,15 @@ public class NatureHorizonsBlocks {
     public static WoodBlockObject ASPEN = BLOCKS.registerWood("aspen",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
 
+    public static ItemObject<LeavesBlock> BALSA_LEAVES = BLOCKS.register("balsa_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SaplingBlock> BALSA_SAPLING = BLOCKS.register("balsa_sapling", () -> sapling(new BalsaTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static WoodBlockObject BALSA = BLOCKS.registerWood("balsa",
+            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).sound(SoundType.WOOD).ignitedByLava()), true);
+
     public static ItemObject<LeavesBlock> BLACK_WALNUT_LEAVES = BLOCKS.register("black_walnut_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
 
@@ -55,6 +63,27 @@ public class NatureHorizonsBlocks {
     public static WoodBlockObject BLACKWOOD = BLOCKS.registerWood("blackwood",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK).sound(SoundType.WOOD).ignitedByLava()), true);
 
+    public static ItemObject<LeavesBlock> WHITE_IPE_LEAVES = BLOCKS.register("white_ipe_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SaplingBlock> WHITE_IPE_SAPLING = BLOCKS.register("white_ipe_sapling", () -> sapling(new WhiteIpeTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<LeavesBlock> GOLDEN_IPE_LEAVES = BLOCKS.register("golden_ipe_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SaplingBlock> GOLDEN_IPE_SAPLING = BLOCKS.register("golden_ipe_sapling", () -> sapling(new GoldenIpeTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<LeavesBlock> PINK_IPE_LEAVES = BLOCKS.register("pink_ipe_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SaplingBlock> PINK_IPE_SAPLING = BLOCKS.register("pink_ipe_sapling", () -> sapling(new PinkIpeTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static WoodBlockObject IPE = BLOCKS.registerWood("ipe",
+            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).sound(SoundType.WOOD).ignitedByLava()), true);
+
     public static ItemObject<LeavesBlock> JAPANESE_MAPLE_LEAVES = BLOCKS.register("japanese_maple_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
 
@@ -70,7 +99,7 @@ public class NatureHorizonsBlocks {
     public static ItemObject<LeavesBlock> ORANGE_JAPANESE_MAPLE_LEAVES = BLOCKS.register("orange_japanese_maple_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
 
-    public static ItemObject<SaplingBlock> ORANGE_JAPANESE_MAPLE_SAPLING = BLOCKS.register("orange_japanese_maple_sapling", () -> sapling(new ORangeJapaneseMapleTreeGrower()),
+    public static ItemObject<SaplingBlock> ORANGE_JAPANESE_MAPLE_SAPLING = BLOCKS.register("orange_japanese_maple_sapling", () -> sapling(new OrangeJapaneseMapleTreeGrower()),
             (block) -> new BlockItem(block, new Item.Properties()));
 
     public static WoodBlockObject JAPANESE_MAPLE = BLOCKS.registerWood("japanese_maple",
@@ -85,13 +114,22 @@ public class NatureHorizonsBlocks {
     public static WoodBlockObject JUNIPER = BLOCKS.registerWood("juniper",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).sound(SoundType.WOOD).ignitedByLava()), true);
 
-    public static ItemObject<LeavesBlock> AURIC_LEAVES = BLOCKS.register("auric_leaves", () -> leaves(SoundType.GRASS),
+    public static ItemObject<LeavesBlock> MAHOGANY_LEAVES = BLOCKS.register("mahogany_leaves", () -> leaves(SoundType.GRASS),
             (block) -> new BlockItem(block, new Item.Properties()));
 
-    public static ItemObject<SandSaplingBlock> AURIC_SAPLING = BLOCKS.register("auric_sapling", () -> sandSapling(new AuricTreeGrower()),
+    public static ItemObject<SaplingBlock> MAHOGANY_SAPLING = BLOCKS.register("mahogany_sapling", () -> sapling(new MahoganyTreeGrower()),
             (block) -> new BlockItem(block, new Item.Properties()));
 
-    public static WoodBlockObject AURIC = BLOCKS.registerWood("auric",
+    public static WoodBlockObject MAHOGANY = BLOCKS.registerWood("mahogany",
+            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).ignitedByLava()), true);
+
+    public static ItemObject<LeavesBlock> NANMU_LEAVES = BLOCKS.register("nanmu_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SaplingBlock> NANMU_SAPLING = BLOCKS.register("nanmu_sapling", () -> sapling(new NanmuTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static WoodBlockObject NANMU = BLOCKS.registerWood("nanmu",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).sound(SoundType.WOOD).ignitedByLava()), true);
 
     public static ItemObject<LeavesBlock> PINE_LEAVES = BLOCKS.register("pine_leaves", () -> leaves(SoundType.GRASS),
@@ -112,7 +150,16 @@ public class NatureHorizonsBlocks {
     public static WoodBlockObject REDWOOD = BLOCKS.registerWood("redwood",
             (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GRAY).sound(SoundType.WOOD).ignitedByLava()), true);
 
-    public static List<WoodBlockObject> WOODS = List.of(ASPEN, BLACK_WALNUT, BLACKWOOD, JUNIPER, AURIC, PINE, REDWOOD, JAPANESE_MAPLE);
+    public static ItemObject<LeavesBlock> WILLOW_LEAVES = BLOCKS.register("willow_leaves", () -> leaves(SoundType.GRASS),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static ItemObject<SaplingBlock> WILLOW_SAPLING = BLOCKS.register("willow_sapling", () -> sapling(new RedwoodTreeGrower()),
+            (block) -> new BlockItem(block, new Item.Properties()));
+
+    public static WoodBlockObject WILLOW = BLOCKS.registerWood("willow",
+            (wood -> BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_GREEN).sound(SoundType.WOOD).ignitedByLava()), true);
+
+    public static List<WoodBlockObject> WOODS = List.of(ASPEN, BALSA, BLACK_WALNUT, BLACKWOOD, IPE, JAPANESE_MAPLE, JUNIPER, MAHOGANY, NANMU, PINE, REDWOOD, WILLOW);
 
     public static void initCompostable() {
         addCompostableWithSameChance(0.3f, ASPEN_SAPLING, ASPEN_LEAVES);
@@ -126,9 +173,10 @@ public class NatureHorizonsBlocks {
                 ORANGE_JAPANESE_MAPLE_LEAVES, ORANGE_JAPANESE_MAPLE_SAPLING);
         addCompostableWithSameChance(0.3f, JUNIPER_SAPLING, JUNIPER_LEAVES);
         addCompostable(0.65f, NatureHorizonsItems.JUNIPER_BERRY);
-        addCompostableWithSameChance(0.3f, AURIC_SAPLING, AURIC_LEAVES);
+        addCompostableWithSameChance(0.3f, NANMU_SAPLING, NANMU_LEAVES);
         addCompostableWithSameChance(0.3f, PINE_SAPLING, PINE_LEAVES);
         addCompostableWithSameChance(0.3f, REDWOOD_SAPLING, REDWOOD_LEAVES);
+        addCompostableWithSameChance(0.3f, WILLOW_SAPLING, WILLOW_LEAVES);
     }
 
     private static void addCompostable(float chance, ItemLike itemLike) {
@@ -143,10 +191,6 @@ public class NatureHorizonsBlocks {
 
     private static SaplingBlock sapling(AbstractTreeGrower grower) {
         return new SaplingBlock(grower, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY));
-    }
-
-    private static SandSaplingBlock sandSapling(AbstractTreeGrower grower) {
-        return new SandSaplingBlock(grower, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY));
     }
 
     private static LeavesBlock leaves(SoundType p_152615_) {
